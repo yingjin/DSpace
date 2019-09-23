@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Test Thesaurus for Research Data Collection
+-->
+
+<node id="RDMT" label="RDMT">
+	<isComposedBy>
+		<node id="000" label="Campus Entities">
+			<isComposedBy>
+				<node id="010" label="Groups">
+					<isComposedBy>
+						<node id="011" label="Archaeology Group" />
+						<node id="012" label="Atomic and Molecular Collisions Group" />
+						<node id="013" label="Barron Research Group" />
+						<node id="014" label="Bartel Research Group" />
+						<node id="015" label="Beckingham Research Group" />
+						<node id="016" label="Bennett Research Group" />
+					</isComposedBy>
+				</node>
+				<node id="020" label="Departments">
+					<isComposedBy>
+						<node id="021" label="Department of Air Force Science" />
+						<node id="022" label="Department of Ancient Mediterranean Civilizations" />
+						<node id="023" label="Department of Anthropology" />
+						<node id="024" label="Department of Art History" />
+						<node id="025" label="Department of Bioengineering" />
+						<node id="026" label="Chemistry Department" />
+					</isComposedBy>
+				</node>
+				<node id="030" label="Centers and Institutes">
+					<isComposedBy>
+						<node id="031" label="Wetland Center for Biogeochemical Research" />
+						<node id="032" label="Rice 360 Institute for Global Health Technologies" />
+						<node id="033" label="Center for Energy &amp; Environmental Research in the Human Sciences" />
+						<node id="034" label="Bonner Nuclear Laboratories" />
+						<node id="035" label="Boniuk Institute for the Study and Advancement of Religious Tolerance" />
+						<node id="036" label="Chao Center for Asian Studies" />
+					</isComposedBy>
+				</node>
+				<node id="040" label="Others">
+					<isComposedBy>
+						<node id="041" label="OpenStax" />
+						<node id="042" label="Scientia" />
+						<node id="043" label="Softlib" />
+						<node id="044" label="Energy and Environment Initiative" />
+					</isComposedBy>
+				</node>
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>

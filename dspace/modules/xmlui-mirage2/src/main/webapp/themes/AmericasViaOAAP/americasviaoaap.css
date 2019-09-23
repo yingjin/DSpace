@@ -1,0 +1,22 @@
+/*
+
+americaviaoaap.css
+
+Style that hides elements that link back to the Americas Collection in DSpace.
+It is intended to be used when viewing DSpace items while in the OAAP frameset 
+(which will point to the item with a paremeter of '?themepath=AmericasViaOAAP/').
+
+*/
+
+#ds-options, #ds-trail-top, #ds-footer{
+  display: none;
+}
+
+#ds-body{
+  width: auto;
+  float: none;
+}
+
+h1.ds-div-head{
+  padding-top: .5em;
+}

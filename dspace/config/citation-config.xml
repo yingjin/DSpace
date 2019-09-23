@@ -1,0 +1,1596 @@
+<?xml version="1.0"?>
+<!DOCTYPE citation-config SYSTEM "citation-config.dtd">
+
+<!-- citation-config configs the format of the citation at community level, collection level or a  -->
+<!-- document type level. The file is adapted from input-forms.xml.     -->
+
+<!--
+    Author: Ying Jin @ 2008
+-->
+
+<citation-config>
+
+
+
+	<!-- The citation-map maps the community, a collection or a document type to a citation name.    -->
+    <!--  (E)* name-map
+            (A)** scope: the handle of a community or a collection
+            (A)** citation-name: citation name
+
+            (E)** map-type
+                (A)*** document-type: the full name of the document type. The name corresponds to the value in dc.type for each item.
+                (A)*** citation-name: citation name
+
+    The citation-name is given in name-map will be overwriten by the one given in map-type.
+
+    For example,
+        <name-map scope="1911/2946" citation-name="ece-default">
+            <map-type document-type="Conference Paper" citation-name="ece-conference" />
+        </name-map>
+
+    The citation "ece-default" is applied to the collection with handle "1911/2946". However, the items with document
+    type dc.type="Conference Paper" in this collection will be using the citation "ece-conference".
+
+    -->
+	<citation-map>
+
+        <!-- SERVER-SPECIFIC -->
+        <!-- dspace.rice.edu -->
+        <!-- ECE publications -->
+
+        <!--name-map scope="1911/81741" citation-name="ESCI-maps"/-->  <!-- on testing -->
+
+        <name-map scope="1911/10563" citation-name="ece-default">
+            <map-type document-type="Conference Paper" citation-name="ece-conference" />
+        </name-map>
+
+        <!-- CMC publications -->
+        <name-map scope="1911/21945" citation-name="ece-default">
+            <map-type document-type="Conference Paper" citation-name="ece-conference" />
+        </name-map>
+
+        <!-- DSP publications -->
+        <name-map scope="1911/21661" citation-name="ece-default">
+            <map-type document-type="Conference Paper" citation-name="ece-conference" />
+        </name-map>
+
+        <!-- Americas Original Documents -->
+        <name-map scope="1911/9221" citation-name="americas-original"/> 
+        <!-- Americas Visual Materials -->
+        <name-map scope="1911/21756" citation-name="americas-original"/> 
+        <!-- Americas Mora -->
+        <name-map scope="1911/21844" citation-name="americas-mora"/> 
+
+        <!-- Americas Translated -->
+        <name-map scope="1911/20693" citation-name="americas-translated"/> 
+
+        <name-map scope="1911/13110" citation-name="etd-default"/>
+
+	<!--name-map scope="1911/68494" citation-name="weber-default"/-->
+
+	<name-map scope="1911/64890" citation-name="thresher-default"/>
+
+        <!--name-map scope="1911/77130" citation-name="shepherd-pamphlets"/-->
+
+        <name-map scope="1911/79705" citation-name="patents-default"/>
+
+        <name-map scope="1911/79696" citation-name="haaa-vahf"/>    <!--VAHF -->
+        <name-map scope="1911/79695" citation-name="haaa-vahf"/>    <!--HAAA -->
+        <name-map scope="1911/36136" citation-name="haaa-vahf"/>    <!--VAHF -->
+        <name-map scope="1911/75169" citation-name="haaa-vahf"/>    <!--HAAA -->
+
+	<!-- for historical image default-->
+	<!--name-map scope="1911/61408" citation-name="histimage-default"/--> <!-- Events -->
+	<!--name-map scope="1911/62306" citation-name="histimage-default"/--> <!-- Key Documents -->
+	<!--name-map scope="1911/61406" citation-name="histimage-default"/--> <!-- People -->
+	<!--name-map scope="1911/61407" citation-name="histimage-default"/--> <!-- Places -->
+	<!--name-map scope="1911/61409" citation-name="histimage-default"/--> <!-- Sports -->
+	<!--name-map scope="1911/61410" citation-name="histimage-default"/--> <!-- Various -->
+
+    <!--name-map scope="1911/70649" citation-name="histimage-default"/--> <!-- Correspondence and ephemera from Lovett World Tour -->
+    <!--name-map scope="1911/70176" citation-name="histimage-default"/--> <!-- Postcards collected on Lovett World Tour  -->
+    <!--name-map scope="1911/69482" citation-name="histimage-default"/--> <!-- World Tour images by Carrington Weems -->
+
+        <!--name-map scope="1911/75565" citation-name="histimage-default"/--> <!-- Oral History -->
+        <!--name-map scope="1911/75967" citation-name="histimage-default"/--> <!-- Rice University Sports Videos -->
+        <!--name-map scope="1911/35948" citation-name="histimage-default"/--> <!-- History of Rice University -->
+        <!--name-map scope="1911/35950" citation-name="histimage-default"/--> <!-- Rice University General announcements  -->
+        <!--name-map scope="1911/35952" citation-name="histimage-default"/--> <!-- Rice University Presidential Inauguration Speeches -->
+
+        <name-map scope="1911/77660" citation-name="dataset-default"/>
+
+        <name-map scope="1911/88869" citation-name="baker-default"/>
+        <name-map scope="1911/88867" citation-name="baker-default"/>
+        <name-map scope="1911/88864" citation-name="baker-default"/>
+        <name-map scope="1911/88878" citation-name="baker-default"/>
+        <name-map scope="1911/88876" citation-name="baker-default"/>
+        <name-map scope="1911/88865" citation-name="baker-default"/>
+        <name-map scope="1911/88866" citation-name="baker-default"/>
+        <name-map scope="1911/88870" citation-name="baker-default"/>
+        <name-map scope="1911/88881" citation-name="baker-default"/>
+        <name-map scope="1911/88874" citation-name="baker-default"/>
+        <name-map scope="1911/88868" citation-name="baker-default"/>
+        <name-map scope="1911/88875" citation-name="baker-default"/>
+        <name-map scope="1911/88873" citation-name="baker-default"/>
+        <name-map scope="1911/20460" citation-name="baker-default"/>
+        <name-map scope="1911/88879" citation-name="baker-default"/>
+        <name-map scope="1911/88872" citation-name="baker-default"/>
+        <name-map scope="1911/88871" citation-name="baker-default"/>
+        <name-map scope="1911/88880" citation-name="baker-default"/>
+
+
+        <name-map scope="1911/90431" citation-name="undergraduate-default"/>
+        <!-- dspaceland, dspacentest -->
+<!--        <name-map scope="1911/2946" citation-name="ece-default">
+            <map-type document-type="Conference Paper" citation-name="ece-conference" />
+        </name-map>
+
+        <name-map scope="1911/6241" citation-name="americas-original"/>
+        <name-map scope="1911/6401" citation-name="americas-original"/>
+        <name-map scope="1911/6243" citation-name="americas-original"/>
+        <name-map scope="1911/6794" citation-name="americas-mora"/>
+        <name-map scope="1911/7843" citation-name="americas-translated"/>
+        
+
+        <name-map scope="1911/8598" citation-name="thresher-default"/>
+
+-->
+	</citation-map>
+
+	<citation-definitions>
+
+  <!--
+    (E)* citation
+        (A)** name: citation name, must be unique for all citations defined
+        (A)** sensitive-fields-name: The citaton won't be generated if given sensitive field(s) are null or empty.
+        (E)** field
+            (E)*** max-n-value: designed with max-n-ending attribute for author display.
+                Use Case -  if an item has more than 3 authors, and the citation will only display first 3 authors
+                            and replace other authors with "et al.", you can put max-n-value="3" max-n-ending="et al."
+                            attributes in the author field
+            (E)*** max-n-ending: see max-n-value
+            (E)*** noshow-if-exist: don't show this field if specified field(s) exists.
+                Sample Value: "dc.contributor.author" or "dc.pubplace;dc.contributor.publisher" (multiple fields seperated with ";")
+            (E)*** show-if-exist: show this field if specified field(s) exists.
+                Sample Value: "dc.contributor.author" or "dc.pubplace;dc.contributor.publisher" (multiple fields seperated with ";")
+            (E)*** op: used with noshow-if-exist or show-if-exist when there are multiple fields specified. Value set is ("AND", "OR")
+            (A)*** dc-schema: you can specify any schema here, dc or whatever you name it
+            (A)*** dc-element: the element name
+            (A)*** dc-qualifier: the qualifier name
+            (A)*** display-format: Here is the place you can format your citation.
+                    @field@ will be replaced by the actural field value. Also you can apply html tags. See [Note 1]
+                    for supported html tags.
+                (E)**** multiple-value-seperator: Use this seperator to seperate multiple-value field. Default is ", ".
+                (E)**** format-it: The attribute is used to customize the field value - @field@ itself.
+                        In dspace-api/.../app/util/FormatIt.java, you will find a method formatIt. All format-it attributes are
+                        handled over here. Here are the steps to format your field (for multiple-value field, it formats
+                        each individual value.)
+                        Step 1 - Name your format, for example "firstname-initial-only"
+                        Step 2 - Write your format method in FormatIt.java, for example,
+                            String getFirstNameInitials(String value)
+                        Step 3 - add a line to formatIt method
+                            if(formatit.equalsIgnoreCase("firstname-initial-only")){
+                                    return getFirstNameInitials(value);
+                            }
+                        Of course, you need to compile the code, deploy, and restart the web application.
+
+    Special use case - a field without a field value
+            If you would like to put a punctuation or a phrase which is not related to any metadata field in the citation,
+            you can leave the dc-schema, dc-element, and dc-qualifier empty, and put whatever you want in display-format.
+            For example,
+
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="AND">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>:</display-format>
+           </field>
+
+
+    [Note 1]
+          This method is applicable to XMLUI.
+          For html tag like <i> </i>, you need to escape "<" as "&lt;" and ">" as "&gt;".
+          Before you send the page to the browser, you need to apply html-tag-parser.xsl to the field so that these tags
+          can be interpreted as HTML. Currently, html-tag-parser.xsl supports tag <i>, <b>, <a>, and <p>. You can change
+          the parser to support more tags by updating this line:
+           <xsl:when test="contains($str,'&lt;i') or contains($str, '&lt;b') or contains($str, '&lt;a') or contains($str, '&lt;p')">
+
+    *************************************************************************  -->
+
+
+        <!-- ************************************************************************
+
+                        Undergraduate citation format
+
+              ************************************************************************   -->
+              <citation name="undergraduate-default">
+                 <!-- Author -->
+             <field max-n-value="3" max-n-ending="et al.">
+               <dc-schema>dc</dc-schema>
+               <dc-element>creator</dc-element>
+               <dc-qualifier></dc-qualifier>
+               <display-format multiple-value-seperator=",">@field@.</display-format>
+             </field>
+
+                  <!-- Title -->
+                 <field>
+                   <dc-schema>dc</dc-schema>
+                   <dc-element>title</dc-element>
+                   <dc-qualifier></dc-qualifier>
+                   <display-format> "@field@."</display-format>
+                 </field>
+
+                  <!-- Journal Title -->
+                 <field>
+                   <dc-schema>thesis</dc-schema>
+                   <dc-element>degree</dc-element>
+                   <dc-qualifier>level</dc-qualifier>
+                   <display-format> @field@ thesis</display-format>
+                 </field>
+
+                  <!-- Volume Number -->
+                 <field>
+                   <dc-schema>thesis</dc-schema>
+                   <dc-element>degree</dc-element>
+                   <dc-qualifier>grantor</dc-qualifier>
+                   <display-format>, @field@</display-format>
+                 </field>
+
+                  <!-- Year -->
+                 <field>
+                   <dc-schema>dc</dc-schema>
+                   <dc-element>date</dc-element>
+                   <dc-qualifier>issued</dc-qualifier>
+                   <display-format format-it="year-only">, @field@. </display-format>
+                 </field>
+
+
+                  <!-- URI -->
+                 <field>
+                   <dc-schema>dc</dc-schema>
+                   <dc-element>identifier</dc-element>
+                   <dc-qualifier>uri</dc-qualifier>
+                   <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+                 </field>
+
+              </citation>
+
+
+      <!-- ************************************************************************
+
+                  Undergraduate citation format
+
+        ************************************************************************   -->
+
+
+     <!-- ************************************************************************
+
+                  Baker Institute citation format
+
+        ************************************************************************   -->
+        <citation name="baker-default">
+           <!-- Author -->
+	   <field max-n-value="3" max-n-ending="et al.">
+	     <dc-schema>dc</dc-schema>
+	     <dc-element>contributor</dc-element>
+	     <dc-qualifier>author</dc-qualifier>
+	     <display-format multiple-value-seperator=",">@field@.</display-format>
+	   </field>
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author">
+              <dc-schema>dc</dc-schema>
+              <dc-element>creator</dc-element>
+              <dc-qualifier></dc-qualifier>
+              <display-format multiple-value-seperator=",">@field@.</display-format>
+            </field>
+
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author;dc.creator" op="AND">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>photographer</dc-qualifier>
+              <display-format multiple-value-seperator=",">@field@ (photographer).</display-format>
+            </field>
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author;dc.creator" op="AND">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>performer</dc-qualifier>
+              <display-format multiple-value-seperator=",">@field@ (performer).</display-format>
+            </field>
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author;dc.creator" op="AND">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>illustrator</dc-qualifier>
+              <display-format multiple-value-seperator=","> @field@ (illustrator).</display-format>
+            </field>
+
+            <!-- Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> "@field@."</display-format>
+           </field>
+
+            <!-- Journal Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>journalTitle</dc-qualifier>
+             <display-format> &lt;i&gt;@field@,&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- Volume Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>volumeNumber</dc-qualifier>
+             <display-format> @field@, </display-format>
+           </field>
+
+            <!-- Journal Issue Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>issueNumber</dc-qualifier>
+             <display-format> no. @field@ </display-format>
+           </field>
+
+            <!-- Year -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format format-it="year-only"> (@field@) </display-format>
+           </field>
+
+            <!-- publisher -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>publisher</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>@field@:</display-format>
+           </field>
+
+            <!-- Journal Page Number -->
+            <field>
+                <dc-schema>dc</dc-schema>
+                <dc-element>citation</dc-element>
+                <dc-qualifier>firstpage</dc-qualifier>
+                <display-format> @field@</display-format>
+            </field>
+
+            <field>
+                <dc-schema>dc</dc-schema>
+                <dc-element>citation</dc-element>
+                <dc-qualifier>lastpage</dc-qualifier>
+                <display-format>-@field@</display-format>
+            </field>
+
+            <field show-if-exist="dc.citation.firstpage">
+                <dc-schema></dc-schema>
+                <dc-element></dc-element>
+                <dc-qualifier></dc-qualifier>
+                <display-format>.</display-format>
+            </field>
+
+            <!-- DOI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>doi</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- URI -->
+           <field noshow-if-exist="dc.identifier.doi">
+             <dc-schema>dc</dc-schema>
+             <dc-element>relation</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+        </citation>
+
+
+
+
+        <!-- ************************************************************************
+
+                      DEFAULT citation format for HAAA and VAHF collection
+
+        ************************************************************************   -->
+        <citation name="haaa-vahf">
+
+            <!-- Author -->
+            <field>
+              <dc-schema>dc</dc-schema>
+              <dc-element>creator</dc-element>
+              <dc-qualifier></dc-qualifier>
+              <display-format multiple-value-seperator=", ">@field@,</display-format>
+            </field>
+
+
+                <!-- interviewee -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>contributor</dc-element>
+                 <dc-qualifier>interviewer</dc-qualifier>
+                 <display-format multiple-value-seperator=", "> interview by @field@. </display-format>
+               </field>
+
+            <!-- date -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format format-it="thresher-date"> @field@.</display-format>
+           </field>
+
+            <!-- source collection -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>source</dc-element>
+               <dc-qualifier>collection</dc-qualifier>
+             <display-format> @field@. </display-format>
+           </field>
+
+            <!-- URI -->
+             <field>
+               <dc-schema>dc</dc-schema>
+               <dc-element>identifier</dc-element>
+               <dc-qualifier>uri</dc-qualifier>
+               <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+             </field>
+
+
+            </citation>
+
+
+
+               <!-- ************************************************************************
+
+                      DEFAULT citation format for Patents collection
+
+        ************************************************************************   -->
+        <citation name="patents-default">
+
+            <!-- Author -->
+            <field>
+              <dc-schema>dc</dc-schema>
+              <dc-element>creator</dc-element>
+              <dc-qualifier></dc-qualifier>
+              <display-format multiple-value-seperator=", ">@field@,</display-format>
+            </field>
+
+
+                <!-- Title -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>title</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> "@field@." </display-format>
+               </field>
+
+            <!-- Patents -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+               <dc-qualifier>patentID</dc-qualifier>
+             <display-format>Patent @field@. </display-format>
+           </field>
+
+                <!-- source -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>date</dc-element>
+                 <dc-qualifier>issued</dc-qualifier>
+                 <display-format> issued @field@.</display-format>
+               </field>
+
+            <!-- URI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> Retrieved from &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+
+            </citation>
+
+        <!-- ************************************************************************
+
+                      DEFAULT citation format for ESCI collection
+
+        ************************************************************************   -->
+        <citation name="ESCI-maps">
+
+            <!-- Author -->
+            <field>
+              <dc-schema>dc</dc-schema>
+              <dc-element>creator</dc-element>
+              <dc-qualifier></dc-qualifier>
+              <display-format multiple-value-seperator=", ">@field@.</display-format>
+            </field>
+
+
+                <!-- Title -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>title</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> @field@ </display-format>
+               </field>
+
+            <!-- subtitle -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+               <dc-qualifier>subtitle</dc-qualifier>
+             <display-format>[@field@].</display-format>
+           </field>
+
+                <!-- source -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>relation</dc-element>
+                 <dc-qualifier>ispartof</dc-qualifier>
+                 <display-format> @field@</display-format>
+               </field>
+
+
+            </citation>
+
+        <!-- ************************************************************************
+
+                      DEFAULT citation format for Dataset collection
+
+        ************************************************************************   -->
+        <citation name="dataset-default">
+
+            <!-- Author -->
+            <field>
+              <dc-schema>dc</dc-schema>
+              <dc-element>creator</dc-element>
+              <dc-qualifier></dc-qualifier>
+              <display-format multiple-value-seperator=", ">@field@</display-format>
+            </field>
+
+            <!-- Year -->
+            <field>
+              <dc-schema>dc</dc-schema>
+              <dc-element>date</dc-element>
+              <dc-qualifier>issued</dc-qualifier>
+              <display-format format-it="year-only"> (@field@):</display-format>
+            </field>
+
+                <!-- Title -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>title</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> @field@.</display-format>
+               </field>
+
+            <!-- Sub Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier>subtitle</dc-qualifier>
+             <display-format> [@field@].</display-format>
+           </field>
+
+
+            <!-- version -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>description</dc-element>
+             <dc-qualifier>version</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- publisher -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>publisher</dc-element>
+             <display-format> @field@.</display-format>
+           </field>
+
+
+            <!-- DOI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>doi</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- URI -->
+           <field noshow-if-exist="dc.identifier.doi">
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+
+            </citation>
+
+  <!-- ************************************************************************
+
+                      DEFAULT citation format for Weber-Staub-Briscoe architectural collection, 1909-2010 collection 
+
+        ************************************************************************   -->
+        <citation name="weber-default">
+
+                <!-- Title -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>title</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> "@field@."</display-format>
+               </field>
+
+                <!-- Collection -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>source</dc-element>
+                 <dc-qualifier>collection</dc-qualifier>
+                 <display-format> @field@. </display-format>
+               </field>
+
+
+                <!-- URI -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>identifier</dc-element>
+                 <dc-qualifier>uri</dc-qualifier>
+                 <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+               </field>
+
+
+            </citation>
+
+        <!-- ************************************************************************
+
+                              DEFAULT citation format for Shepherd Pamphlets
+
+                ************************************************************************   -->
+                <citation name="shepherd-pamphlets">
+
+                        <!-- Title -->
+                       <field>
+                         <dc-schema>dc</dc-schema>
+                         <dc-element>title</dc-element>
+                         <dc-qualifier></dc-qualifier>
+                         <display-format> @field@.</display-format>
+                       </field>
+
+                    <!-- Year -->
+                   <field>
+                     <dc-schema>dc</dc-schema>
+                     <dc-element>date</dc-element>
+                     <dc-qualifier>issued</dc-qualifier>
+                     <display-format format-it="year-only"> (@field@)</display-format>
+                   </field>
+
+                        <!-- publisher -->
+                       <field>
+                         <dc-schema>dc</dc-schema>
+                         <dc-element>publisher</dc-element>
+                         <display-format> @field@. </display-format>
+                       </field>
+
+
+                        <!-- URI -->
+                       <field>
+                         <dc-schema>dc</dc-schema>
+                         <dc-element>identifier</dc-element>
+                         <dc-qualifier>uri</dc-qualifier>
+                         <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+                       </field>
+
+
+                    </citation>
+
+
+        <!-- ************************************************************************
+
+                      DEFAULT citation format for ETD collection ( Chicago Manual of Style )
+
+        ************************************************************************   -->
+        <citation name="etd-default">
+               <!-- Author -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>creator</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format multiple-value-seperator=", ">@field@.</display-format>
+               </field>
+
+            <!-- Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> "@field@."</display-format>
+           </field>
+
+                <!-- Year -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>date</dc-element>
+                 <dc-qualifier>issued</dc-qualifier>
+                 <display-format format-it="year-only"> (@field@)</display-format>
+               </field>
+
+
+                <!-- Master's Thesis or Dissertation -->
+               <field>
+                 <dc-schema>thesis</dc-schema>
+                 <dc-element>degree</dc-element>
+                 <dc-qualifier>level</dc-qualifier>
+                 <display-format format-it="thesis-diss"> @field@, </display-format>
+               </field>
+
+            <!--field>
+                  <dc-schema>thesis</dc-schema>
+                  <dc-element>degree</dc-element>
+                  <dc-qualifier>level</dc-qualifier>
+                  <display-format> @field@, </display-format>
+                </field-->
+
+                <!-- University -->
+               <field>
+                 <dc-schema>thesis</dc-schema>
+                 <dc-element>degree</dc-element>
+                 <dc-qualifier>grantor</dc-qualifier>
+                 <display-format> @field@. </display-format>
+               </field>
+
+                <!-- URI -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>identifier</dc-element>
+                 <dc-qualifier>uri</dc-qualifier>
+                 <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+               </field>
+
+
+            </citation>
+
+
+
+        <!-- ************************************************************************
+
+                      DEFAULT citation format for Thresher collection
+
+        ************************************************************************   -->
+        <citation name="thresher-default">
+               <!-- Author -->
+<!--               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>contributor</dc-element>
+                 <dc-qualifier>author</dc-qualifier>
+                 <display-format multiple-value-seperator=", ">@field@.</display-format>
+               </field>
+-->
+                <!-- Title -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>title</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format>@field@.</display-format>
+               </field>
+
+                <!-- dc.publisher  -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>publisher</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> @field@, </display-format>
+               </field>
+
+
+                <!-- Year -->
+   <!--            <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>date</dc-element>
+                 <dc-qualifier>issued</dc-qualifier>
+                 <display-format format-it="thresher-date"> @field@.</display-format>
+               </field>
+-->
+               <!-- Volume Number -->
+   <!--            <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>citation</dc-element>
+                 <dc-qualifier>volumeNumber</dc-qualifier>
+                 <display-format> @field@ </display-format>
+               </field>
+-->
+                <!-- Journal Issue Number -->
+   <!--            <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>citation</dc-element>
+                 <dc-qualifier>issueNumber</dc-qualifier>
+                 <display-format> (@field@)</display-format>
+               </field>
+-->
+                <!-- Journal Page Number -->
+               <!--<field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>citation</dc-element>
+                 <dc-qualifier>pageNumber</dc-qualifier>
+                 <display-format>, @field@.</display-format>
+               </field>
+-->
+
+                <!-- URI -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>identifier</dc-element>
+                 <dc-qualifier>uri</dc-qualifier>
+                 <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+               </field>
+
+
+            </citation>
+
+
+        <!-- ************************************************************************
+
+                      DEFAULT citation format for Historical Images collection
+
+        ************************************************************************   -->
+        <citation name="histimage-default">
+               <!-- Author -->
+<!--               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>contributor</dc-element>
+                 <dc-qualifier>author</dc-qualifier>
+                 <display-format multiple-value-seperator=", ">@field@.</display-format>
+               </field>
+-->
+                <!-- Title -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>title</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> "@field@,"</display-format>
+               </field>
+
+                <!-- Year -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>date</dc-element>
+                 <dc-qualifier>issued</dc-qualifier>
+                 <display-format format-it="thresher-date"> @field@.</display-format>
+               </field>
+
+                <!-- dc.publisher  -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>publisher</dc-element>
+                 <dc-qualifier></dc-qualifier>
+                 <display-format> @field@, </display-format>
+               </field>
+
+                <!-- URI -->
+               <field>
+                 <dc-schema>dc</dc-schema>
+                 <dc-element>identifier</dc-element>
+                 <dc-qualifier>uri</dc-qualifier>
+                 <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+               </field>
+
+
+            </citation>
+
+
+    
+    <!-- ************************************************************************
+
+                  DEFAULT citation format for ECE collection (IEEE)
+
+    ************************************************************************   -->
+    <citation name="ece-default">
+           <!-- Author -->
+	       <field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>contributor</dc-element>
+	         <dc-qualifier>author</dc-qualifier>
+	         <display-format multiple-value-seperator=", " format-it="firstname-initial-only">@field@,</display-format>
+	       </field>
+
+		    <!-- Title -->
+	       <field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>title</dc-element>
+	         <dc-qualifier></dc-qualifier>
+	         <display-format> "@field@,"</display-format>
+	       </field>
+
+            <!-- Journal Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>journalTitle</dc-qualifier>
+             <display-format> &lt;i&gt;@field@,&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- Volume Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>volumeNumber</dc-qualifier>
+             <display-format> vol. @field@,</display-format>
+           </field>
+
+            <!-- Journal Issue Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>issueNumber</dc-qualifier>
+             <display-format> no. @field@,</display-format>
+           </field>
+
+            <!-- Journal Page Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>pageNumber</dc-qualifier>
+             <display-format> pp. @field@,</display-format>
+           </field>
+
+            <!-- Year -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format format-it="year-only"> @field@.</display-format>
+           </field>
+
+            <!-- URI -->
+           <!--field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field-->
+
+
+        </citation>
+        <!-- ************************************************************************
+
+                  Citation format for ECE conference Paper
+
+        ************************************************************************   -->
+        <citation name="ece-conference">
+            <!-- Author -->
+	       <field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>contributor</dc-element>
+	         <dc-qualifier>author</dc-qualifier>
+	         <display-format multiple-value-seperator=", " format-it="firstname-initial-only"> @field@,</display-format>
+	       </field>
+
+            <!-- Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>"@field@,"</display-format>
+           </field>
+
+            <!-- Conference Name -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>conferenceName</dc-qualifier>
+             <display-format> in &lt;i&gt;@field@&lt;/i&gt;,</display-format>
+           </field>
+
+            <!-- Conference Date -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>conferenceDate</dc-qualifier>
+             <display-format format-it="ece-conferencedate"> @field@</display-format>
+           </field>
+
+            <!-- Separator -->
+           <field show-if-exist="dc.citation.pageNumber">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>,</display-format>
+           </field>
+
+            <!-- Page Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>pageNumber</dc-qualifier>
+             <display-format> pp. @field@.</display-format>
+           </field>
+
+
+            <!-- URI -->
+           <!--field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field-->
+
+        </citation>
+
+        <!-- ************************************************************************
+
+                  DEFAULT citation format for Americas Original Documents
+
+                  This citation methodology is based on the Chicago citation style for archival materials.
+                  This script was developed for the Our Americas Archive Partnership collection at Rice University's Digital Scholarship Archive.
+                  For further explanations, please see http://tinyurl.com/mgt5oj
+
+        ************************************************************************   -->
+        <citation name="americas-original">
+           <!-- Author --> <!-- format it as americas, remove date of birth and first three authors only -->
+	       <field max-n-value="3" max-n-ending="et al">
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>contributor</dc-element>
+	         <dc-qualifier>author</dc-qualifier>
+	         <display-format multiple-value-seperator=", " format-it="americas-author">@field@.</display-format>
+	       </field>
+
+            <!-- Editor --> <!-- format it as americas, remove date of birth and first three editors only -->
+            <field max-n-value="3" max-n-ending="et al" noshow-if-exist="dc.contributor.author">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>editor</dc-qualifier>
+              <display-format multiple-value-seperator=", " format-it="americas-author">@field@ Ed.</display-format>
+            </field>
+
+		    <!-- Title -->
+	       <field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>title</dc-element>
+	         <dc-qualifier></dc-qualifier>
+	         <display-format> &lt;i&gt;@field@&lt;/i&gt;</display-format>
+	       </field>
+
+            <!-- SubTitle -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier>subtitle</dc-qualifier>
+             <display-format>, &lt;i&gt;@field@&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- Separator -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>.</display-format>
+           </field>
+
+            <!-- Format -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>format</dc-element>
+             <dc-qualifier>medium</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- publisher city -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>pubplace</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> @field@</display-format>
+           </field>
+
+           <!-- Separator -->
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="AND">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>:</display-format>
+           </field>
+
+            <!-- publisher company -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>contributor</dc-element>
+             <dc-qualifier>publisher</dc-qualifier>
+             <display-format> @field@</display-format>
+           </field>
+
+            <!-- Separator -->
+
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="OR">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>,</display-format>
+           </field>
+
+            <!-- issue date -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- Source: From -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> From</display-format>
+           </field>
+
+            <!-- Source: Woodson Research Center -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>source</dc-element>
+             <dc-qualifier>collection</dc-qualifier>
+             <display-format format-it="get-wrc"> @field@,</display-format>
+           </field>
+
+            <!-- Source: Rice University -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> Rice University</display-format>
+           </field>
+
+            <!-- Collection: Arcival Collection -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>source</dc-element>
+             <dc-qualifier>collection</dc-qualifier>
+             <display-format format-it="americas-ms-source">&lt;i&gt;@field@&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- URI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+        </citation>
+
+
+
+        <!--  *********************************
+                Americas project, Translated Collection
+
+         ************************************** -->
+
+        <citation name="americas-translated">
+           <!-- Author --> <!-- format it as americas, remove date of birth and first three authors only -->
+	       <field max-n-value="3" max-n-ending="et al.">
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>contributor</dc-element>
+	         <dc-qualifier>author</dc-qualifier>
+	         <display-format multiple-value-seperator=", " format-it="americas-author">@field@.</display-format>
+	       </field>
+
+            <!-- Editor --> <!-- format it as americas, remove date of birth and first three editors only -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>editor</dc-qualifier>
+              <display-format multiple-value-seperator=", " format-it="americas-author">@field@ Ed.</display-format>
+            </field>
+
+		    <!-- Title -->
+	       <field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>title</dc-element>
+	         <dc-qualifier></dc-qualifier>
+	         <display-format> &lt;i&gt;@field@&lt;/i&gt;</display-format>
+	       </field>
+
+            <!-- SubTitle -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier>subtitle</dc-qualifier>
+             <display-format>, &lt;i&gt;@field@&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- Separator -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>.</display-format>
+           </field>
+
+            <!-- Translator -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>contributor</dc-element>
+             <dc-qualifier>translator</dc-qualifier>
+             <display-format> Translated by @field@.</display-format>
+           </field>
+
+            <!-- Format -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>format</dc-element>
+             <dc-qualifier>medium</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- publisher city -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>pubplace</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> @field@</display-format>
+           </field>
+
+           <!-- Separator -->
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="AND">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>:</display-format>
+           </field>
+
+            <!-- publisher company -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>contributor</dc-element>
+             <dc-qualifier>publisher</dc-qualifier>
+             <display-format> @field@</display-format>
+           </field>
+
+            <!-- Separator -->
+
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="OR">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>,</display-format>
+           </field>
+
+            <!-- issue date -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+
+            <!-- Source: From -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> From</display-format>
+           </field>
+
+            <!-- Source: Woodson Research Center -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>source</dc-element>
+             <dc-qualifier>collection</dc-qualifier>
+             <display-format format-it="get-wrc"> @field@,</display-format>
+           </field>
+
+            <!-- Source: Rice University -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> Rice University</display-format>
+           </field>
+
+            <!-- Collection: Arcival Collection -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>source</dc-element>
+             <dc-qualifier>collection</dc-qualifier>
+             <display-format format-it="americas-ms-source">&lt;i&gt;@field@&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- URI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+        </citation>
+
+
+
+        <!--  *********************************
+                Americas project, Mora Collection
+
+         ************************************** -->
+
+        <citation name="americas-mora">
+           <!-- Author --> <!-- format it as americas, remove date of birth and first three authors only -->
+	       <field max-n-value="3" max-n-ending="et al.">
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>contributor</dc-element>
+	         <dc-qualifier>author</dc-qualifier>
+	         <display-format multiple-value-seperator=", " format-it="americas-author">@field@.</display-format>
+	       </field>
+
+            <!-- Editor --> <!-- format it as americas, remove date of birth and first three editors only -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>editor</dc-qualifier>
+              <display-format multiple-value-seperator=", " format-it="americas-author">@field@ Ed.</display-format>
+            </field>
+
+		    <!-- Title -->
+	       <field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>title</dc-element>
+	         <dc-qualifier></dc-qualifier>
+	         <display-format> &lt;i&gt;@field@&lt;/i&gt;</display-format>
+	       </field>
+
+            <!-- SubTitle -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier>subtitle</dc-qualifier>
+             <display-format>, &lt;i&gt;@field@&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- Separator -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>.</display-format>
+           </field>
+
+            <!-- Format -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>format</dc-element>
+             <dc-qualifier>medium</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- publisher city -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>pubplace</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> @field@</display-format>
+           </field>
+
+           <!-- Separator -->
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="AND">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>:</display-format>
+           </field>
+
+            <!-- publisher company -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>contributor</dc-element>
+             <dc-qualifier>publisher</dc-qualifier>
+             <display-format> @field@</display-format>
+           </field>
+
+            <!-- Separator -->
+
+           <field show-if-exist="dc.pubplace;dc.contributor.publisher" op="OR">
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>,</display-format>
+           </field>
+
+            <!-- issue date -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- Source: Instituto Mora -->
+           <field>
+             <dc-schema></dc-schema>
+             <dc-element></dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> From Instituto Mora.</display-format>
+           </field>
+
+            <!-- URI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+        </citation>
+
+
+        <!-- ************************************************************************
+
+                  DEFAULT citation format for all archives, with Chicago style
+
+        ************************************************************************   -->
+        <citation name="default">
+           <!-- Author -->
+	   <field max-n-value="3" max-n-ending="et al.">
+	     <dc-schema>dc</dc-schema>
+	     <dc-element>contributor</dc-element>
+	     <dc-qualifier>author</dc-qualifier>
+	     <display-format multiple-value-seperator=",">@field@.</display-format>
+	   </field>
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author">
+              <dc-schema>dc</dc-schema>
+              <dc-element>creator</dc-element>
+              <dc-qualifier></dc-qualifier>
+              <display-format multiple-value-seperator=",">@field@.</display-format>
+            </field>
+
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author;dc.creator" op="AND">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>photographer</dc-qualifier>
+              <display-format multiple-value-seperator=",">@field@ (photographer).</display-format>
+            </field>
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author;dc.creator" op="AND">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>performer</dc-qualifier>
+              <display-format multiple-value-seperator=",">@field@ (performer).</display-format>
+            </field>
+
+            <!-- if the contributor.author is empty, try to use contributor.photographer or contributor.illustrator -->
+            <field max-n-value="3" max-n-ending="et al." noshow-if-exist="dc.contributor.author;dc.creator" op="AND">
+              <dc-schema>dc</dc-schema>
+              <dc-element>contributor</dc-element>
+              <dc-qualifier>illustrator</dc-qualifier>
+              <display-format multiple-value-seperator=","> @field@ (illustrator).</display-format>
+            </field>
+
+            <!-- Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>title</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format> "@field@."</display-format>
+           </field>
+
+            <!-- Journal Title -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>journalTitle</dc-qualifier>
+             <display-format> &lt;i&gt;@field@,&lt;/i&gt;</display-format>
+           </field>
+
+            <!-- Volume Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>volumeNumber</dc-qualifier>
+             <display-format> @field@, </display-format>
+           </field>
+
+            <!-- Journal Issue Number -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>citation</dc-element>
+             <dc-qualifier>issueNumber</dc-qualifier>
+             <display-format> no. @field@ </display-format>
+           </field>
+
+            <!-- Year -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>date</dc-element>
+             <dc-qualifier>issued</dc-qualifier>
+             <display-format format-it="year-only"> (@field@) </display-format>
+           </field>
+
+            <!-- publisher -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>publisher</dc-element>
+             <dc-qualifier></dc-qualifier>
+             <display-format>@field@:</display-format>
+           </field>
+
+            <!-- Journal Page Number -->
+            <field>
+                <dc-schema>dc</dc-schema>
+                <dc-element>citation</dc-element>
+                <dc-qualifier>firstpage</dc-qualifier>
+                <display-format> @field@</display-format>
+            </field>
+
+            <field>
+                <dc-schema>dc</dc-schema>
+                <dc-element>citation</dc-element>
+                <dc-qualifier>lastpage</dc-qualifier>
+                <display-format>-@field@</display-format>
+            </field>
+
+            <field show-if-exist="dc.citation.firstpage">
+                <dc-schema></dc-schema>
+                <dc-element></dc-element>
+                <dc-qualifier></dc-qualifier>
+                <display-format>.</display-format>
+            </field>
+
+            <!-- DOI -->
+           <field>
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>doi</dc-qualifier>
+             <display-format> @field@.</display-format>
+           </field>
+
+            <!-- URI -->
+           <field noshow-if-exist="dc.identifier.doi">
+             <dc-schema>dc</dc-schema>
+             <dc-element>identifier</dc-element>
+             <dc-qualifier>uri</dc-qualifier>
+             <display-format> &lt;a href="@field@"&gt;@field@&lt;/a&gt;.</display-format>
+           </field>
+
+        </citation>
+
+
+
+
+	</citation-definitions>
+
+	<citation-sensitive-fields>
+		<field-set name="default">
+			<sensitive-field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>publisher</dc-element>
+	         <dc-qualifier></dc-qualifier>
+			</sensitive-field>
+			<sensitive-field>
+		     <dc-schema>dc</dc-schema>
+	         <dc-element>date</dc-element>
+	         <dc-qualifier>issue</dc-qualifier>
+			</sensitive-field>
+		</field-set>
+	</citation-sensitive-fields>
+</citation-config>
+
+

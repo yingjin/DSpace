@@ -1,0 +1,1588 @@
+/*
+  style.css
+  Version: $Revision: 1.9 $
+  Date: $Date: 2006/07/27 22:54:52 $
+  Copyright (c) 2002-2005, Hewlett-Packard Company and Massachusetts
+  Institute of Technology.  All rights reserved.
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+  - Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  - Neither the name of the Hewlett-Packard Company nor the name of the
+  Massachusetts Institute of Technology nor the names of their
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+  OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+  TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+ */
+/******************/
+/* START HEADER */
+/******************/
+/* The div at the top of the page which contains all of the header elements */
+/*
+  .header {
+  position: relative;
+  width: 800px;
+  height: 70px;
+  background-color: #f8f3e0;
+  border-right-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  z-index: 1;
+  min-width:780px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-right: 0px;
+  border-bottom-style: solid;
+  border-bottom-color: #7E1A46;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  }
+ */
+.header {
+    position: relative;
+    width: 800px;
+    height: 70px;
+    background-color: #f8f3e0;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #7E1A46;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align:left;
+}
+/* The div that contains the text menu that contains "home, browse, about, contact, help */
+.mainMenu {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #7e1a36;
+    position: absolute;
+    width: 464px;
+    height: 16px;
+    font-size: 90%;
+    left: 107px;
+    top: 40px;
+    z-index: 2;
+}
+.timeaLogo {
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    z-index: 1;
+}
+.timeaLogoText {
+    position: absolute;
+    z-index: 2;
+    top: 11px;
+    left: 100px
+}
+/*
+  .mainMenu {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #7e1a36;
+  position: absolute;
+  width: 464px;
+  height: 16px;
+  left: 107px;
+  top: 40px;
+  z-index: 2;
+  }
+ */
+/* This describes how to orient the text links(spacing between words) etc */
+.mainMenu a {
+    float: left;
+    width: 85px;
+/* width: 90px; */
+    color: #7e1a36;
+    font-size: .98em;
+    text-decoration: none;
+}
+/* The text link mouse-over information for the main menu */
+.mainMenu a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* The text link mouse-over information for the main menu */
+.mainMenu a:active {
+    font-weight:bold
+}
+/* The div that contains all of the search elements in the header, including the button, text field, and advanced search text */
+.advancedSearch {
+    height: 25px;
+    width: 50px;
+    position: relative;
+    text-align: center;
+    float: left;
+/* reduced font size so that advanced search matches main TIMEA site */
+    font-size:85%;
+}
+.searchForm {
+    position: relative;
+    width: 300px;
+    z-index: 2;
+    overflow: visible;
+    text-align: right;
+    top: 33px;
+    float: right;
+    font-size: 75%;
+    left: -5px;
+/* margin: 1em auto; */
+}
+/*
+  .searchForm {
+  position: relative;
+  width: 260px;
+  z-index: 2;
+  overflow: visible;
+  text-align: right;
+  top: 30px;
+  float: right;
+  font-size: 80%;
+  font-weight: bold;
+  padding-right: 25px;
+  }
+ */
+/* The jpeg image that says "travelers in the middle east archive" */
+/*
+  .timeaLogoText {
+  position: absolute;
+  z-index: 2;
+  top: 11px;
+  left: 100px
+  }
+ */
+/* The timea logo jpeg */
+/*
+  .timeaLogo {
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  z-index: 1;
+  }
+ */
+/******************/
+/* END HEADER */
+/******************/
+/******************/
+/* START GENERAL STYLES */
+/* Body, footer, container links, etc */
+/******************/
+/* general styles for the body of the webpage */
+body {
+    font-size: 90%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #bebcad;
+    text-align: left;
+/* text-align: center; */
+/* width: 800px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+  body {
+  font-size: 90%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #bebcad;
+  text-align: left
+  }
+ */
+/* The container contains the three main divisions of the page: header, content, footer */
+.container {
+    position: relative;
+    min-width:780px;
+    width:800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align:center;
+}
+/* sitewide link styles */
+a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #7e1a36;
+}
+/* sitewide link styles */
+a:visited {
+    color:#852183;
+}
+/* sitewide link styles */
+a.selected {
+    font-weight:bold;
+}
+/* The content area of the page; between the header and footer */
+.content {
+    height: auto;
+    width: 80%;
+/* width: 95%; */
+    position: relative;
+    background-color: #FFFFFF;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #000000;
+    border-bottom-color: #333333;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+/* padding-left: 20px; */
+    min-width:780px;
+    width:790px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    text-align:left;
+    z-index: 1;
+    overflow: hidden;
+}
+/*
+  .content2 {
+  padding-left: -20px;
+  padding-top: 0px;
+  }
+ */
+.login {
+    position: absolute;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    top:2px;
+/* top: 135px; */
+    right: 10px;
+    width: 10%;
+    padding: 2px 5px 5px 5px;
+}
+/* the footer at the bottom of the page */
+.footer {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 95%;
+    background-color: #FFFFFF;
+/* width: 95%; */
+    width: 800px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #7E1A36;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #000000;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #000000;
+/* min-width:780px; */
+    padding-right: 0px;
+    padding-bottom: 10px;
+/* padding-left: 20px; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/******************/
+/* END GENERAL STYLES */
+/******************/
+/******************/
+/* START SPECIFIC STYLES */
+/******************/
+.resultlist {
+    padding-right: 25px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 95%;
+    position: relative;
+}
+.numberitems {
+    padding-right: 25px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    position: relative;
+    text-align: center;
+}
+.searchfooter {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    padding-right: 25px;
+}
+.bold {
+    font-weight: bold;
+}
+title {
+    height: 21px;
+    width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 110%;
+    font-weight: bold;
+    color: #7e1a36;
+    padding-left: 15px;
+}
+.titleital {
+    font-style: italic;
+}
+/* regular black text */
+.textreg {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 95%;
+    color: #333333;
+    padding-right: 25px;
+}
+.textsm {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 85%;
+    color: #333333;
+}
+.entirepage {
+    height: 500px;
+    width: 95%;
+    position: relative;
+}
+/* The search result heading. Directly above the search result (see .results) */
+.heading {
+    font-size: 95%;
+    font-weight: bold;
+    color: #7e1a36;
+    height: auto;
+    width: 98%;
+    text-align: left;
+}
+.subhead {
+    font-size: 95%;
+    font-weight: bold;
+    color: #7e1a36;
+    height: auto;
+    width: 98%;
+    text-align: left;
+}
+.mainheading {
+    color: #7e1a36;
+    font-size: 110%;
+    font-weight: bold;
+    text-align: center;
+}
+.headingsm {
+    font-size: 90%;
+    font-weight: bold;
+    color: #7e1a36;
+    height: auto;
+    width: 98%;
+    text-align: left;
+}
+/* for search results pages. This is the actual results that appears under the search result heading (see .heading) */
+.results {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    left: 15px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 25px;
+    width: 95%;
+}
+.names {
+    font-size: 80%;
+    color: #333333;
+}
+.nameemph {
+    font-style: italic;
+}
+/* For making a horizontal rule with dashes */
+.dashed {
+    border: none 0;
+    border-top: 1px dashed #000;
+/* the border */
+    text-align: left;
+    width: 80%;
+    height: 1px;
+/* whatever the total width of the border-top and border-bottom equal */
+}
+/* Form for the advanced search page */
+.advancedSearchForm {
+    font-size: 90%;
+    text-align: left;
+    padding-right: 25px;
+    padding-left: 15px;
+}
+.smallcell {
+    width:5px;
+}
+.next {
+    font-size: 90%;
+    text-align: right;
+    padding-right: 25px;
+}
+.checkBoxes {
+    position: relative;
+    padding-left: 40px;
+    width: 300px;
+}
+/* For presenting tabular information on GIS search & browse */
+.mapresults {
+    border-collapse:collapse;
+    font-size: 90%;
+}
+*/check box for advanced search page */
+.checkbox {
+    position: relative;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    padding-left: 25px;
+    width: 40px;
+}
+/******************/
+/* END SPECIFIC STYLES */
+/******************/
+/******************/
+/* START DSPACE STYLES */
+/******************/
+.locationBar {
+    font-size: 80%;
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    text-align: left
+}
+.itemDisplayTable {
+    text-align: center;
+    border: 0;
+    color: #000000
+}
+.metadataFieldLabel {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 95%;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    vertical-align: top;
+    text-align: right;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 3px
+}
+.metadataFieldValue {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 95%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: top;
+    text-align: left;
+    text-decoration: none;
+    padding: 3px
+}
+.signin {
+    font-size: 80%;
+    text-align: right;
+    padding-right: 20px;
+}
+.thead {
+    font-weight: bold;
+    font-size: 90%
+}
+.oddRowOddCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 3px
+}
+.evenRowOddCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #eeeeee;
+    padding: 3px
+}
+.oddRowEvenCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #eeeeee;
+    padding: 3px
+}
+.evenRowEvenCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #dddddd;
+    padding: 3px
+}
+.highlightRowOddCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #ccccee;
+    padding: 3px
+}
+.highlightRowEvenCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #bbbbcc;
+    padding: 3px
+}
+.itemDisplayTable {
+    text-align: center;
+    border: 0;
+    color: #000000
+}
+.browseBarLabel {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    background: #ffffff;
+    vertical-align: middle;
+    text-decoration: none
+}
+.browseBar {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+    background: #ffffff;
+    vertical-align: middle;
+}
+.miscTable {
+    padding-right: 20px;
+}
+/******************/
+/* END DSPACE STYLES */
+/******************/
+/*
+  The only div in the body, ds-main contains all DRI generated content.
+  Parents:    body
+  Children:   div#ds-header
+  div#ds-options
+  div#ds-body
+  div#ds-footer
+ */
+div#ds-main {
+    position: relative;
+    background-color: white;
+    overflow-x: hidden;
+}
+/*
+  The header div, ds-header contains the current title of the DRI generated
+  document, with optional sub-title divs and whatnot.
+  Parents:    div#ds-main
+  Children:   optional: text(), div#ds-title, div#ds-subtitle
+ */
+.ds-head {
+    color: #7E1A36;
+    font-size: 120%;
+}
+div#ds-header {
+    height: 128px;
+/* border: 1px solid green; */
+    background-image: url(header.jpg);
+    background-repeat: repeat-x;
+    background-color: #d8e6f4;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+/* Code taken from www.tdl.org and used in the header */
+/*
+  div#ds-header h1, div#ds-header h2 {
+  display: none;
+  }
+ */
+img#logo {
+    position: relative;
+    left: 19px;
+    top: 23px;
+    width: 190px;
+    height: 41px;
+    background-image: url(logo.gif);
+    z-index: 5;
+}
+#contact_us {
+    font-size: 10px;
+    font-weight: bold;
+    color: #0C3F71;
+    position: absolute;
+    text-transform: uppercase;
+    width: 142px;
+    height: 30px;
+    top: 50px;
+    right: 10px;
+    z-index: 4;
+}
+a.contact_us {
+    text-decoration: none;
+    color: #0C3F71;
+}
+a.contact_us:hover {
+    text-decoration: underline;
+}
+#hidedropdown {
+    position:absolute;
+    width:777px;
+    height:350px;
+    z-index:3;
+    left: 0px;
+    top: 0px;
+    visibility: hidden;
+}
+/*
+  #mainmenu {
+  position: absolute;
+  top: 100px;
+  height: 29px;
+  left: 0px;
+  width: 100%;
+  background-color: #97A9C0;
+  line-height: normal;
+  border: 1px solid white;
+  border-width: 1px 0px 0px 0px;
+  z-index: 4;
+  }
+  #mainmenu {
+  position: absolute;
+  top: 100px;
+  height: 29px;
+  left: 0px;
+  width: 100%;
+  background-color:
+  #97A9C0;
+  line-height: normal;
+  border: 1px solid white;
+  border-width: 1px 0px 1px 0px;
+  z-index: 4;
+  }
+  #mainmenu ul {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 3px;
+  list-style: none;
+  }
+  #mainmenu ul li {
+  float: left;
+  margin: 0px;
+  display: inline;
+  color: white;
+  text-transform: uppercase;
+  }
+  #mainmenu ul li.current {
+  background-color: #97A9C0;
+  }
+  #mainmenu ul li a {
+  position: relative;
+  top: 5px;
+  color: white;
+  background-color: #0C3F71;
+  border-right: 1px solid white;
+  margin: 0px;
+  padding: 8px 26px 8px 26px;
+  text-decoration: none;
+  }
+  #mainmenu ul li.search {
+  background-color: #97A9C0;
+  }
+  #mainmenu ul li a:hover {
+  background-color: #2B5C8C;
+  font-weight: normal;
+  margin: 0px;
+  }
+ */
+#dropdown1 {
+    position:absolute;
+    width:200px;
+    height: auto;
+    z-index: 5;
+    left: 9px;
+    top: 130px;
+    background-image: url(sub_nav_bkgd.png);
+    background-repeat: repeat;
+    visibility: hidden;
+}
+#dropdown2 {
+    position:absolute;
+    width:200px;
+    height:115px;
+    z-index: 5;
+    left: 91px;
+    top: 130px;
+    background-image: url(sub_nav_bkgd.png);
+    visibility: hidden;
+}
+#dropdown3 {
+    position:absolute;
+    width:200px;
+    height:115px;
+    z-index: 5;
+    left: 194px;
+    top: 130px;
+    background-image: url(sub_nav_bkgd.png);
+    visibility: hidden;
+}
+#dropdown4 {
+    position:absolute;
+    width:200px;
+    height:115px;
+    z-index: 5;
+    left: 398px;
+    top: 130px;
+    background-image: url(sub_nav_bkgd.png);
+    visibility: hidden;
+}
+#dropdown5 {
+    position:absolute;
+    width:200px;
+    height:115px;
+    z-index: 5;
+    left: 375px;
+    top: 130px;
+    background-image: url(sub_nav_bkgd.png);
+    visibility: hidden;
+}
+.main_nav_text {
+    color: #FFFFFF;
+    cursor: hand;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: normal;
+}
+.sub_nav_text {
+    color: #05192C;
+    font-weight: bold;
+    text-decoration: none;
+}
+ul.subnav {
+    list-style: none;
+    padding: .5em 0 0.5em 1em;
+    margin: 0;
+}
+ul.subnav li {
+    display: list-item;
+    padding: 0 0 10px 0;
+    margin: 0
+}
+ul#ds-trail-top {
+    position: relative;
+    top: 35px;
+    height: 30px;
+    margin: 0px;
+/* //margin-left: 25px; */
+    padding: 0px;
+    padding-left: 24px;
+    background-color: #2b5c8c;
+/*
+  border-top: 0px solid white;
+  border-bottom: 1px solid white;
+ */
+}
+ul#ds-trail-bottom {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 25px;
+    line-height: 30px;
+    background-color: rgb(84, 123, 162);
+}
+li.ds-trail-link {
+    display: inline;
+    padding-left: 15px;
+    margin-top: 2px;
+    margin-left: 0px;
+    line-height: 20px;
+    max-width: 400px;
+    overflow: hidden;
+    background-image: url(trail.png);
+    background-repeat: no-repeat;
+    background-position: 0% 60%;
+    color: white;
+    font-family: Verdana, sans-serif;
+    font-size: 10px;
+}
+li.first-link {
+    list-style: none;
+    background-image: none;
+    padding-left: 0;
+}
+li.ds-trail-link a {
+    color: white;
+    text-decoration: none;
+}
+li.ds-trail-link a:hover {
+    text-decoration: underline;
+}
+li.last-link {
+    font-weight: bolder;
+}
+/*
+  The options div, ds-options contains lists of navigation links
+  Parents:    div#ds-main
+  Children:   optional: text(), div#ds-title, div#ds-subtitle
+ */
+div#ds-options {
+    position: absolute;
+    top:2px;
+/* top: 2px; */
+    right: 5px;
+    width: 20%;
+    font-size:90%;
+    padding: 15px 20px 10px 20px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #7E1A46;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #7E1A46;
+}
+div#ds-search-option {
+    position: absolute;
+    top: -27px;
+    right: 10px;
+    text-align: right;
+    border: none;
+    padding: 0px;
+    margin-top: 0px;
+    z-index: 5;
+}
+div#ds-search-option input.ds-text-field {
+/*
+  border-bottom: 2px solid rgb(200,200,200);
+  border-right: 2px solid rgb(200,200,200);
+  border-left: 2px solid rgb(75,75,75);
+  border-top: 2px solid rgb(75,75,75);
+ */
+    padding-left: 5px;
+    margin-right: 5px;
+    width: 130px;
+/* color: #0C3F71; */
+    font-size: 12px;
+    font-weight: bold;
+}
+div#ds-search-option input.ds-button-field {
+/*
+  border-bottom: 2px solid rgb(50,50,50);
+  border-right: 2px solid rgb(50,50,50);
+  border-left: 2px solid rgb(210,210,210);
+  border-top: 2px solid rgb(210,210,210);
+  background-color: rgb(150,150,150);
+  color: rgb(60,60,60);
+ */
+    font: Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+div#ds-search-option a {
+    position: relative;
+    top: 8px;
+    font-weight: bold;
+    color: #436B92;
+}
+div.ds-option-set {
+    margin-bottom: 20px;
+/* border-left: 1px solid #546AA5; */
+    padding-left: 15px;
+    padding-top: 10px;
+}
+div#ds-options h3 {
+    position: relative;
+    top: 12px;
+    margin: 0px;
+    margin-left: 5px;
+    color: #7e1a36;
+/* color: #243A75; */
+}
+div#ds-options h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-color: #7e1a36;
+    font-size:100%;
+/* color: #BE1621; */
+}
+div#ds-options ul {
+/* margin-bottom: 10px; */
+/* padding-left: 30px; */
+    list-style-position: outside;
+    padding-left: 5px;
+    margin-left: 0px;
+}
+div#ds-options li {
+    padding: 0px;
+    color: rgb(25,25,75);
+}
+div#ds-body {
+    padding: 0px 30px 20px 5px;
+    margin-left: 20px;
+    width: 65%;
+/*
+  width: 80%;
+ */
+/* min-height: 350px; */
+}
+/*
+  Special handling of the alphabet list, used as an index entry into the browsing and
+  search results lists
+ */
+ul.alphabet {
+/*
+  //height: 60px;
+  //margin-bottom: 20px;
+ */
+    padding-left: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    margin-top: 5px;
+/*
+  background-color: rgb(255,255,240);
+  border: 2px solid rgb(245,245,216);
+ */
+    text-align: center;
+}
+.alphabet li {
+    list-style: none;
+    display: inline;
+    margin-right: 3px;
+    font-weight: 200;
+}
+.alphabet a {
+/* //font-size: larger; */
+    font-weight: 600;
+    color: #243A75;
+}
+.alphabet a:hover {
+/* //font-size: larger; */
+    font-weight: 600;
+    color: #BE1621;
+}
+/*
+  New rules concerning secondary content (i.e. search boxes and stuff) /
+/*
+  p.intro-text {
+  display: inline;
+  }/
+  .search {
+  min-width: 328px;
+  max-width: 500px;
+  }
+  .search select {
+  max-width: 200px;
+  }
+ */
+/*
+  .collection .search, .community .search {
+  padding: 5px 5px 5px 10px;
+  background-color: rgb(229,240,251);
+ */
+/*
+  border: 1px solid rgb(206,220,234);/*
+  margin: 5px 0px 5px 0px;
+  font-size: 10px;
+  }
+  div.search-browse {
+  //border: 1px solid red;
+  float: left;
+  padding: 0px;
+  width: 50%;
+  margin-right: 3%;
+  margin-bottom: 2%;
+  }
+  div.filter-search-results .filter-search {
+  padding: 5px 5px 5px 10px;
+  background-color: rgb(229,240,251);
+  border: 1px solid rgb(206,220,234);
+  margin: 5px 0px 5px 0px;
+  font-size: 10px;
+  width: 260px;
+  }
+  .result-query {
+  text-align: center;
+  color: rgb(150, 150, 200);
+  }
+/*
+  div.secondary .filter-search {
+  padding: 5px 5px 5px 10px;
+  background-color: rgb(229,240,251);
+  border: 1px solid rgb(206,220,234);
+  margin: 5px 0px 5px 0px;
+  font-size: 10px;
+  width: auto;
+  }
+ */
+.filter-search h2, .filter-search h2 {
+    display: none;
+}
+.collection input, .community input, div.filter-search-results input {
+    margin: 0px;
+    font-size: 10px;
+}
+.collection input.ds-text-field, .community input.ds-text-field, div.filter-search-results input.ds-text-field {
+    width: 136px;
+}
+.collection select, .community select, div.filter-search-results select {
+    margin: 0px;
+    font-size: 10px;
+    width: 140px;
+}
+.collection p.button-list, .community p.button-list {
+    margin: 0px;
+}
+input.ds-password-field {
+    margin-right: 5px;
+}
+/*
+  .search, .navigation {
+  background-color: rgb(255,255,240);
+  border: 2px solid rgb(245,245,216);
+  padding: 0px 5px 0px 5px;
+  }
+ */
+.navigation input, .navigation select {
+    margin-left: 5px;
+    font-size: 10px;
+}
+.navigation p {
+    margin: 5px;
+    text-align: center;
+}
+/*
+  .search table {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: none;
+  }
+  .search th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  //background-color: rgb(250,250,220);
+  text-align: left;
+  }
+ */
+div.browse {
+    display: none;
+}
+div#ds-footer {
+    height: 82px;
+    background-color: #D8E6F4;
+}
+div#ds-footer p {
+    margin: 0;
+    padding-top: 15px;
+    padding-left: 25px;
+    font-family: Arial,Sans-serif;
+    font-size: 10px;
+    color: #666;
+}
+/* CSS rules concerning pagination divs and their contents */
+div.pagination {
+    position: relative;
+    height: 45px;
+/*
+  background-color: #F8F3E0;
+  border: black;
+ */
+/*
+  background-color: rgb(229,240,251);
+  border: 1px solid rgb(206,220,234);
+ */
+    padding: 0px 5px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+}
+div.pagination-masked {
+    position: relative;
+    width: auto;
+    height: 40px;
+/* background-color: rgb(229,240,251); */
+/* border: 1px solid rgb(206,220,234); */
+    padding: 5px;
+    margin-bottom: 5px;
+}
+a.previous-page-link {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+/* color: rgb(25,25,100); */
+}
+p.pagination-info {
+    position: relative;
+    top: -6px;
+    left: 10px;
+    width: auto;
+    max-width: 300px;
+    text-align: center;
+    padding: 1px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+/* //border: 1px solid blue; */
+}
+ul.pagination-links {
+    position: relative;
+    text-align: center;
+    top: -24px;
+    left: -2%;
+/* //width: 500px; */
+}
+.pagination-links li {
+    list-style: none;
+    display: inline;
+    margin-right: 5px;
+    font-weight: bolder;
+    font-size: 90%;
+}
+li.page-link a, li.first-page-link a, li.last-page-link a {
+/* color: rgb(25,25,100); */
+}
+li.current-page-link a {
+    color: #BE1621;
+}
+a.next-page-link {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: rgb(25,25,100);
+}
+.artifact-title a {
+    color: #243A75;
+/* color:  #7e1a36; */
+    text-decoration: none;
+    font-weight: bolder;
+/* font-size: 90%; */
+}
+.artifact-title a:hover {
+    text-decoration: underline;
+}
+.item-view-toggle {
+    margin-top: 30px;
+}
+.citation {
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(247,252,255);
+/* border: 1px solid rgb(206,220,234); */
+    font-size: 11px;
+    overflow: hidden;
+}
+span.title {
+    font-style: italic;
+}
+/* Styles related to the the detailed view of communties and collections */
+/*
+  The logo will start creeping around if you override the CSS font settings
+  from the browser. I should probably use the FF specific one here (that
+  is, setting the display to table-cell and using v-align) and the IE
+  specific solution in the other one
+ */
+div.ds-logo-wrapper {
+    float: right;
+/*
+  //clear: both;
+  //position: absolute;
+  //top: 0px;
+  //right: 0px;
+ */
+    padding: 10px;
+/* //margin-right: 10px; */
+/* //border: 1px solid rgb(229,240,251); */
+/* //float: right; */
+    font-size: 1px;
+/*
+  //line-height: 200px;
+  //height: 200px;
+ */
+    width: 41%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+img.logo {
+    max-width: 200px;
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+p.copyright-text {
+    margin-top: 30px;
+    font-style: italic;
+    text-align: center;
+}
+div.artifact-title {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+ul.ds-artifact-list {
+    clear: both;
+/* border: 1px solid rgb(229,240,251); */
+    margin-left: 0px;
+    padding-left: 0px;
+}
+li.ds-artifact-item {
+    list-style-position: inside;
+    list-style: none;
+    padding: 10px 10px 15px 60px;
+    margin-left: 0px;
+}
+/* Branding of ETDs */
+li.ds-artifact-item.TAMU {
+    background-image: url(TAMU.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.UT {
+    background-image: url(UT.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.TT {
+    background-image: url(TT.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.UH {
+    background-image: url(UH.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.Rice {
+    background-image: url(Rice.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+.artifact-links {
+    margin-top: 7px;
+}
+.artifact-links a {
+    margin-right: 20px;
+}
+/*
+  li.ds-artifact-item.odd {
+  background-color: rgb(231,242,251);
+  }
+  li.ds-artifact-item.even {
+  background-color: rgb(247,252,255);
+  }
+ */
+/* Overflow mechanism for top level divisions no longer necessary */
+div.primary {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+/*
+  //overflow: auto;
+  //overflow-y: hidden;
+  //width: 100%;
+ */
+/* border: 1px solid green; */
+}
+/* Tables and their associated formatting rules */
+table {
+    position: relative;
+    width: 100%;
+/* //margin-right: 1px; */
+    padding: 0px;
+    border-spacing: 0px;
+    position: relative;
+/* border: 1px solid rgb(206,220,234); */
+}
+tr.ds-table-header-row {
+/* background-color: rgb(206,220,234); */
+    background-color: white;
+}
+tr.ds-table-row.odd {
+/* background-color: rgb(231,242,251); */
+/* background-color: #FFF2BF; */
+    background-color:#DFDCD1;
+}
+tr.ds-table-row.even {
+    background-color: rgb(247,252,255);
+}
+td {
+    padding: 3px 10px 5px 10px;
+    border: none;
+}
+.first-cell {
+    vertical-align: center;
+    text-align: center;
+}
+th {
+    padding: 10px;
+    text-align:left;
+}
+/*
+  Tables that are actually a result of glossary lists are not rendered
+  as plain tables are...
+ */
+table.ds-gloss-list {
+    border: none;
+    width: auto;
+    background-color: white;
+    font-size: 95%;
+}
+.ds-gloss-list td {
+    padding-left: 0px;
+    font-weight: bolder;
+    background-color: white;
+    font-size: 85%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+/* Formatting associated with the "Files in this item" table in the item view */
+.file-list td {
+    text-align: center;
+}
+a.image-link img {
+    border: none;
+}
+/*
+  .file-list a {
+  color: rgb(80,80,50);
+  }
+ */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, sans-serif;
+/* //color: red; */
+    color: #05192C;
+/* //font-size: 90%; */
+/* font-size: 11px; */
+}
+/*
+  Tinker with the link color to make them suit the theme better, maybe?
+  a {
+  color: blue;
+  }
+ */
+div#ds-body h1 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #7E1A36;
+/* color: #041A55; */
+/*
+  border-bottom: 1px solid #BE1621;
+ */
+    padding-bottom: 3px;
+}
+div#ds-body h2 {
+    clear: both;
+    font-size: 14px;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: #7E1A36;
+/* color: #243A75; */
+/* //color: #05192C; */
+    font-weight: bold;
+}
+div#ds-body h3 {
+/* font-size: 11px; */
+    padding: 10px 0;
+    margin-bottom: 0px;
+    font-size:110%;
+    color: #7E1A36;
+    font-weight: bold;
+}
+/* The composite field voodoo */
+span.ds-composite-field {
+    display: table-row;
+    padding: 2px;
+}
+.ds-composite-field .ds-composite-component {
+    display: table-cell;
+    text-align: left;
+    width: auto;
+    padding-right: 10px;
+}
+.ds-composite-field input, .ds-composite-field textarea, .ds-composite-field select {
+    margin-right: 5px;
+    margin-bottom: -2px;
+}
+span.composite-help {
+    font-size: 80%;
+    color: blue;
+    text-align: left;
+}
+/* Checkboxes and Radio buttons */
+fieldSet.ds-checkbox-field, fieldSet.ds-radio-field {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+fieldSet.ds-checkbox-field legend, fieldSet.ds-radio-field legend {
+    display: none;
+}
+fieldSet.ds-checkbox-field label, fieldSet.ds-radio-field label {
+    display: block;
+}
+/* The form list and and its components voodoo */
+/* Top-level stuff */
+fieldSet.ds-form-list {
+/* background-color: rgb(229,240,251); */
+/* border: 1px solid rgb(206,220,234); */
+/* border: 2px solid rgb(240,240,210); */
+    padding: 0;
+/* background-color: rgb(255,255,245); */
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2px;
+}
+/*
+  fieldSet.ds-form-list.thick {
+  border-top: 22px solid rgb(206,220,234);
+  }
+ */
+fieldSet.ds-form-list ol {
+/* //display: table; */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+fieldSet.ds-form-list legend {
+    color: #DF6E00;
+    font-size: 115%;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+/*
+  fieldSet.thick legend {
+  background-color: rgb(229,240,251);
+  border-top: 1px solid rgb(206,220,234);
+  padding-left: 10px;
+  padding-right: 30px;
+  }
+ */
+/* Top-level stuff for the nested "form" lists */
+fieldSet.ds-form-sublist {
+/* //border-top: 1px solid rgb(240,240,210); */
+/* border: 1px solid rgb(206,220,234); */
+    padding: 0;
+    margin: 5px;
+}
+fieldSet.ds-form-sublist ol {
+    display: table;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+/* //border: 1px solid red; */
+}
+fieldSet.ds-form-sublist legend {
+    color: #DF6E00;
+    font-size: 100%;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+/* //border: 1px solid blue; */
+}
+/* Row-level hierarchy */
+li.ds-form-item {
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+}
+fieldSet.ds-form-list li.odd {
+/* background-color: rgb(252,252,230); */
+}
+fieldSet.ds-form-list li.even {
+/* background-color: rgb(229,240,251); */
+}
+fieldSet.ds-form-list li.last {
+    display: block;
+    width: 100%;
+/*
+  border-top: 1px solid rgb(206,220,234);
+  background-color: rgb(248,248,217);
+ */
+}
+fieldSet.ds-form-list li.sublist {
+    background-color: transparent;
+}
+span.ds-form-content {
+    display: table-cell;
+    padding: 7px;
+}
+span.ds-form-label, label.ds-form-label {
+    display: table-cell;
+    padding: 5px 20px 5px 10px;
+    width: 110px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+label.ds-composite-component {
+    display: block;
+    float: left;
+    padding: 0px 5px 0 0px;
+    font-size: 90%;
+    color: blue;
+    text-align: left;
+}
+span.error {
+    display: block;
+    font-size: 85%;
+    color: red;
+    margin: 0;
+}
+span.field-help {
+    margin-left: 5px;
+    font-size: 80%;
+    color: gray;
+}
+input.error, textarea.error, select.error {
+    background-color: rgb(255,245,245);
+    border-color: red;
+}
+span.composite-help {
+    display: block;
+    font-size: 80%;
+    color: gray;
+    text-align: left;
+}
+div.spacer {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    clear: both;
+}

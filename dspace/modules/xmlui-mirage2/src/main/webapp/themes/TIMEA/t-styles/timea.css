@@ -1,0 +1,1015 @@
+body {
+    font-size: 80%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #bebcad;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #7e1a36;
+}
+a:visited {
+    color:#852183;
+}
+a.selected {
+    font-weight:bold;
+}
+
+/* The container contains the three main divisions of the page: header, content, footer */
+.container {
+    background-color: rgb(245,245,245);
+    width:800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #000000;
+}
+
+.header {
+    position: relative;
+    width: 800px;
+    height: 70px;
+    background-color: #f8f3e0;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #7E1A46;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align:left;
+}
+
+.content {
+	/*width: 750px; /* +50px padding */
+	width: 569px;
+    padding: 25px;
+    margin: 0px;
+    float: left;
+    clear: left;
+    background-color: #FFFFFF;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #7E1A46;
+    text-align: left;
+    z-index: 1;
+}
+
+
+.footer {
+	clear: both;
+    text-align: center;
+    background-color: #FFFFFF;
+	width: 750px; /* +50px padding */
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #7E1A46;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #000000;
+}
+
+.mainMenu {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #7e1a36;
+    position: absolute;
+    width: 464px;
+    height: 16px;
+    font-size: 90%;
+    left: 107px;
+    top: 40px;
+    z-index: 2;
+}
+
+.timeaLogo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    border: 0px;
+}
+
+.timeaLogoText {
+    position: absolute;
+    top: 11px;
+    left: 100px;
+    z-index: 2;
+    border: 0px;
+    width: 398px;
+}
+
+/* This describes how to orient the text links(spacing between words) etc */
+.mainMenu a {
+    float: left;
+    width: 90px;
+    color: #7e1a36;
+    font-size: .98em;
+    text-decoration: none;
+}
+/* The text link mouse-over information for the main menu */
+.mainMenu a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* The text link mouse-over information for the main menu */
+.mainMenu a:active {
+    font-weight:bold
+}
+.searchForm {
+    position: relative;
+    width: 280px;
+    top: 33px;
+    left: 0px;
+    float: right;
+    z-index: 2;
+    text-align: right;
+    font-size: 75%;
+/* margin: 1em auto; */
+}
+.searchForm form div {
+	float: left;
+}
+
+.advancedSearch {
+    height: 25px;
+    width: 50px;
+    /*position: relative;*/
+    text-align: center;
+    float: right;
+/* reduced font size so that advanced search matches main TIMEA site */
+    font-size:85%;
+}
+
+.resultlist {
+    padding-right: 25px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    position: relative;
+}
+.numberitems {
+    padding-right: 25px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+
+/* The content area of the page; between the header and footer */
+.login {
+    position: absolute;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    top:2px;
+/* top: 135px; */
+    right: 10px;
+    width: 10%;
+    padding: 2px 5px 5px 5px;
+}
+
+/******************/
+/* END GENERAL STYLES */
+/******************/
+/******************/
+/* START SPECIFIC STYLES */
+/******************/
+.searchfooter {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    padding-right: 25px;
+}
+.bold {
+    font-weight: bold;
+}
+title {
+    height: 21px;
+    width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 110%;
+    font-weight: bold;
+    color: #7e1a36;
+    padding-left: 15px;
+}
+.titleital {
+    font-style: italic;
+}
+/* regular black text */
+.textreg {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333333;
+    padding-right: 25px;
+}
+/*SWB*/
+table#metadata {
+	border: 0px;
+	border-spacing: 3px;
+}
+table.textReg tr td {
+	vertical-align: top;
+}
+.textsm {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+.entirepage {
+    height: 500px;
+    width: 95%;
+    position: relative;
+}
+/* The search result heading. Directly above the search result (see .results) */
+.heading, .ds-list-head {
+    font-weight: bold;
+    color: #7e1a36;
+    height: auto;
+    width: 98%;
+    text-align: left;
+}
+.subhead {
+    font-size: 95%;
+    font-weight: bold;
+    color: #7e1a36;
+    height: auto;
+    width: 98%;
+    text-align: left;
+}
+.mainheading {
+    color: #7e1a36;
+    font-size: 110%;
+    font-weight: bold;
+    text-align: center;
+}
+.headingsm {
+    font-size: 90%;
+    font-weight: bold;
+    color: #7e1a36;
+    height: auto;
+    width: 98%;
+    text-align: left;
+}
+/* for search results pages. This is the actual results that appears under the search result heading (see .heading) */
+.results {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    left: 15px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 25px;
+    width: 95%;
+}
+.names {
+    color: #333333;
+}
+.nameemph {
+    font-style: italic;
+}
+/* For making a horizontal rule with dashes */
+.dashed {
+    border: none 0;
+    border-top: 1px dashed #000;
+/* the border */
+    text-align: left;
+    width: 80%;
+    height: 1px;
+/* whatever the total width of the border-top and border-bottom equal */
+}
+/* Form for the advanced search page */
+.advancedSearchForm {
+    text-align: left;
+    padding-right: 25px;
+    padding-left: 15px;
+}
+.smallcell {
+    width:5px;
+}
+.next {
+    text-align: right;
+    padding-right: 25px;
+}
+.checkBoxes {
+    position: relative;
+    padding-left: 40px;
+    width: 300px;
+}
+/* For presenting tabular information on GIS search & browse */
+.mapresults {
+    border-collapse:collapse;
+}
+*/check box for advanced search page */
+.checkbox {
+    position: relative;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    padding-left: 25px;
+    width: 40px;
+}
+/******************/
+/* END SPECIFIC STYLES */
+/******************/
+/******************/
+/* START DSPACE STYLES */
+/******************/
+.locationBar {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    text-align: left
+}
+.itemDisplayTable {
+    text-align: center;
+    border: 0;
+    color: #000000
+}
+.metadataFieldLabel {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    vertical-align: top;
+    text-align: right;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 3px
+}
+.metadataFieldValue {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: top;
+    text-align: left;
+    text-decoration: none;
+    padding: 3px
+}
+.signin {
+    text-align: right;
+    padding-right: 20px;
+}
+.thead {
+    font-weight: bold;
+}
+.oddRowOddCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 3px
+}
+.evenRowOddCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #eeeeee;
+    padding: 3px
+}
+.oddRowEvenCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #eeeeee;
+    padding: 3px
+}
+.evenRowEvenCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #dddddd;
+    padding: 3px
+}
+.highlightRowOddCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #ccccee;
+    padding: 3px
+}
+.highlightRowEvenCol {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #bbbbcc;
+    padding: 3px
+}
+.itemDisplayTable {
+    text-align: center;
+    border: 0;
+    color: #000000
+}
+.browseBarLabel {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    background: #ffffff;
+    vertical-align: middle;
+    text-decoration: none
+}
+.browseBar {
+    font-family: "verdana", "Arial", "Helvetica", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    background: #ffffff;
+    vertical-align: middle;
+}
+.miscTable {
+    padding-right: 20px;
+}
+
+
+
+
+div#ds-search-option {
+    position: absolute;
+    top: -27px;
+    right: 10px;
+    text-align: right;
+    border: none;
+    padding: 0px;
+    margin-top: 0px;
+    z-index: 5;
+}
+div#ds-search-option input.ds-text-field {
+    padding-left: 5px;
+    margin-right: 5px;
+    width: 130px;
+/* color: #0C3F71; */
+    font-size: 12px;
+    font-weight: bold;
+}
+div#ds-search-option input.ds-button-field {
+    font: Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+div#ds-search-option a {
+    position: relative;
+    top: 8px;
+    font-weight: bold;
+    color: #436B92;
+}
+
+/* SWB */
+div#ds-options h3#rudr_nav {
+	position: static;
+	top: 0px;
+	color: #000000;
+}
+div#ds-options h3 {
+    position: relative;
+    top: 12px;
+    margin: 0px;
+    margin-left: 5px;
+    color: #7e1a36;
+/* color: #243A75; */
+}
+div#ds-options h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-color: #7e1a36;
+/* color: #BE1621; */
+}
+div#ds-options ul {
+/* margin-bottom: 10px; */
+/* padding-left: 30px; */
+    list-style-position: outside;
+    padding-left: 5px;
+    margin-left: 0px;
+}
+div#ds-options li {
+    padding: 0px;
+    color: rgb(25,25,75);
+}
+
+ul.alphabet {
+/*
+  //height: 60px;
+  //margin-bottom: 20px;
+ */
+    padding-left: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    margin-top: 5px;
+/*
+  background-color: rgb(255,255,240);
+  border: 2px solid rgb(245,245,216);
+ */
+    text-align: center;
+}
+.alphabet li {
+    list-style: none;
+    display: inline;
+    margin-right: 3px;
+    font-weight: 200;
+}
+.alphabet a {
+    font-weight: 600;
+    color: #243A75;
+}
+.alphabet a:hover {
+    font-weight: 600;
+    color: #BE1621;
+}
+
+.filter-search h2, .filter-search h2 {
+    display: none;
+}
+.collection input, .community input, div.filter-search-results input {
+    margin: 0px;
+    font-size: 10px;
+}
+/*.collection input.ds-text-field, .community input.ds-text-field, div.filter-search-results input.ds-text-field {
+    width: 136px;
+} */
+.collection select, .community select, div.filter-search-results select {
+    margin: 0px;
+    font-size: 10px;
+    width: 140px;
+}
+.collection p.button-list, .community p.button-list {
+    margin: 0px;
+}
+input.ds-password-field {
+    margin-right: 5px;
+}
+
+.navigation input, .navigation select {
+    margin-left: 5px;
+    font-size: 10px;
+}
+.navigation p {
+    margin: 5px;
+    text-align: center;
+}
+
+div.browse {
+    display: none;
+}
+
+/* CSS rules concerning pagination divs and their contents */
+div.pagination {
+    position: relative;
+    height: 45px;
+/*
+  background-color: #F8F3E0;
+  border: black;
+ */
+/*
+  background-color: rgb(229,240,251);
+  border: 1px solid rgb(206,220,234);
+ */
+    padding: 0px 5px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+}
+div.pagination-masked {
+    position: relative;
+    width: auto;
+    height: 40px;
+/* background-color: rgb(229,240,251); */
+/* border: 1px solid rgb(206,220,234); */
+    padding: 5px;
+    margin-bottom: 5px;
+}
+a.previous-page-link {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+/* color: rgb(25,25,100); */
+}
+p.pagination-info {
+    position: relative;
+    top: -6px;
+    left: 10px;
+    width: auto;
+    max-width: 300px;
+    text-align: center;
+    padding: 1px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+/* //border: 1px solid blue; */
+}
+ul.pagination-links {
+    position: relative;
+    text-align: center;
+    top: -24px;
+    left: -2%;
+/* //width: 500px; */
+}
+.pagination-links li {
+    list-style: none;
+    display: inline;
+    margin-right: 5px;
+    font-weight: bolder;
+}
+li.page-link a, li.first-page-link a, li.last-page-link a {
+/* color: rgb(25,25,100); */
+}
+li.current-page-link a {
+    color: #BE1621;
+}
+a.next-page-link {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: rgb(25,25,100);
+}
+.artifact-title a {
+    color: #243A75;
+/* color:  #7e1a36; */
+    text-decoration: none;
+    font-weight: bolder;
+}
+.artifact-title a:hover {
+    text-decoration: underline;
+}
+.item-view-toggle {
+    margin-top: 30px;
+}
+.citation {
+    padding: 5px 5px 5px 10px;
+    background-color: rgb(247,252,255);
+/* border: 1px solid rgb(206,220,234); */
+    overflow: hidden;
+}
+span.title {
+    font-style: italic;
+}
+/* Styles related to the the detailed view of communties and collections */
+/*
+  The logo will start creeping around if you override the CSS font settings
+  from the browser. I should probably use the FF specific one here (that
+  is, setting the display to table-cell and using v-align) and the IE
+  specific solution in the other one
+ */
+div.ds-logo-wrapper {
+    float: right;
+/*
+  //clear: both;
+  //position: absolute;
+  //top: 0px;
+  //right: 0px;
+ */
+    padding: 10px;
+/* //margin-right: 10px; */
+/* //border: 1px solid rgb(229,240,251); */
+/* //float: right; */
+    font-size: 1px;
+/*
+  //line-height: 200px;
+  //height: 200px;
+ */
+    width: 41%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+img.logo {
+    max-width: 200px;
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+p.copyright-text {
+    margin-top: 30px;
+    font-style: italic;
+    text-align: center;
+}
+div.artifact-title {
+    margin-bottom: 2px;
+}
+ul.ds-artifact-list {
+    clear: both;
+/* border: 1px solid rgb(229,240,251); */
+    margin-left: 0px;
+    padding-left: 0px;
+}
+li.ds-artifact-item {
+    list-style-position: inside;
+    list-style: none;
+    padding: 10px 10px 15px 60px;
+    margin-left: 0px;
+}
+/* Branding of ETDs */
+li.ds-artifact-item.TAMU {
+    background-image: url(TAMU.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.UT {
+    background-image: url(UT.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.TT {
+    background-image: url(TT.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.UH {
+    background-image: url(UH.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+li.ds-artifact-item.Rice {
+    background-image: url(Rice.png);
+    background-repeat: no-repeat;
+    background-position: 11px 50%;
+}
+.artifact-links {
+    margin-top: 7px;
+}
+.artifact-links a {
+    margin-right: 20px;
+}
+/* Overflow mechanism for top level divisions no longer necessary */
+div.primary {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+/* Tables and their associated formatting rules */
+table {
+    position: relative;
+    width: 100%;
+/* //margin-right: 1px; */
+    padding: 0px;
+    border-spacing: 0px;
+    position: relative;
+/* border: 1px solid rgb(206,220,234); */
+}
+tr.ds-table-header-row {
+/* background-color: rgb(206,220,234); */
+    background-color: white;
+}
+tr.ds-table-row.odd {
+/* background-color: rgb(231,242,251); */
+/* background-color: #FFF2BF; */
+    background-color:#DFDCD1;
+}
+tr.ds-table-row.even {
+    background-color: rgb(247,252,255);
+}
+td {
+    padding: 3px 10px 5px 10px;
+    border: none;
+}
+.first-cell {
+    vertical-align: center;
+    text-align: center;
+}
+th {
+    padding: 10px;
+    text-align:left;
+}
+/*
+  Tables that are actually a result of glossary lists are not rendered
+  as plain tables are...
+ */
+table.ds-gloss-list {
+    border: none;
+    width: auto;
+    background-color: white;
+}
+.ds-gloss-list td {
+    padding-left: 0px;
+    font-weight: bolder;
+    background-color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+/* Formatting associated with the "Files in this item" table in the item view */
+.file-list td {
+    text-align: center;
+}
+a.image-link img {
+    border: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, sans-serif;
+    color: #05192C;
+}
+h1 {
+	font-size: 150%;
+}
+div#ds-body h1 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #7E1A36;
+/* color: #041A55; */
+/*
+  border-bottom: 1px solid #BE1621;
+ */
+    padding-bottom: 3px;
+}
+div#ds-body h2 {
+    clear: both;
+    font-size: 14px;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: #7E1A36;
+/* color: #243A75; */
+/* //color: #05192C; */
+    font-weight: bold;
+}
+div#ds-body h3 {
+ font-size: 11px;
+    padding: 10px 0;
+    margin-bottom: 0px;
+    color: #7E1A36;
+    font-weight: bold;
+}
+/* The composite field voodoo */
+span.ds-composite-field {
+    display: table-row;
+    padding: 2px;
+}
+.ds-composite-field .ds-composite-component {
+    display: table-cell;
+    text-align: left;
+    width: auto;
+    padding-right: 10px;
+}
+.ds-composite-field input, .ds-composite-field textarea, .ds-composite-field select {
+    margin-right: 5px;
+    margin-bottom: -2px;
+}
+span.composite-help {
+    color: blue;
+    text-align: left;
+}
+/* Checkboxes and Radio buttons */
+fieldSet.ds-checkbox-field, fieldSet.ds-radio-field {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+fieldSet.ds-checkbox-field legend, fieldSet.ds-radio-field legend {
+    display: none;
+}
+fieldSet.ds-checkbox-field label, fieldSet.ds-radio-field label {
+    display: block;
+}
+/* The form list and and its components voodoo */
+/* Top-level stuff */
+fieldSet.ds-form-list {
+/* background-color: rgb(229,240,251); */
+/* border: 1px solid rgb(206,220,234); */
+/* border: 2px solid rgb(240,240,210); */
+    padding: 0;
+/* background-color: rgb(255,255,245); */
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2px;
+}
+/*
+  fieldSet.ds-form-list.thick {
+  border-top: 22px solid rgb(206,220,234);
+  }
+ */
+fieldSet.ds-form-list ol {
+/* //display: table; */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+fieldSet.ds-form-list legend {
+    color: #DF6E00;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+/*
+  fieldSet.thick legend {
+  background-color: rgb(229,240,251);
+  border-top: 1px solid rgb(206,220,234);
+  padding-left: 10px;
+  padding-right: 30px;
+  }
+ */
+/* Top-level stuff for the nested "form" lists */
+fieldSet.ds-form-sublist {
+/* //border-top: 1px solid rgb(240,240,210); */
+/* border: 1px solid rgb(206,220,234); */
+    padding: 0;
+    margin: 5px;
+}
+fieldSet.ds-form-sublist ol {
+    display: table;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+/* //border: 1px solid red; */
+}
+fieldSet.ds-form-sublist legend {
+    color: #DF6E00;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+/* //border: 1px solid blue; */
+}
+/* Row-level hierarchy */
+li.ds-form-item {
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+}
+fieldSet.ds-form-list li.odd {
+/* background-color: rgb(252,252,230); */
+}
+fieldSet.ds-form-list li.even {
+/* background-color: rgb(229,240,251); */
+}
+fieldSet.ds-form-list li.last {
+    display: block;
+    width: 100%;
+/*
+  border-top: 1px solid rgb(206,220,234);
+  background-color: rgb(248,248,217);
+ */
+}
+fieldSet.ds-form-list li.sublist {
+    background-color: transparent;
+}
+span.ds-form-content {
+    display: table-cell;
+    padding: 7px;
+}
+span.ds-form-label, label.ds-form-label {
+    display: table-cell;
+    padding: 5px 20px 5px 10px;
+    width: 110px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+label.ds-composite-component {
+    display: block;
+    float: left;
+    padding: 0px 5px 0 0px;
+    color: blue;
+    text-align: left;
+}
+span.error {
+    display: block;
+    color: red;
+    margin: 0;
+}
+span.field-help {
+    margin-left: 5px;
+    color: gray;
+}
+input.error, textarea.error, select.error {
+    background-color: rgb(255,245,245);
+    border-color: red;
+}
+span.composite-help {
+    display: block;
+    color: gray;
+    text-align: left;
+}
+div.spacer {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    clear: both;
+}
+
+.main-content {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}

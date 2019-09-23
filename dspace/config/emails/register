@@ -1,0 +1,14 @@
+# E-mail sent to DSpace users when they register for an account
+#
+# Parameters: {0} is expanded to a special registration URL
+#
+# See org.dspace.core.Email for information on the format of this file.
+#
+ubject: scholarship.rice.edu Account Registration
+To complete registration for your account, please click the link
+below:
+
+  {0}
+
+If you need assistance with your account, please contact us at
+https://library.rice.edu/services/dss/contact-us-dss

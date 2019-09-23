@@ -1,0 +1,549 @@
+/*
+
+america.css
+
+Style made for the Americas Archive of the Rice University Scholarship Archive.
+Based on style of the Our Americas Archive Partnership.
+
+*/
+
+/* ---- Basic elements and page structure ---- */
+
+body {
+  font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+  font-size: 13px;
+  color: #7b7b7b;
+  background: #ddd;
+  margin: 0;
+  border-top: 7px solid #50b0ec;
+}
+
+table{
+  font-size: 1.0em;
+}
+
+a{
+  color: #11AAFF;
+  color: #0e8ed5;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+img{
+  border-width: 0;
+}
+#ds-main{
+  text-align: center;
+}
+
+#americas-main{
+  width: 1150px;
+  background-color: white;
+  margin: auto;
+  text-align: left;
+}
+
+#americas-contents{
+  padding: 0 10px;
+}
+
+#ds-options{
+  float: left;
+  width: 310px;
+  padding-bottom: 1em;
+}
+
+#ds-body{
+  width: 820px;
+  padding: 0 0 1em;
+  margin: 0;
+  float: right;
+}
+
+* html #ds-body{
+  width: 650px;
+}
+/*
+.Z3988{
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+ */
+/* ---- Breadcrumbs and footer ---- */
+ /*
+#ds-trail-wrapper, #ds-trail-bottom{
+  background-color: #b2b2b2 !important;
+  background-color: #ededed !important;
+  margin: 0 0 25px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+   */
+#ds-trail-bottom{
+  margin-bottom: 0;
+}
+
+#ds-footer{
+  background-color: #ededed !important;
+  clear: both;
+  margin-top: 1em;
+  padding-bottom: 10px;
+}
+
+#ds-footer p{
+  margin: 10px 10px 0;
+}
+
+#contact_us{
+  text-transform: capitalize;
+}
+
+.clear{
+  clear: both;
+}
+
+#repository-options a, .first-link{
+  padding-right: 16px;
+  background-image: url(images/external-link.png);
+  background-repeat: no-repeat;
+  background-position: right .1em;
+  padding-left: 0;
+}
+
+.first-link{
+  padding-right: 12px;
+}
+
+/* ---- Left-hand navigation ("options"), excluding headers (below) ---- */
+
+#repository-link, #repository-link a{
+  color: black;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+#repository-link a{
+  text-transform: none;
+}
+
+.ds-search-option{
+  width: 200px;
+  height: 40px;
+  background: url(a-images/search_bar_lg.jpg) no-repeat left top;
+  margin: 10px 0px 5px 0px;
+}
+
+.advanced-search{
+  text-align: right;
+  margin-right: 10px;
+}
+
+.ds-search-option .ds-text-field{
+  vertical-align: top;
+  border: 0;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  padding: 6px;
+  color: #bbb;
+  width: 239px;
+  font-size: 12px;
+}
+
+* html .ds-search-option .ds-text-field{
+  width: 251px;
+  top: 3px;
+  left: 3px;
+  height: 28px;
+}
+
+.ds-option-set{
+  margin: .5em 0;
+}
+
+#community-options .ds-option-set{
+  background-image: url(images/side_btm.gif);
+  background-position: 0 bottom;
+  background-repeat: no-repeat;
+  background-color: #ededed;
+  padding: .5em 10px 10px;
+  margin: 0 0 1em;
+  width: 280px;
+}
+
+* html #community-options .ds-option-set{
+  width: 300px;
+}
+
+#ds-options .ds-option-set ul{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+  margin-left: 0;
+}
+
+#ds-options .ds-option-set li{
+  padding: 0;
+  margin: 0 0 .25em;
+}
+
+#repository-options{
+  margin-top: 1.5em;
+  border-top: 1px solid #50b0ec;
+  border-top: 1px solid #ccc;
+  padding-top: .25em;
+}
+
+#repository-options, #community-options{
+  margin-right: 10px;
+}
+
+/* ---- Headers ---- */
+
+h1{
+  font-size: 150%;
+  letter-spacing: .25px;
+  color: #7f7f7f;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.item-view #ds-body h1{
+  font-family: palatino linotype, book antiqua, palatino, georgia, new york, serif;
+  color: #405d88;
+  font-size: 2.4em;
+  letter-spacing: -1px;
+}
+
+h2, h3{
+  font-size: 130%;
+  margin: 10px 0 5px;
+  color: black;
+}
+
+
+
+#community-options h3{
+  background-image: url(images/side_top.gif);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: #ededed;
+  padding: 10px 10px .5em;
+  margin: 1em 0 0;
+  width: 280px;
+}
+
+* html #community-options h3{
+  width: 300px;
+}
+
+/* ---- Browse/Search results ---- */
+
+.ds-artifact-list{
+  display: block;
+  border: 3px solid #ededed;
+  border-bottom-width: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-artifact-item{
+  padding: 8px;
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+  list-style-type: none;
+}
+
+.artifact-description{
+  margin-left: 8px;
+  height: 1%;
+}
+
+.artifact-title{
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.artifact-title a{
+  text-decoration: underline;
+}
+
+.artifact-info{
+  padding-top: 5px;
+  font-size: 1.0em;
+}
+/**
+.artifact-preview{
+  float: left;
+  margin-right: 8px;
+  width: 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.artifact-preview img{
+  max-width: 80px;
+  max-height: 80px;
+  width: expression(this.width > 78 ? "80px" : "auto"); *//* 78 due to freezing problem due to race condition */
+/*  height: expression(this.height > 78 ? "80px" : "auto");
+}
+  **/
+li.odd, tr.odd{
+  background-color: #ededed;
+}
+
+li.even, tr.even{
+  background-color: white;
+}
+
+.ds-table-header-row{
+  background-color: #e1e1e1;
+  color: black;
+}
+
+.ds-table, .ds-includeSet-table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ds-table th, .ds-table td, .ds-includeSet-table th, .ds-includeSet-table td{
+  padding: .5em;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+/* ---- Pagination ---- */
+
+.pagination-masked, .pagination{
+  background-color: #ededed;
+  padding: 15px 10px 5px;
+  text-align: center;
+  position: relative;
+}
+
+.pagination-info{
+  display: inline;
+  padding-right: .3em;
+}
+
+.next-page-link, .previous-page-link{
+  position: absolute;
+}
+
+.next-page-link{
+  right: 10px;
+}
+
+.previous-page-link{
+  left: 10px !important;
+}
+
+.pagination-links, .pagination-links li{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination-links li{
+  padding-left: .6em;
+  padding-right: .3em;
+  border-left: 1px solid #555;
+}
+
+.current-page-link a{
+  color: #555;
+}
+
+.alphabet, .alphabet li{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.alphabet li{
+  display: inline;
+  padding-right: .3em;
+}
+
+.alphabet{
+  display: block;
+}
+
+.navigation{
+  text-align: center;
+}
+
+.navigation input, .navigation select, .ds-table input, .ds-table select{
+  margin: 0 .25em;
+}
+
+fieldset.ds-form-list{
+  padding: 0;
+  border-width: 0;
+}
+
+/* ---- "Recent Submission" samples (made smaller) ---- */
+/* ---- Search forms (made larger) ---- */
+
+.search{
+  font-size: 1.1em;
+}
+
+/* ---- Front page ---- */
+
+#aspect_artifactbrowser_CommunityViewer_div_community-view ul{ /* maybe need better hooks */
+  padding-left: 1.5em;
+}
+
+#aspect_artifactbrowser_CommunityViewer_div_community-view .ds-artifact-item{
+  background-color: transparent;
+  border-width: 0;
+  font-weight: bold;
+  font-size: 0.98em;
+  padding: 0 0 .5em;
+  margin-left: 0;
+  display: list-item;
+  list-style-type: disc;
+}
+
+/* ---- Item page ----- */
+
+.full-book{
+  font-size: 1.2em;
+}
+
+.full-book img{
+  vertical-align: middle;
+  height: 15px;
+  margin-left: 0;
+}
+
+.full-book a{
+  font-weight: bold;
+}
+
+.item-view-toggle-top{
+  margin: 1.2em 0 .5em;
+  float: right;
+}
+
+.hiddenfield{
+  cursor: pointer;
+}
+
+.metadata-seperator{
+  height: 1px;
+  border-width: 0;
+  background-color: #ddd;
+}
+
+.ds-trail-link{
+  display: inline;
+  padding-left: 16px;
+  background-image: url(a-images/trail.png);
+  background-repeat: no-repeat;
+  background-position: .1em 60%;
+}
+
+.trail-wrapper {
+    background-color: rgb(237, 237, 237);
+
+    .breadcrumb{
+        background-color: transparent;
+        margin-bottom: 0;
+
+         > li {
+            display: inline-block;
+                color: #50B0EC;
+        }
+        > li a{
+              color:#50B0EC;
+        }
+        > li {
+            + li:before {
+                display: inline-block;
+                color: #50B0EC;
+            }
+        }
+        > .active {
+            color: #50B0EC;
+        }
+    }
+
+    .sidebar-toggle .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+    }
+
+    .sidebar-toggle .icon-bar + .icon-bar {
+        margin-top: 4px;
+    }
+}
+
+.trail-wrapper .breadcrumb > li + li:before {
+    color: #7B7B7B;
+}
+
+.trail-wrapper .breadcrumb > li a {
+    color: #0E8ED5;
+}
+
+.trail-wrapper .breadcrumb > li {
+    color: #7B7B7B;
+}
+
+
+.trail-wrapper .breadcrumb > .active {
+    color: #7B7B7B;
+}
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus{
+    z-index: 2;
+    color: #fff;
+    background-color: #50B0EC;
+    border-color: #607890;
+}
+
+
+@media(min-width: 768px) {
+    .navbar-nav{
+    float: left;
+	margin-top:35px;
+    margin-right: 5px;
+    margin-left: 5px;
+	background-color: #50B0EC;
+	border-radius: 2px;
+	}
+    .navbar-nav > li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+ }
+}
+
+.btn-primary{
+    color:#fff;
+    background-color:#50B0EC;
+    border-color:#566b81;
+}
+
+
+
+.main-content {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+#ds-options {
+    float: left;
+    width: 270px;
+    padding-bottom: 1em;
+}

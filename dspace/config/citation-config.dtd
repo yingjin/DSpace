@@ -1,0 +1,49 @@
+<!-- DSpace Custom Submit input form definition language -->
+<!-- Ying Jin updated this for adding document type support for DLC, 11/15/2007-->
+
+ <!ELEMENT citation-config (citation-map, citation-definitions, citation-sensitive-fields) >
+
+ <!ELEMENT citation-map (name-map)* >
+
+ <!ELEMENT name-map (map-type)* >
+ <!ELEMENT map-type EMPTY >
+
+<!-- How to specify only one of the attributes is required -->
+ <!ATTLIST name-map
+           scope CDATA #REQUIRED
+           citation-name CDATA #IMPLIED>
+
+ <!ATTLIST map-type
+           document-type CDATA #IMPLIED
+           citation-name NMTOKEN #REQUIRED>
+
+ <!ELEMENT citation-definitions (citation)+ >
+ <!ELEMENT citation (field)+ >
+ <!ATTLIST citation name NMTOKEN #REQUIRED>
+ <!ELEMENT field (dc-schema, dc-element, dc-qualifier?, display-format) >
+ <!ATTLIST field 
+ 			required CDATA #IMPLIED
+			default-value CDATA #IMPLIED
+			max-n-value CDATA #IMPLIED
+			max-n-ending CDATA #IMPLIED
+			show-if-exist CDATA #IMPLIED
+			noshow-if-exist CDATA #IMPLIED
+			op CDATA #IMPLIED>
+
+ <!ELEMENT dc-schema (#PCDATA) >
+ <!ELEMENT dc-element (#PCDATA) >
+ <!ELEMENT dc-qualifier (#PCDATA) >
+ <!ELEMENT display-format (#PCDATA)>
+ <!ATTLIST display-format
+           multiple-value-seperator CDATA #IMPLIED
+           format-it CDATA #IMPLIED>
+           
+ 
+ <!ELEMENT citation-sensitive-fields (field-set)* >
+ <!ELEMENT field-set (sensitive-field)+ >
+ <!ATTLIST field-set name NMTOKEN #REQUIRED>
+ 
+ <!ELEMENT sensitive-field (dc-schema, dc-element, dc-qualifier?) >
+  
+ <!ATTLIST citation sensitive-fields-name CDATA  #IMPLIED>
+ 

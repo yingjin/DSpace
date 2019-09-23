@@ -1,0 +1,1 @@
+mvn -U clean package -Dmirage2.on=true -Dmirage2.deps.included=true
