@@ -848,6 +848,9 @@
          <xsl:variable name="filename">
              <xsl:value-of select="mets:FLocat/@xlink:title"/>
          </xsl:variable>
+         <xsl:variable name="first_lf">
+             <xsl:value-of select='substring($filename, 0, 1)'/><xsl:text>.vtt</xsl:text>
+         </xsl:variable>
 
 
          <xsl:variable name="FL_ID">
@@ -898,12 +901,12 @@
                                             playlist: [{
                                                 image: "<xsl:value-of select='$mp4thumb'/>",
                                                 sources: [{
-                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select='$streamingfilename'/>"
+                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select='$filename_suffix' />/<xsl:value-of select='$FL_ID'/>/<xsl:value-of select='$streamingfilename'/>"
                                                 },{
                                                     file: "rtmp://fldp.rice.edu/fondren/mp4:<xsl:value-of select='$streamingfilename'/>"
                                                 }],
                                                 tracks: [{
-                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of
+                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/vtt/<xsl:value-of select='$first_lf'/>/<xsl:value-of
                                                         select='$vtt_filename'/>",
                                                     label: "English",
                                                     kind: "captions",
@@ -930,7 +933,7 @@
                                             playlist: [{
                                                 image: "<xsl:value-of select='$mp4thumb'/>",
                                                 sources: [{
-                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select='$streamingfilename'/>"
+                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select='$filename_suffix' />/<xsl:value-of select='$FL_ID'/>/<xsl:value-of select='$streamingfilename'/>"
                                                 },{
                                                     file: "rtmp://fldp.rice.edu/fondren/mp4:<xsl:value-of select='$streamingfilename'/>"
                                                 }],
@@ -962,6 +965,7 @@
                                     <xsl:value-of select='$filename'/><xsl:text>.vtt</xsl:text>
                                 </xsl:variable>
 
+
                                 <div id="{$streamingfilename}">Loading the player...</div>
 
                                 <script type="text/javascript">
@@ -971,13 +975,13 @@
                                     playlist: [{
 
                                         sources: [{
-                                             file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select="$streamingfilename"/>"
+                                             file: "<xsl:value-of select="$baseURL"/>/streaming/mp3/<xsl:value-of select="$FL_ID"/>/<xsl:value-of select="$streamingfilename"/>"
                                         },{
                                             file: "rtmp://fldp.rice.edu/fondren/mp3:<xsl:value-of select='$streamingfilename'/>"
                                         }],
                                         tracks: [{
-                                            file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of
-                                                select='$vtt_filename'/>",
+                                            file: "<xsl:value-of select="$baseURL"/>/streaming/vtt/<xsl:value-of
+                                        select='$first_lf'/>/<xsl:value-of select='$vtt_filename'/>",
                                             label: "English",
                                             kind: "captions",
                                             "default": true
@@ -1000,7 +1004,7 @@
                                         playlist: [{
 
                                             sources: [{
-                                                file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select="$streamingfilename"/>"
+                                                file: "<xsl:value-of select="$baseURL"/>/streaming/mp3/<xsl:value-of select="$FL_ID"/>/<xsl:value-of select="$streamingfilename"/>"
                                                 },{
                                                 file: "rtmp://fldp.rice.edu/fondren/mp3:<xsl:value-of select='$streamingfilename'/>"
                                             }],
