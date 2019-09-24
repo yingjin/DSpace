@@ -482,7 +482,7 @@ public class MediaFilterServiceImpl implements MediaFilterService, InitializingB
         if(extension.equals("vtt")){
             String file_dir = filename.substring(0,1);
             streaming_dir = streaming_dir +"/" + extension.toLowerCase() +"/" + file_dir;
-            String streaming_name = filename;
+            streaming_name = filename;
         }else{
             String ID = source.getID().toString();
             // first letter of the ID will be part of the path.
@@ -490,7 +490,7 @@ public class MediaFilterServiceImpl implements MediaFilterService, InitializingB
 
             streaming_dir = streaming_dir + "/" + extension.toLowerCase() +"/" + id_dir;
 
-            String streaming_name = "file_" + ID + "_" + filename;
+            streaming_name = "file_" + ID + "_" + filename;
         }
         // check if the dir exists
         File sd = new File(streaming_dir);
