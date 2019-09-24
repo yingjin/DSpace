@@ -221,6 +221,11 @@ public class Bitstream extends DSpaceObject implements DSpaceObjectLegacySupport
         return sizeBytes;
     }
 
+    public long getSizeBytes()
+    {
+        return sizeBytes;
+    }
+
     public void setSizeBytes(long sizeBytes) {
         this.sizeBytes = sizeBytes;
     }
