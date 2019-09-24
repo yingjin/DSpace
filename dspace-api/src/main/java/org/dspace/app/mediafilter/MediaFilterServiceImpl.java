@@ -476,7 +476,7 @@ public class MediaFilterServiceImpl implements MediaFilterService, InitializingB
         }
 
         String filepath = source.getFilepath();
-
+        String streaming_name = "";
 
         // special case for vtt file, they don't have the id part as the file name, just original file name plus .vtt
         if(extension.equals("vtt")){
