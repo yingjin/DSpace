@@ -1271,6 +1271,7 @@
                         <br/>
                     </xsl:if>
                 </xsl:for-each>
+        </div>
         </xsl:if>
         <xsl:if test="dim:field[@element='relation'][@qualifier='IsPartOfSeries' and descendant::text()]">
             <div class="simple-item-view-architect item-page-field-wrapper table">
@@ -1281,6 +1282,7 @@
                         <br/>
                     </xsl:if>
                 </xsl:for-each>
+            </div>
         </xsl:if>
         <xsl:if test="dim:field[@element='relation'][@qualifier='IsReferencedBy' and descendant::text()]">
             <div class="simple-item-view-architect item-page-field-wrapper table">
@@ -1291,6 +1293,7 @@
                         <br/>
                     </xsl:if>
                 </xsl:for-each>
+            </div>
         </xsl:if>
         <xsl:if test="dim:field[@element='relation'][@qualifier='IsPartOf' and descendant::text()]">
             <div class="simple-item-view-architect item-page-field-wrapper table">
@@ -1301,6 +1304,7 @@
                         <br/>
                     </xsl:if>
                 </xsl:for-each>
+            </div>
         </xsl:if>
     </xsl:template>
 
