@@ -881,9 +881,9 @@
                                 <xsl:if test="@MIMETYPE='video/mp4'">
                                     <xsl:text>mp4</xsl:text>
                                 </xsl:if>
-                                <xsl:otherwise>
+                                <xsl:if test="@MIMETYPE='video/m4v'">
                                     <xsl:text>m4v</xsl:text>
-                                </xsl:otherwise>
+                                </xsl:if>
                             </xsl:variable>)
 
                             <div class="videoContainer">
