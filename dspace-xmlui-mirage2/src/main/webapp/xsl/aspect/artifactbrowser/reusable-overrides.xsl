@@ -842,8 +842,9 @@
          <xsl:variable name="repositoryURL" select="dri:document/dri:meta/dri:pageMeta/dri:trail[1]/@target"/>
          <xsl:variable name="bitstreamurl1" select="mets:FLocat[@LOCTYPE='URL']/@xlink:href"/>
          <xsl:variable name="bitstreamurl" select="substring-before($bitstreamurl1, '&amp;isAllowed')"/>
+         <xsl:variable name="ID"><xsl:value-of select="@ID"/></xsl:variable>
          <xsl:variable name="streamingfilename">
-             <xsl:value-of select="@ID"/>_<xsl:value-of select="mets:FLocat/@xlink:title"/>
+             <xsl:value-of select="$ID"/>_<xsl:value-of select="mets:FLocat/@xlink:title"/>
          </xsl:variable>
          <xsl:variable name="filename">
              <xsl:value-of select="mets:FLocat/@xlink:title"/>
@@ -854,7 +855,7 @@
 
 
          <xsl:variable name="FL_ID">
-             <xsl:value-of select="substring('@ID', 1,1)"/>
+             <xsl:value-of select="substring($ID, 1,1)"/>
          </xsl:variable>
 
         <div class="file-wrapper row">
@@ -877,7 +878,12 @@
                             <div id="{$streamingfilename}" style="position:absolute;width:100% !important;height: 100% !important;">Loading the player...</div>
                             -->
                             <xsl:variable name="filename_suffix">
-                                <xsl:value-of select="substring($filename, string-length($filename)-3, 3)"/>
+                                <xsl:if test="@MIMETYPE='video/mp4'">
+                                    <xsl:text>mp4</xsl:text>
+                                </xsl:if>
+                                <xsl:otherwise>
+                                    <xsl:text>m4v</xsl:text>
+                                </xsl:otherwise>
                             </xsl:variable>)
 
                             <div class="videoContainer">
@@ -1213,7 +1219,7 @@
                         <xsl:call-template name="itemSummaryView-DIM-type"/>
                         <xsl:call-template name="itemSummaryView-DIM-publisher"/>
                         <xsl:call-template name="itemSummaryView-DIM-department"/>
-                        <!--xsl:call-template name="itemSummaryView-DIM-funder"/-->
+                        <xsl:call-template name="itemSummaryView-DIM-Related-Work"/>
                         <xsl:call-template name="itemSummaryView-DIM-URI"/>
                         <xsl:call-template name="itemSummaryView-DIM-rights"/>
                         <xsl:call-template name="itemSummaryView-DIM-relation-URI"/>
@@ -1248,30 +1254,6 @@
         <xsl:if test="dim:field[@element='relation'][@qualifier='HasPart' and descendant::text()]">
             <div class="simple-item-view-architect item-page-field-wrapper table">
                 <h5><i18n:text>xmlui.Rice.related-work</i18n:text></h5>
-                <xsl:for-each select="dim:field[@element='relation' and not(@qualifier)]">
-                    <xsl:copy-of select="./node()"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and not(@qualifier)]) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
-                <xsl:for-each select="dim:field[@element='relation' and @qualifier='IsPartOfSeries']">
-                    <xsl:copy-of select="./node()"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='IsPartOfSeries']) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
-                <xsl:for-each select="dim:field[@element='relation' and @qualifier='IsReferencedBy']">
-                    <xsl:copy-of select="./node()"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='IsReferencedBy']) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
-                <xsl:for-each select="dim:field[@element='relation' and @qualifier='IsPartOf']">
-                    <xsl:copy-of select="./node()"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='IsPartOf']) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
                 <xsl:for-each select="dim:field[@element='relation' and @qualifier='HasPart']">
                     <xsl:copy-of select="./node()"/>
                     <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='HasPart']) != 0">
@@ -1279,6 +1261,46 @@
                     </xsl:if>
                 </xsl:for-each>
             </div>
+        </xsl:if>
+        <xsl:if test="dim:field[@element='relation' and not(@qualifier) and descendant::text()]">
+        <div class="simple-item-view-architect item-page-field-wrapper table">
+        <h5><i18n:text>xmlui.Rice.related-work</i18n:text></h5>
+                <xsl:for-each select="dim:field[@element='relation' and not(@qualifier)]">
+                    <xsl:copy-of select="./node()"/>
+                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and not(@qualifier)]) != 0">
+                        <br/>
+                    </xsl:if>
+                </xsl:for-each>
+        </xsl:if>
+        <xsl:if test="dim:field[@element='relation'][@qualifier='IsPartOfSeries' and descendant::text()]">
+            <div class="simple-item-view-architect item-page-field-wrapper table">
+            <h5><i18n:text>xmlui.Rice.related-work</i18n:text></h5>
+                <xsl:for-each select="dim:field[@element='relation' and @qualifier='IsPartOfSeries']">
+                    <xsl:copy-of select="./node()"/>
+                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='IsPartOfSeries']) != 0">
+                        <br/>
+                    </xsl:if>
+                </xsl:for-each>
+        </xsl:if>
+        <xsl:if test="dim:field[@element='relation'][@qualifier='IsReferencedBy' and descendant::text()]">
+            <div class="simple-item-view-architect item-page-field-wrapper table">
+            <h5><i18n:text>xmlui.Rice.related-work</i18n:text></h5>
+                <xsl:for-each select="dim:field[@element='relation' and @qualifier='IsReferencedBy']">
+                    <xsl:copy-of select="./node()"/>
+                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='IsReferencedBy']) != 0">
+                        <br/>
+                    </xsl:if>
+                </xsl:for-each>
+        </xsl:if>
+        <xsl:if test="dim:field[@element='relation'][@qualifier='IsPartOf' and descendant::text()]">
+            <div class="simple-item-view-architect item-page-field-wrapper table">
+            <h5><i18n:text>xmlui.Rice.related-work</i18n:text></h5>
+                <xsl:for-each select="dim:field[@element='relation' and @qualifier='IsPartOf']">
+                    <xsl:copy-of select="./node()"/>
+                    <xsl:if test="count(following-sibling::dim:field[@element='relation' and @qualifier='IsPartOf']) != 0">
+                        <br/>
+                    </xsl:if>
+                </xsl:for-each>
         </xsl:if>
     </xsl:template>
 
@@ -1308,14 +1330,22 @@
             <h5><i18n:text>xmlui.Rice.rights</i18n:text></h5>
             <span>
                 <xsl:for-each select="dim:field[@element='rights' and not(@qualifier)]">
-                    <xsl:copy-of select="./node()"/>
+                    <xsl:choose>
+                        <xsl:when test="(contains(.,'http://') or contains(.,'https://') )">
+                            <xsl:call-template name="makeLinkFromText"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="."></xsl:value-of><xsl:text> </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <!--xsl:copy-of select="./node()"/-->
                 </xsl:for-each>
             </span>
         </div>
     </xsl:if>
         <xsl:if test="dim:field[@element='rights' and @qualifier='uri']">
             <div class="simple-item-view-rights item-page-field-wrapper table">
-                <h5><i18n:text>xmlui.Rice.rights</i18n:text></h5>
+                <h5><i18n:text>xmlui.Rice.rights.uri</i18n:text></h5>
                 <span>
                     <xsl:for-each select="dim:field[@element='rights' and @qualifier='uri']">
                     <a>
@@ -1998,13 +2028,59 @@
              <div class="simple-item-view-performer item-page-field-wrapper table">
                  <h5><i18n:text>xmlui.Shepherd.Performedby</i18n:text></h5>
                  <div>
+
+                     <xsl:variable name="cc" select="count(dim:field[@element='contributor' and @qualifier='performer']/node())" />
+
+                     <xsl:if test="$cc != 0">
+                         <xsl:for-each select="dim:field[@element='contributor' and @qualifier='performer']">
+                             <xsl:if test="position() &lt;= 5">
+                                 <span>
+
+                                     <xsl:copy-of select="node()"/>
+                                     <xsl:if test="position()!=last() ">
+                                         <xsl:text>; </xsl:text>
+                                     </xsl:if>
+                                 </span>
+                             </xsl:if>
+
+                         </xsl:for-each>
+
+                         <xsl:if test="$cc &gt; 5">
+                             <a class="showHide"
+                                data-toggle="collapse"
+                                data-target="#mk"
+                                onclick="$('.showHide').toggle();"> More... </a>
+
+                             <span id="mk" class="collapse">
+                                 <xsl:for-each select="dim:field[@element='contributor' and @qualifier='performer']">
+
+                                     <xsl:if test="position() &gt; 5 ">
+                                         <xsl:copy-of select="node()"/>
+
+                                         <xsl:if test="position()!=last() ">
+                                             <xsl:text>; </xsl:text>
+                                         </xsl:if>
+                                     </xsl:if>
+                                 </xsl:for-each>
+
+                                 <a class=" showHide"
+                                    style="display:none"
+                                    data-toggle="collapse"
+                                    data-target="#mk"
+                                    onclick="$('.showHide').toggle();"> Less... </a>
+                             </span>
+                         </xsl:if>
+
+                     </xsl:if>
+                 </div>
+                 <!--div>
                    <xsl:for-each select="dim:field[@element='contributor'][@qualifier='performer']">
                                  <xsl:copy-of select="node()"/>
                                  <xsl:if test="count(following-sibling::dim:field[@element='contributor'][@qualifier='performer']) != 0">
                                      <br />
                                  </xsl:if>
                      </xsl:for-each>
-                 </div>
+                 </div-->
              </div>
           </xsl:if>
      </xsl:template>

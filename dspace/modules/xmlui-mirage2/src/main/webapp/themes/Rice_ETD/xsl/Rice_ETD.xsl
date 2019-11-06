@@ -31,6 +31,7 @@
                      <xsl:call-template name="itemSummaryView-DIM-department"/>
                      <xsl:call-template name="itemSummaryView-DIM-degree"/>
                      <xsl:call-template name="itemSummaryView-DIM-abstract"/>
+                     <xsl:call-template name="itemSummaryView-DIM-description"/>
                      <xsl:call-template name="itemSummaryView-DIM-subject"/>
                      <xsl:call-template name="itemSummaryView-DIM-citation"/>
                      <xsl:if test="$ds_item_view_toggle_url != ''">
