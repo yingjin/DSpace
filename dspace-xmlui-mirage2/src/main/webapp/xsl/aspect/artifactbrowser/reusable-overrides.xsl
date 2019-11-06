@@ -854,8 +854,8 @@
          </xsl:variable>
 
 
-         <xsl:variable name="FL_ID">
-             <xsl:value-of select="substring($ID, 1,1)"/>
+         <xsl:variable name="FL_ID"> <!--remove file_ from the beginning -->
+             <xsl:value-of select="substring($ID, 6,1)"/>
          </xsl:variable>
 
         <div class="file-wrapper row">
