@@ -14,6 +14,8 @@
 The Discovery Aspect is responsible for managing search/browse facets/filters
 and the recent submissions listing
 
+Ying updated this for RIP and thresher theme
+
 -->
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
     <map:components>
@@ -37,6 +39,7 @@ and the recent submissions listing
             <map:transformer name="CollectionSearch" src="org.dspace.app.xmlui.aspect.discovery.CollectionSearch"/>
             <map:transformer name="CollectionRecentSubmissions" src="org.dspace.app.xmlui.aspect.discovery.CollectionRecentSubmissions"/>
 
+            <map:transformer name="CollectionHomeTransformer" src="org.dspace.app.xmlui.aspect.discovery.CollectionHomeTransformer"/>
 
             <map:transformer name="RelatedItems" src="org.dspace.app.xmlui.aspect.discovery.RelatedItems"/>
 
@@ -206,6 +209,7 @@ and the recent submissions listing
                             <map:transform type="SidebarFacetsTransformer"/>
                             <map:transform type="CollectionSearch"/>
                             <map:transform type="CollectionRecentSubmissions"/>
+                            <map:transform type="CollectionHomeTransformer"/>
                             <map:serialize type="xml"/>
                         </map:match>
                         <map:match type="HandleTypeMatcher" pattern="item">

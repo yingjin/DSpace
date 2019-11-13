@@ -7,8 +7,7 @@
  */
 package org.dspace.app.xmlui.objectmanager;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
@@ -26,6 +25,7 @@ import org.dspace.content.crosswalk.DisseminationCrosswalk;
 import org.dspace.content.factory.ContentServiceFactory;
 import org.dspace.content.service.CollectionService;
 import org.dspace.content.service.CommunityService;
+import org.dspace.core.ConfigurationManager;
 import org.dspace.services.factory.DSpaceServicesFactory;
 import org.dspace.core.Constants;
 import org.dspace.core.Context;
@@ -37,6 +37,10 @@ import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.SAXOutputter;
 import org.xml.sax.SAXException;
+
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * This is an adapter which translates DSpace containers
@@ -590,6 +594,62 @@ public class ContainerAdapter extends AbstractAdapter
         endElement(METS,"structMap");
     }
 
+    /**
+     *  Ying Render the external xml to this mets (not a standard method, but...)
+     * for rendering periodicals only, exception!!! YJ
+     *
+     */
+    protected void renderExtraSections() throws SQLException, SAXException
+    {
+        try{
+
+
+            String externalXMLPath = ConfigurationManager.getProperty("xmlui.externalxml.dir");
+            if(externalXMLPath!=null){
+                String metsID = getMETSID();
+                //metsID here is same as handle, remove the hdl: part
+                String filename = externalXMLPath + "/" + metsID.substring(4).replaceAll("/", "_") + ".xml";
+
+                // find the file with handle.xml
+                File f = new File(filename);
+                if(f.exists()){
+                    InputStream inputStream = new FileInputStream(f);
+
+                    // ///////////////////////////////
+                    // Send the actual XML content
+                    try {
+                        SAXFilter filter = new SAXFilter(contentHandler, lexicalHandler, namespaces);
+                        // Allow the basics for XML
+                        filter.allowIgnorableWhitespace().allowCharacters().allowCDATA().allowPrefixMappings();
+                        // Special option, only allow elements below the second level to pass through. This
+                        // will trim out the METS declaration and only leave the actual METS parts to be
+                        // included.
+                        filter.allowElements(0);
+
+
+                        XMLReader reader = XMLReaderFactory.createXMLReader();
+                        reader.setContentHandler(filter);
+                        reader.setProperty("http://xml.org/sax/properties/lexical-handler", filter);
+                        reader.parse(new InputSource(inputStream));
+                    }
+                    catch (IOException ie)
+                    {
+                        // just ignore the exception and continue on with
+                        //out parsing the xml document.
+                    }
+
+                }
+
+            }
+
+        }
+        catch (Exception e)
+        {
+            // ignore any errors we get, and just add the string literaly.
+        }
+
+
+    }
 
     /**
      *

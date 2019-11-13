@@ -58,7 +58,7 @@ public class HandleDAOImpl extends AbstractHibernateDAO<Handle> implements Handl
             query.setParameter("id", dso.getID());
 
             // Ying debug
-            System.out.println("========================== *** ID: "+dso.getID());
+            //System.out.println("========================== *** ID: "+dso.getID());
             query.setCacheable(true);
             return list(query);
         }

@@ -326,15 +326,58 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
+
+
     <!-- TODO: Adding this can break the search "GO" and "login" buttons etc...WHY!!!!
-
-
 
     Ying:from core/elements.xsl -
         Non-interactive divs get turned into HTML div tags. The general process, which is found in many
         templates in this stylesheet, is to call the template for the head element (creating the HTML h tag),
         handle the attributes, and then apply the templates for the all children except the head. The id
         attribute is -->
+
+    <!-- TODO: TRY AGAIN and check the go button and "login" buttons, etc.......  -->
+    <!-- Non-interactive divs get turned into HTML div tags. The general process, which is found in many
+     templates in this stylesheet, is to call the template for the head element (creating the HTML h tag),
+     handle the attributes, and then apply the templates for the all children except the head. The id
+     attribute is -->
+    <xsl:template match="dri:div" priority="1">
+        <xsl:apply-templates select="dri:head"/>
+        <xsl:apply-templates select="@pagination">
+            <xsl:with-param name="position">top</xsl:with-param>
+        </xsl:apply-templates>
+        <div>
+            <xsl:call-template name="standardAttributes">
+                <xsl:with-param name="class">ds-static-div</xsl:with-param>
+            </xsl:call-template>
+            <xsl:choose>
+                <!--  does this element have any children -->
+                <xsl:when test="child::node()">
+                    <xsl:apply-templates select="*[not(name()='head')]"/>
+                </xsl:when>
+                <!-- if no children are found we add a space to eliminate self closing tags -->
+                <xsl:otherwise>
+                    &#160;
+                </xsl:otherwise>
+            </xsl:choose>
+        </div>
+        <xsl:variable name="itemDivision">
+            <xsl:value-of select="@n"/>
+        </xsl:variable>
+        <xsl:variable name="xrefTarget">
+            <xsl:value-of select="./dri:p/dri:xref/@target"/>
+        </xsl:variable>
+        <!-- we decided to remove the cc-license on the bottom and using regular metadata display-->
+        <!--xsl:if test="$itemDivision='item-view'">
+            <xsl:call-template name="cc-license">
+                <xsl:with-param name="metadataURL" select="./dri:referenceSet/dri:reference/@url"/>
+            </xsl:call-template>
+        </xsl:if-->
+        <xsl:apply-templates select="@pagination">
+            <xsl:with-param name="position">bottom</xsl:with-param>
+        </xsl:apply-templates>
+    </xsl:template>
+
     <xsl:template match="dri:div--DEBUG" priority="1">
         <xsl:apply-templates select="dri:head"/>
         <xsl:apply-templates select="@pagination">
@@ -907,13 +950,12 @@
                                             playlist: [{
                                                 image: "<xsl:value-of select='$mp4thumb'/>",
                                                 sources: [{
-                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select='$filename_suffix' />/<xsl:value-of select='$FL_ID'/>/<xsl:value-of select='$streamingfilename'/>"
+                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/<xsl:value-of select="$filename_suffix" />/<xsl:value-of select="$FL_ID"/>/<xsl:value-of select="$streamingfilename"/>"
                                                 },{
                                                     file: "rtmp://fldp.rice.edu/fondren/mp4:<xsl:value-of select='$streamingfilename'/>"
                                                 }],
                                                 tracks: [{
-                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/vtt/<xsl:value-of select='$first_lf'/>/<xsl:value-of
-                                                        select='$vtt_filename'/>",
+                                                    file: "<xsl:value-of select="$baseURL"/>/streaming/vtt/<xsl:value-of select="$first_lf"/>/<xsl:value-of select="$vtt_filename"/>",
                                                     label: "English",
                                                     kind: "captions",
                                                     "default": true
