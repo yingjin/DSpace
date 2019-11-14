@@ -26,6 +26,7 @@ import org.dspace.app.xmlui.utils.DSpaceValidity;
 import org.dspace.core.Constants;
 import org.dspace.discovery.*;
 import org.dspace.discovery.configuration.DiscoveryConfiguration;
+import org.dspace.core.Context;
 
 import java.io.Serializable;
 import java.sql.SQLException;
