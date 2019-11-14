@@ -93,6 +93,17 @@ public class DiscoveryConfiguration implements InitializingBean{
         return searchFilters;
     }
 
+    /** Ying added following two method for collection home items */
+    public DiscoveryCollectionHomeConfiguration getCollectionHomeConfiguration() {
+        return collectionHomeConfiguration;
+    }
+
+    public void setCollectionHomeConfiguration(DiscoveryCollectionHomeConfiguration collectionHomeConfiguration) {
+        this.collectionHomeConfiguration = collectionHomeConfiguration;
+    }
+
+    /** END Ying added following two method for collection home items */
+    
     @Required
     public void setSearchFilters(List<DiscoverySearchFilter> searchFilters) {
         this.searchFilters = searchFilters;
