@@ -2,25 +2,8 @@
 
 <!--
     
-    reusable-overrides.xsl
-    
-    Description: This file contains template overrides that have been found to have use in multiple 
-    themes, even when those themes are of drastically different appearance (e.g. the Rice theme vs. 
-    the Americas theme).  It allows themes to avoid pulling in all of Rice.xsl to get certain basic
-    functionality.  The template may include what we might consider bug fixes or feature additions 
-    to the base set of stylesheets provided by DSpace.  However, depending on the circumstances, even 
-    these overrides may need to be overridden (e.g. the Shepherd School theme displays "mets:file" 
-    differently).  
-    
-    It differs from reusable-new-templates.xsl in that it contains overrides of templates that have 
-    already been defined elsewhere (mostly in the base set of DSPace stylesheets) or that are very 
-    similar to those defined elsewhere but with a greater specificity applied.
-    
-    Author: Max Starkenburg
-    Author: Ying Jin
-    Author: Sid Byrd
-    Author: Alexey Maslov (original author of many of the overridden templates, to which we have, in some cases, just made small edits)
-    
+  Author: Ying Jin
+
 -->
 
 
