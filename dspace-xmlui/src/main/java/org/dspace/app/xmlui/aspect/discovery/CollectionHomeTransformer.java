@@ -88,32 +88,42 @@ public class CollectionHomeTransformer extends AbstractDSpaceTransformer impleme
     {
     	if (this.validity == null)
     	{
-	        try
+            Collection collection = null;
+            try
 	        {
-	            DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
+                Context.Mode originalMode = context.getCurrentMode();
+                context.setMode(Context.Mode.READ_ONLY);
 
-	            DSpaceValidity validity = new DSpaceValidity();
+                DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
 
-	            // Add the actual collection;
-	            validity.add(dso);
-
-                getHomeItems(dso);
-                if(queryResults != null){
-                    List<DSpaceObject> resultingObjects = queryResults.getDspaceObjects();
-                    for(DSpaceObject resultObject : resultingObjects){
-                        validity.add(resultObject);
-                    }
-                    validity.add("numFound:" + resultingObjects.size());
+                if (dso == null)
+                {
+                    return null;
                 }
 
-	            this.validity = validity.complete();
-	        }
-	        catch (Exception e)
-	        {
-	            // Just ignore all errors and return an invalid cache.
-	        }
-    	}
-    	return this.validity;
+                if (!(dso instanceof Collection))
+                {
+                    return null;
+                }
+
+                collection = (Collection) dso;
+
+                DSpaceValidity validity = new DSpaceValidity();
+
+                // Add the actual collection;
+                validity.add(context, collection);
+
+                this.validity = validity.complete();
+
+                context.setMode(originalMode);
+            }
+            catch (Exception e)
+            {
+                // Just ignore all errors and return an invalid cache.
+            }
+
+        }
+        return this.validity;
     }
 
     /**
