@@ -1504,7 +1504,7 @@
                             </xsl:if>
                         </xsl:if>
                     </xsl:when>
-
+                   </xsl:choose>
                 </div>
             </div>
         </xsl:if>
@@ -1530,9 +1530,9 @@
                     <xsl:otherwise>
                         <i18n:text>xmlui.dri2xhtml.METS-1.0.no-author</i18n:text>
                     </xsl:otherwise>
-                </xsl:choose-->
+                </xsl:choose>
             </div>
-        </xsl:if>
+        </xsl:if-->
     </xsl:template>
 
     <xsl:template name="itemSummaryView-DIM-architect">
