@@ -423,7 +423,7 @@
                         <xsl:apply-templates select="preceding-sibling::i18n:text[1]"/>
                     </li>
                     <xsl:for-each select="dri:option">
-                        <li>
+                        <li role="menuitem">
                             <a href="#" data-returnvalue="{@returnValue}" data-name="{../@n}">
                                 <span aria-hidden="true">
                                     <xsl:attribute name="class">

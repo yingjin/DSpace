@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
     
     rice-homepage.xsl
@@ -212,6 +211,7 @@
                                 <span class="input-group-btn">
                                     <button class="ds-button-field btn btn-primary" title="xmlui.general.go" i18n:attr="title">
                                         <span class="glyphicon glyphicon-search" aria-hidden="true"/>
+                                        <span class="sr-only">search</span>
                                         <xsl:attribute name="onclick">
                                                     <xsl:text>
                                                         var radio = document.getElementById(&quot;ds-search-form-scope-container&quot;);

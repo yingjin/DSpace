@@ -111,6 +111,7 @@
             <a class="btn btn-default btn-sm toggler collapsed" href="javascript:void(0)" role="button"  data-target="{@value}">
                 <i class="glyphicon glyphicon-minus open-icon hidden" aria-hidden="true"/>
                 <i class="glyphicon glyphicon-plus closed-icon" aria-hidden="true"/>
+                <span class="sr-only">collapse or expand</span>
             </a>
         </p>
 

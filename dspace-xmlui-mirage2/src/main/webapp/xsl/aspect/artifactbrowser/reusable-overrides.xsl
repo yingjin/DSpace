@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
     
     reusable-overrides.xsl
@@ -341,7 +340,7 @@
      templates in this stylesheet, is to call the template for the head element (creating the HTML h tag),
      handle the attributes, and then apply the templates for the all children except the head. The id
      attribute is -->
-    <xsl:template match="dri:div" priority="1">
+    <xsl:template match="dri:div-stillsameproblem" priority="1">
         <xsl:apply-templates select="dri:head"/>
         <xsl:apply-templates select="@pagination">
             <xsl:with-param name="position">top</xsl:with-param>
@@ -1412,7 +1411,104 @@
         <xsl:if test="dim:field[@element='contributor'][@qualifier='author' and descendant::text()] or dim:field[@element='creator' and descendant::text()]">
             <div class="simple-item-view-authors item-page-field-wrapper table">
                 <h5><i18n:text>xmlui.dri2xhtml.METS-1.0.item-author</i18n:text></h5>
-                <xsl:choose>
+                <div>
+                   <xsl:choose>
+
+                    <xsl:when test="dim:field[@element='contributor'][@qualifier='author']">
+
+                    <xsl:variable name="cc" select="count(dim:field[@element='contributor' and @qualifier='author']/node())" />
+
+                    <xsl:if test="$cc != 0">
+                        <xsl:for-each select="dim:field[@element='contributor' and @qualifier='author']">
+                            <xsl:if test="position() &lt;= 5">
+                                <span>
+
+                                    <xsl:copy-of select="node()"/>
+                                    <xsl:if test="position()!=last() ">
+                                        <xsl:text>; </xsl:text>
+                                    </xsl:if>
+                                </span>
+                            </xsl:if>
+
+                        </xsl:for-each>
+
+                        <xsl:if test="$cc &gt; 5">
+                            <a class="showHide"
+                               data-toggle="collapse"
+                               data-target="#mk"
+                               onclick="$('.showHide').toggle();"> More... </a>
+
+                            <span id="mk" class="collapse">
+                                <xsl:for-each select="dim:field[@element='contributor' and @qualifier='author']">
+
+                                    <xsl:if test="position() &gt; 5 ">
+                                        <xsl:copy-of select="node()"/>
+
+                                        <xsl:if test="position()!=last() ">
+                                            <xsl:text>; </xsl:text>
+                                        </xsl:if>
+                                    </xsl:if>
+                                </xsl:for-each>
+
+                                <a class=" showHide"
+                                   style="display:none"
+                                   data-toggle="collapse"
+                                   data-target="#mk"
+                                   onclick="$('.showHide').toggle();"> Less... </a>
+                            </span>
+                        </xsl:if>
+                    </xsl:if>
+                    </xsl:when>
+                    <xsl:when test="dim:field[@element='creator']">
+
+                        <xsl:variable name="cc" select="count(dim:field[@element='creator'])" />
+
+                        <xsl:if test="$cc != 0">
+                            <xsl:for-each select="dim:field[@element='creator']">
+                                <xsl:if test="position() &lt;= 5">
+                                    <span>
+
+                                        <xsl:copy-of select="node()"/>
+                                        <xsl:if test="position()!=last() ">
+                                            <xsl:text>; </xsl:text>
+                                        </xsl:if>
+                                    </span>
+                                </xsl:if>
+
+                            </xsl:for-each>
+
+                            <xsl:if test="$cc &gt; 5">
+                                <a class="showHide"
+                                   data-toggle="collapse"
+                                   data-target="#mk"
+                                   onclick="$('.showHide').toggle();"> More... </a>
+
+                                <span id="mk" class="collapse">
+                                    <xsl:for-each select="dim:field[@element='creator']">
+
+                                        <xsl:if test="position() &gt; 5 ">
+                                            <xsl:copy-of select="node()"/>
+
+                                            <xsl:if test="position()!=last() ">
+                                                <xsl:text>; </xsl:text>
+                                            </xsl:if>
+                                        </xsl:if>
+                                    </xsl:for-each>
+
+                                    <a class=" showHide"
+                                       style="display:none"
+                                       data-toggle="collapse"
+                                       data-target="#mk"
+                                       onclick="$('.showHide').toggle();"> Less... </a>
+                                </span>
+                            </xsl:if>
+                        </xsl:if>
+                    </xsl:when>
+
+                </div>
+            </div>
+        </xsl:if>
+                <!--xsl:choose>
                     <xsl:when test="dim:field[@element='contributor'][@qualifier='author']">
                         <xsl:for-each select="dim:field[@element='contributor'][@qualifier='author']">
                             <div>
@@ -1434,7 +1530,7 @@
                     <xsl:otherwise>
                         <i18n:text>xmlui.dri2xhtml.METS-1.0.no-author</i18n:text>
                     </xsl:otherwise>
-                </xsl:choose>
+                </xsl:choose-->
             </div>
         </xsl:if>
     </xsl:template>

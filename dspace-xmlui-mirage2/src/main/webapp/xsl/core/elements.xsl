@@ -68,11 +68,11 @@
         <xsl:variable name="xrefTarget">
             <xsl:value-of select="./dri:p/dri:xref/@target"/>
         </xsl:variable>
-        <xsl:if test="$itemDivision='item-view'">
+        <!--xsl:if test="$itemDivision='item-view'">
             <xsl:call-template name="cc-license">
                 <xsl:with-param name="metadataURL" select="./dri:referenceSet/dri:reference/@url"/>
             </xsl:call-template>
-        </xsl:if>
+        </xsl:if-->
         <xsl:apply-templates select="@pagination">
             <xsl:with-param name="position">bottom</xsl:with-param>
         </xsl:apply-templates>

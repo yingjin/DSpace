@@ -32,7 +32,7 @@ public class DiscoveryConfiguration implements InitializingBean{
      * Configuration object for the collection home items **/
     private DiscoveryCollectionHomeConfiguration collectionHomeConfiguration;
     /** END Ying added following two method for collection home items */
-    
+
 
     /** Configuration object for the recent submissions **/
     private DiscoveryRecentSubmissionsConfiguration recentSubmissionConfiguration;
