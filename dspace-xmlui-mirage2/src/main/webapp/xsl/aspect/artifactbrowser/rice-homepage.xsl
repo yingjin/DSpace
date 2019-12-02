@@ -199,10 +199,10 @@
                         </xsl:attribute>
                         <fieldset>
                             <legend>Searching scope</legend>
-                            <label for="query" class="visuallyhidden"><xsl:text>Search: </xsl:text></label>
+                            <label for="queryinput" class="visuallyhidden"><xsl:text>Search: </xsl:text></label>
                             <div class="input-group">
                                 <input class="ds-text-field form-control" type="text" placeholder="xmlui.general.search"
-                                       i18n:attr="placeholder">
+                                       i18n:attr="placeholder" id="queryinput">
                                     <xsl:attribute name="name">
                                         <xsl:value-of
                                                 select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
