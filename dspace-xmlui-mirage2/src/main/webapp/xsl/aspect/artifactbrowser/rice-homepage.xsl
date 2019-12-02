@@ -209,7 +209,8 @@
                                     </xsl:attribute>
                                 </input>
                                 <span class="input-group-btn">
-                                    <button class="ds-button-field btn btn-primary" title="xmlui.general.go" i18n:attr="title">
+                                    <label for="searchbutton" class="visuallyhidden"><xsl:text>Go Search</xsl:text></label>
+                                    <button class="ds-button-field btn btn-primary" title="xmlui.general.go" i18n:attr="title" id="searchbutton">
                                         <span class="glyphicon glyphicon-search" aria-hidden="true"/>
                                         <span class="sr-only">search</span>
                                         <xsl:attribute name="onclick">
