@@ -294,6 +294,7 @@
                                                     select="substring-after(parent::node()/@pageURLMask,'{pageNum}')"/>
                                         </xsl:attribute>
                                         <span class="glyphicon glyphicon-arrow-left"></span>
+                                        <span class="sr-only">previous page</span>
                                     </a>
                                 </li>
                                 <xsl:if test="(parent::node()/@currentPage - 4) &gt; 0">
@@ -368,6 +369,7 @@
                                                         select="substring-after(parent::node()/@pageURLMask,'{pageNum}')"/>
                                             </xsl:attribute>
                                             <span class="glyphicon glyphicon-arrow-right"></span>
+                                            <span class="sr-only">next page</span>
                                         </a>
                                     </li>
                                 </xsl:if>
