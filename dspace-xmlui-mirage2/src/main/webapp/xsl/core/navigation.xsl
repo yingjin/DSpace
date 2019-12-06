@@ -57,16 +57,17 @@
                         <fieldset>
                             <legend>Searching scope</legend>
                             <div class="input-group">
-                                <label for="Search" class="visuallyhidden"><xsl:text>Search: </xsl:text></label>
+                                <label for="searchquery" class="visuallyhidden"><xsl:text>Search: </xsl:text></label>
                                 <input class="ds-text-field form-control" type="text" placeholder="xmlui.general.search"
-                                       i18n:attr="placeholder">
+                                       i18n:attr="placeholder" id="searchquery">
                                     <xsl:attribute name="name">
                                         <xsl:value-of
                                                 select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='queryField']"/>
                                     </xsl:attribute>
                                 </input>
                                 <span class="input-group-btn">
-                                    <button class="ds-button-field btn btn-primary" title="xmlui.general.go" i18n:attr="title">
+                                    <label for="searchbutton" class="visuallyhidden"><xsl:text>Go Search</xsl:text></label>
+                                    <button class="ds-button-field btn btn-primary" title="xmlui.general.go" i18n:attr="title" id="searchbutton">
                                         <span class="glyphicon glyphicon-search" aria-hidden="true"/>
                                         <xsl:attribute name="onclick">
                                                     <xsl:text>

@@ -389,7 +389,7 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu"
                                             aria-labelledby="user-dropdown-toggle-xs" data-no-collapse="true">
-                                            <li>
+                                            <li role="menuitem">
                                                 <a href="{/dri:document/dri:meta/dri:userMeta/
                             dri:metadata[@element='identifier' and @qualifier='url']}">
                                                     <i18n:text>xmlui.EPerson.Navigation.profile</i18n:text>
