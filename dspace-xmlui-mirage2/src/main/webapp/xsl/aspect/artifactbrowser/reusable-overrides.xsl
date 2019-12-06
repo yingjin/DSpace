@@ -2712,9 +2712,10 @@ references to stylesheets pulled directly from the pageMeta element. -->
                         <xsl:choose>
                             <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
                                 <li class="dropdown">
-                                    <label for="user-dropdown-toggle-xs" class="visuallyhidden"><xsl:text>User dropdown toggle</xsl:text></label>
+
                                     <button class="dropdown-toggle navbar-toggle navbar-link" id="user-dropdown-toggle-xs" href="#" role="button"  data-toggle="dropdown" >
                                         <b class="visible-xs glyphicon glyphicon-user" aria-hidden="true"/>
+                                        <span class="sr-only">User dropdown toggle</span>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu"
                                         aria-labelledby="user-dropdown-toggle-xs" data-no-collapse="true">
@@ -2737,9 +2738,10 @@ references to stylesheets pulled directly from the pageMeta element. -->
                                 <li>
                                     <form style="display: inline" action="{/dri:document/dri:meta/dri:userMeta/
                         dri:metadata[@element='identifier' and @qualifier='loginURL']}" method="get">
-                                        <label for="buttonlogin" class="visuallyhidden"><xsl:text>Login</xsl:text></label>
+                                        <!--label for="buttonlogin" class="visuallyhidden"><xsl:text>Login</xsl:text></label-->
                                         <button class="navbar-toggle navbar-link" id="buttonlogin">
                                         <b class="visible-xs glyphicon glyphicon-user" aria-hidden="true"/>
+                                            <span class="sr-only">login</span>
                                         </button>
                                     </form>
                                 </li>
