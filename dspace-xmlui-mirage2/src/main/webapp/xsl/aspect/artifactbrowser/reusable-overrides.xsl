@@ -2712,7 +2712,8 @@ references to stylesheets pulled directly from the pageMeta element. -->
                         <xsl:choose>
                             <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
                                 <li class="dropdown">
-                                    <button class="dropdown-toggle navbar-toggle navbar-link" id="user-dropdown-toggle-xs" href="#" role="button"  data-toggle="dropdown">
+                                    <label for="user-dropdown-toggle-xs" class="visuallyhidden"><xsl:text>User dropdown toggle</xsl:text></label>
+                                    <button class="dropdown-toggle navbar-toggle navbar-link" id="user-dropdown-toggle-xs" href="#" role="button"  data-toggle="dropdown" >
                                         <b class="visible-xs glyphicon glyphicon-user" aria-hidden="true"/>
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu"
@@ -2736,7 +2737,8 @@ references to stylesheets pulled directly from the pageMeta element. -->
                                 <li>
                                     <form style="display: inline" action="{/dri:document/dri:meta/dri:userMeta/
                         dri:metadata[@element='identifier' and @qualifier='loginURL']}" method="get">
-                                        <button class="navbar-toggle navbar-link">
+                                        <label for="buttonlogin" class="visuallyhidden"><xsl:text>Login</xsl:text></label>
+                                        <button class="navbar-toggle navbar-link" id="buttonlogin">
                                         <b class="visible-xs glyphicon glyphicon-user" aria-hidden="true"/>
                                         </button>
                                     </form>
@@ -2816,7 +2818,7 @@ references to stylesheets pulled directly from the pageMeta element. -->
                         </xsl:choose>
                     </ul>
 
-                    <button data-toggle="offcanvas" class="navbar-toggle visible-sm" type="button">
+                    <button data-toggle="offcanvas" class="navbar-toggle visible-sm" type="button" >
                         <span class="sr-only"><i18n:text>xmlui.mirage2.page-structure.toggleNavigation</i18n:text></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
