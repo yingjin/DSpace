@@ -489,6 +489,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"/>
+            <span class="sr-only">add filter</span>
         </button>
     </xsl:template>
 
@@ -512,6 +513,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"/>
+            <span class="sr-only">remove filter</span>
         </button>
     </xsl:template>
 

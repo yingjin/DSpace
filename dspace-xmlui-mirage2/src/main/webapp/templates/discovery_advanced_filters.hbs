@@ -12,6 +12,7 @@
      class="ds-form-item row advanced-filter-row search-filter">
     <div class="col-xs-4 col-sm-2">
         <p>
+            <label for="aspect_discovery_SimpleSearch_field_filtertype_{{index}}" class="visuallyhidden">select filter type</label>
             <select id="aspect_discovery_SimpleSearch_field_filtertype_{{index}}" class="ds-select-field form-control"
                     name="filtertype_{{index}}">
                 {{#set_selected type}}
@@ -24,6 +25,7 @@
     </div>
     <div class="col-xs-4 col-sm-2">
         <p>
+            <label for="aspect_discovery_SimpleSearch_field_filter_relational_operator_{{index}}" class="visuallyhidden">select filter operator</label>
             <select id="aspect_discovery_SimpleSearch_field_filter_relational_operator_{{index}}"
                     class="ds-select-field form-control" name="filter_relational_operator_{{index}}">
                 {{#set_selected relational_operator}}
@@ -36,6 +38,7 @@
     </div>
     <div class="col-xs-4 col-sm-6">
         <p>
+            <label for="aspect_discovery_SimpleSearch_field_filter_{{index}}" class="visuallyhidden">input filter query</label>
             <input id="aspect_discovery_SimpleSearch_field_filter_{{index}}"
                    class="ds-text-field form-control discovery-filter-input discovery-filter-input"
                    name="filter_{{index}}" type="text" value="{{query}}">
@@ -44,12 +47,14 @@
     <div class="hidden-xs col-sm-2">
         <div class="btn-group btn-group-justified">
                 <p class="btn-group">
+                    <label for="aspect_discovery_SimpleSearch_field_add-filter_{{index}}" class="visuallyhidden">add filter</label>
                     <button id="aspect_discovery_SimpleSearch_field_add-filter_{{index}}"
                             class="ds-button-field btn btn-default filter-control filter-add filter-control filter-add"
                             name="add-filter_{{index}}" type="submit" title="Add Filter"><span
                             class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
                 </p>
                 <p class="btn-group">
+                    <label for="aspect_discovery_SimpleSearch_field_remove-filter_{{index}}" class="visuallyhidden">remove filter</label>
                     <button id="aspect_discovery_SimpleSearch_field_remove-filter_{{index}}"
                             class="ds-button-field btn btn-default filter-control filter-remove filter-control filter-remove"
                             name="remove-filter_{{index}}" type="submit" title="Remove"><span

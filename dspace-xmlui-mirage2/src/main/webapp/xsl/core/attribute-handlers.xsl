@@ -188,6 +188,7 @@
                                         <xsl:value-of select="$prev-page"/>
                                     </xsl:attribute>
                                     <span class="glyphicon glyphicon-arrow-left"></span>
+                                    <span class="sr-only">previous page</span>
                                 </a>
                             </li>
                             <li>
@@ -203,6 +204,7 @@
                                         <xsl:value-of select="$next-page"/>
                                     </xsl:attribute>
                                     <span class="glyphicon glyphicon-arrow-right"></span>
+                                    <span class="sr-only">next page</span>
                                 </a>
                             </li>
                         </ul>
@@ -459,6 +461,7 @@
     <xsl:template name="renderGearButton">
         <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog" aria-hidden="true"/>
+            <span class="sr-only">settings</span>
         </button>
     </xsl:template>
 
