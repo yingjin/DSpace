@@ -2835,4 +2835,7 @@ Data depositors can opt-out of using the CC0 waiver for datasets, especially if 
 	<message key="xmlui.Rice.rights.uri">Link to License</message>
 	<message key="xmlui.Rice.relation-uri">Link to related resources </message>
 	<message key="xmlui.Rice.related-work">Related Work(s)</message>
+
+	<message key="xmlui.statistics.visits.titles">Titles</message>
+
 </catalogue>

@@ -423,6 +423,10 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
             // Create a select list to choose a month
             jumpForm.addContent(T_jump_select);
             Select month = jumpForm.addSelect(BrowseParams.MONTH);
+            // Ying added this for fixing accessibility issue
+            month.addLabel("Select Month");
+            // END Ying added this for fixing accessibility issue
+
             month.addOption(false, "-1", T_choose_month);
             for (int i = 1; i <= 12; i++)
             {
@@ -432,6 +436,9 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
 
             // Create a select list to choose a year
             Select year = jumpForm.addSelect(BrowseParams.YEAR);
+            // Ying added this for fixing accessibility issue
+            year.addLabel("Select Month");
+            // END Ying added this for fixing accessibility issue
             year.addOption(false, "-1", T_choose_year);
             int currentYear = DCDate.getCurrent().getYear();
             int i = currentYear;
@@ -537,7 +544,9 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
                 {
                     controlsForm.addContent(T_sort_by);
                     Select sortSelect = controlsForm.addSelect(BrowseParams.SORT_BY);
-
+                    // Ying added this for fixing accessibility issue
+                    sortSelect.addLabel("Select Sort");
+                    // END Ying added this for fixing accessibility issue
                     for (SortOption so : sortOptions)
                     {
                         if (so.isVisible())
@@ -557,12 +566,18 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
         // Create a control to changing ascending / descending order
         controlsForm.addContent(T_order);
         Select orderSelect = controlsForm.addSelect(BrowseParams.ORDER);
+        // Ying added this for fixing accessibility issue
+        orderSelect.addLabel("Order Select");
+        // END Ying added this for fixing accessibility issue
         orderSelect.addOption("ASC".equals(params.scope.getOrder()), "ASC", T_order_asc);
         orderSelect.addOption("DESC".equals(params.scope.getOrder()), "DESC", T_order_desc);
 
         // Create a control for the number of records to display
         controlsForm.addContent(T_rpp);
         Select rppSelect = controlsForm.addSelect(BrowseParams.RESULTS_PER_PAGE);
+        // Ying added this for fixing accessibility issue
+        rppSelect.addLabel("RPP Select");
+        // END Ying added this for fixing accessibility issue
 
         for (int i : RESULTS_PER_PAGE_PROGRESSION)
         {

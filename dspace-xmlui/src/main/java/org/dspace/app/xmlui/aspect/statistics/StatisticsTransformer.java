@@ -41,6 +41,8 @@ public class StatisticsTransformer extends AbstractDSpaceTransformer {
     private static final String T_head_visits_total = "xmlui.statistics.visits.total";
     private static final String T_head_visits_month = "xmlui.statistics.visits.month";
     private static final String T_head_visits_views = "xmlui.statistics.visits.views";
+    // Ying added following line to fix accessibility of empty table header
+	private static final String T_head_visits_titles = "xmlui.statistics.visits.titles";
     private static final String T_head_visits_countries = "xmlui.statistics.visits.countries";
     private static final String T_head_visits_cities = "xmlui.statistics.visits.cities";
     private static final String T_head_visits_bitstream = "xmlui.statistics.visits.bitstreams";
@@ -409,7 +411,8 @@ public class StatisticsTransformer extends AbstractDSpaceTransformer {
 
 			Row headerRow = table.addRow();
 
-			headerRow.addCell("", Cell.ROLE_HEADER, "labelcell");
+			// Ying updated this for accessibility fix of empty table header
+			headerRow.addCell("", Cell.ROLE_HEADER, "labelcell").addContent(message(T_head_visits_titles));
 			
 			headerRow.addCell("", Cell.ROLE_HEADER, "labelcell").addContent(message(T_head_visits_views));
 
