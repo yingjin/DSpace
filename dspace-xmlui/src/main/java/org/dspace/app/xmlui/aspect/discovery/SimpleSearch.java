@@ -151,6 +151,9 @@ public class SimpleSearch extends AbstractSearch implements CacheableProcessingC
         Item searchBoxItem = searchList.addItem();
         Text text = searchBoxItem.addText("query");
         text.setValue(queryString);
+        // Ying added this for fixing accessibility issue
+        text.setLabel("Search query");
+        // END Ying added this for fixing accessibility issue
         searchBoxItem.addButton("submit", "search-icon").setValue(T_go);
         if(queryResults != null && StringUtils.isNotBlank(queryResults.getSpellCheckQuery()))
         {
@@ -262,6 +265,7 @@ public class SimpleSearch extends AbstractSearch implements CacheableProcessingC
 
         //And last add an add button
         Cell buttonsCell = row.addCell("filter-controls_" + index, Cell.ROLE_DATA, "filter-controls");
+
         buttonsCell.addButton("add-filter_" + index, "filter-control filter-add").setValue(T_filter_controls_add);
         buttonsCell.addButton("remove-filter_" + index, "filter-control filter-remove").setValue(T_filter_controls_remove);
 

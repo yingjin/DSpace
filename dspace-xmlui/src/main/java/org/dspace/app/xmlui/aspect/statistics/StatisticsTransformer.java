@@ -355,8 +355,9 @@ public class StatisticsTransformer extends AbstractDSpaceTransformer {
 
 			/** Generate Header Row */
 			Row headerRow = table.addRow();
-			headerRow.addCell("spacer", Cell.ROLE_HEADER, "labelcell");
-
+			// Ying updated this for accessibility fix of empty table header
+			headerRow.addCell("spacer", Cell.ROLE_HEADER, "labelcell").addContent(message(T_head_visits_titles));
+			// END Ying updated this for accessibility fix of empty table header
 			String[] cLabels = dataset.getColLabels().toArray(new String[0]);
 			for (int row = 0; row < cLabels.length; row++) {
 				Cell cell = headerRow.addCell(0 + "-" + row + "-h",
@@ -413,7 +414,7 @@ public class StatisticsTransformer extends AbstractDSpaceTransformer {
 
 			// Ying updated this for accessibility fix of empty table header
 			headerRow.addCell("", Cell.ROLE_HEADER, "labelcell").addContent(message(T_head_visits_titles));
-			
+			// END Ying updated this for accessibility fix of empty table header
 			headerRow.addCell("", Cell.ROLE_HEADER, "labelcell").addContent(message(T_head_visits_views));
 
 			/** Generate Table Body */
