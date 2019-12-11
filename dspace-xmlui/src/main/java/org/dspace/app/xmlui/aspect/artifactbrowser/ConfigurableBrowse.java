@@ -437,7 +437,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
             // Create a select list to choose a year
             Select year = jumpForm.addSelect(BrowseParams.YEAR);
             // Ying added this for fixing accessibility issue
-            year.setLabel("Select Month");
+            year.setLabel("Select Year");
             // END Ying added this for fixing accessibility issue
             year.addOption(false, "-1", T_choose_year);
             int currentYear = DCDate.getCurrent().getYear();
@@ -477,6 +477,9 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
         {
             // Create a clickable list of the alphabet
             List jumpList = jump.addList("jump-list", List.TYPE_SIMPLE, "alphabet");
+            // Ying updated this for accessibility fix
+            jumpList.addLabel("alphabet list");
+            // END Ying updated this for accessibility fix
 
             // browse params for each letter are all the query params
             // WITHOUT the second-stage browse value, and add STARTS_WITH.

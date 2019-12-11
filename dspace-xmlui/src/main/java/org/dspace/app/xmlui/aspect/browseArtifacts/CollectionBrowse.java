@@ -68,6 +68,10 @@ public class CollectionBrowse extends AbstractDSpaceTransformer {
         Division browseDiv = search.addDivision("collection-browse", "secondary browse");
         List browse = browseDiv.addList("collection-browse", List.TYPE_SIMPLE,
                 "collection-browse");
+        // Ying added this for fixing accessibility issue
+        browse.addLabel("collection browse");
+        // END Ying added this for fixing accessibility issue
+
         browse.setHead(T_head_browse);
         String url = contextPath + "/handle/" + collection.getHandle();
 

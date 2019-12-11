@@ -265,6 +265,9 @@ public abstract class AbstractSearch extends AbstractDSpaceTransformer implement
 
         mainForm.addHidden("rpp").setValue(getParameterRpp());
         Hidden sort_by = mainForm.addHidden("sort_by");
+        // Ying added this for fixing accessibility issue
+        sort_by.setLabel("sort_by");
+        // END Ying added this for fixing accessibility issue
         if(!StringUtils.isBlank(request.getParameter("sort_by")))
         {
             sort_by.setValue(request.getParameter("sort_by"));
@@ -273,6 +276,10 @@ public abstract class AbstractSearch extends AbstractDSpaceTransformer implement
         }
 
         Hidden order = mainForm.addHidden("order");
+        // Ying added this for fixing accessibility issue
+        order.setLabel("order");
+        // END Ying added this for fixing accessibility issue
+
         if(getParameterOrder() != null)
         {
             order.setValue(request.getParameter("order"));

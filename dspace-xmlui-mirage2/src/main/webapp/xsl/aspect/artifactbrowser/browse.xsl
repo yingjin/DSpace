@@ -107,7 +107,7 @@
         or dri:field/@id='aspect.administrative.WithdrawnItems.field.year'
         or dri:field/@id='aspect.administrative.PrivateItems.field.year']">
         <div class="form-group">
-            <label><xsl:apply-templates select="i18n:text[1]"/></label>
+            <label for="aspect.artifactbrowser.ConfigurableBrowse.field.year"><xsl:apply-templates select="i18n:text[1]"/></label>
             <div class="row">
                 <div class="col-xs-5 col-sm-3">
                     <xsl:apply-templates select="dri:field[@id='aspect.artifactbrowser.ConfigurableBrowse.field.year'

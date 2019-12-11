@@ -69,6 +69,11 @@ public class CommunityBrowse extends AbstractDSpaceTransformer {
         List browse = browseDiv.addList("community-browse", List.TYPE_SIMPLE,
                 "community-browse");
         browse.setHead(T_head_browse);
+
+        // Ying added this for fixing accessibility issue
+        browse.addLabel("community browse");
+        // END Ying added this for fixing accessibility issue
+
         String url = contextPath + "/handle/" + community.getHandle();
 
         try {
