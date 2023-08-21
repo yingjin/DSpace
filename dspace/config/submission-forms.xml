@@ -672,7 +672,6 @@
                     <input-type>onebox</input-type>
                     <hint>Lab, center, institute or department affiliated with the creation of the dataset.</hint>
                     <required></required>
-                    <!--vocabulary>RDMT</vocabulary-->
                 </field>
             </row>
             <row>
@@ -685,7 +684,6 @@
                     <input-type value-pairs-name="researchdata_othercontributor">qualdrop_value</input-type>
                     <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.othercontributor</hint>
                     <required></required>
-                    <!--vocabulary>RDMT</vocabulary-->
                 </field>
             </row>
             <row>
