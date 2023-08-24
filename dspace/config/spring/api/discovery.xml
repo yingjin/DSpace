@@ -58,8 +58,8 @@
                 <!-- Used to display related items on single-item pages, because a relationship does not always point to the latest version of the related item -->
                 <entry key="default-relationships" value-ref="defaultRelationshipsConfiguration" />
 
-                <entry key="1911/13110" value-ref="ETDConfiguration" />
-                <entry key="1911/8299" value-ref="ETDConfiguration" />
+<!--                <entry key="1911/13110" value-ref="ETDConfiguration" />-->
+<!--                <entry key="1911/8299" value-ref="ETDConfiguration" />-->
 
                 <!--<entry key="123456789/7621" value-ref="defaultConfiguration"/>-->
                 <!-- Used to show filters and results on MyDSpace -->
@@ -161,12 +161,8 @@
         </property>
     </bean>
 
-    <!--- ===============================================================================================================
-                                    ETD
- =============================================================================================================== -->
-
-    <!-- Ying The ETD configuration settings for discovery-->
-    <bean id="ETDConfiguration" class="org.dspace.discovery.configuration.DiscoveryConfiguration" scope="prototype">
+    <!--The default configuration settings for discovery-->
+    <bean id="defaultConfiguration" class="org.dspace.discovery.configuration.DiscoveryConfiguration" scope="prototype">
         <!--Which sidebar facets are to be displayed-->
         <property name="sidebarFacets">
             <list>
@@ -178,101 +174,7 @@
                 <ref bean="searchFilterDegreeDiscipline" />
                 <ref bean="searchFilterDegreeLevel" />
                 <ref bean="searchFilterDegreeName" />
-            </list>
-        </property>
-        <!--The search filters which can be used on the discovery search page-->
-        <property name="searchFilters">
-            <list>
-                <ref bean="searchFilterTitle" />
-                <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterAdvisor" />
-                <ref bean="searchFilterContributor"/>
-                <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterIssued" />
-                <!-- Ying customized searchFilter: abstract, doi, fulltext -->
-                <ref bean="searchFilterAbstract" />
-                <!--ref bean="searchFilterFulltext" /-->
-                <!-- END Ying customized searchFilter: abstract, doi, fulltext -->
-                <ref bean="searchFilterDegreeDepartment" />
-                <ref bean="searchFilterDegreeDiscipline" />
-                <ref bean="searchFilterDegreeLevel" />
-                <ref bean="searchFilterDegreeName" />
-                <ref bean="searchFilterType" />
-                <ref bean="searchFilterDOI" />
-            </list>
-        </property>
-        <!--The sort filters for the discovery search-->
-        <property name="searchSortConfiguration">
-            <bean class="org.dspace.discovery.configuration.DiscoverySortConfiguration">
-                <!--<property name="defaultSort" ref="sortDateIssued"/>-->
-                <!--DefaultSortOrder can either be desc or asc (desc is default)-->
-<!--                <property name="defaultSortOrder" value="desc"/>-->
-                <property name="sortFields">
-                    <list>
-                        <ref bean="sortTitle" />
-                        <ref bean="sortDateIssued" />
-                    </list>
-                </property>
-            </bean>
-        </property>
-        <!--Any default filter queries, these filter queries will be used for all queries done by discovery for this configuration-->
-        <!--<property name="defaultFilterQueries">-->
-        <!--<list>-->
-        <!--Only find items-->
-        <!--<value>search.resourcetype:2</value>-->
-        <!--</list>-->
-        <!--</property>-->
-        <!--The configuration for the recent submissions-->
-        <property name="recentSubmissionConfiguration">
-            <bean class="org.dspace.discovery.configuration.DiscoveryRecentSubmissionsConfiguration">
-                <property name="metadataSortField" value="dc.date.accessioned" />
-                <property name="type" value="date"/>
-                <property name="max" value="20"/>
-            </bean>
-        </property>
-        <!--Default result per page  -->
-        <property name="defaultRpp" value="10" />
-        <property name="hitHighlightingConfiguration">
-            <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightingConfiguration">
-                <property name="metadataFields">
-                    <list>
-                        <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.title"/>
-                            <property name="snippets" value="5"/>
-                        </bean>
-                        <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.contributor.author"/>
-                            <property name="snippets" value="5"/>
-                        </bean>
-                        <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.description.abstract"/>
-                            <property name="maxSize" value="250"/>
-                            <property name="snippets" value="2"/>
-                        </bean>
-                        <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="fulltext"/>
-                            <property name="maxSize" value="250"/>
-                            <property name="snippets" value="2"/>
-                        </bean>
-                    </list>
-                </property>
-            </bean>
-        </property>
-
-        <!-- When true a "did you mean" example will be displayed, value can be true or false -->
-        <property name="spellCheckEnabled" value="true"/>
-    </bean>
-    <!-- END YING  The ETD Configuration setting for discovery  -->
-
-    <!--The default configuration settings for discovery-->
-    <bean id="defaultConfiguration" class="org.dspace.discovery.configuration.DiscoveryConfiguration" scope="prototype">
-        <!--Which sidebar facets are to be displayed-->
-        <property name="sidebarFacets">
-            <list>
-                <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterIssued" />
-                <ref bean="searchFilterContentInOriginalBundle"/>
+<!--                <ref bean="searchFilterContentInOriginalBundle"/>-->
                 <ref bean="searchFilterEntityType"/>
             </list>
         </property>
@@ -283,9 +185,14 @@
             <list>
                 <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterAuthor" />
+                <ref bean="searchFilterAdvisor"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
-                <ref bean="searchFilterContentInOriginalBundle"/>
+                <ref bean="searchFilterDegreeDepartment" />
+                <ref bean="searchFilterDegreeDiscipline" />
+                <ref bean="searchFilterDegreeLevel" />
+                <ref bean="searchFilterDegreeName" />
+<!--                <ref bean="searchFilterContentInOriginalBundle"/>-->
                 <ref bean="searchFilterFileNameInOriginalBundle" />
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
                 <ref bean="searchFilterEntityType"/>
@@ -2363,7 +2270,6 @@
         <property name="pageSize" value="10"/>
     </bean>
 
-
     <bean id="searchFilterIsOrgUnitOfPublicationRelation" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
         <property name="indexFieldName" value="isOrgUnitOfPublication"/>
         <property name="metadataFields">
@@ -2468,52 +2374,52 @@
         <property name="sortOrderSidebar" value="COUNT"/>
         <property name="sortOrderFilterPage" value="COUNT"/>
     </bean>
-    <bean id="searchFilterDOI" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-        <property name="indexFieldName" value="doi"/>
-        <property name="metadataFields">
-            <list>
-                <value>dc.identifier.doi</value>
-            </list>
-        </property>
-        <property name="facetLimit" value="10"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
-    </bean>
-    <bean id="searchFilterAbstract" class="org.dspace.discovery.configuration.DiscoverySearchFilter">
-        <property name="indexFieldName" value="abstract"/>
-        <property name="metadataFields">
-            <list>
-                <value>dc.description.abstract</value>
-            </list>
-        </property>
-    </bean>
-    <bean id="searchFilterContributor" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-        <property name="indexFieldName" value="contributor"/>
-        <property name="metadataFields">
-            <list>
-                <value>dc.contributor</value>
-                <value>dc.contributor.accompanist</value>
-                <value>dc.contributor.advisor</value>
-                <value>dc.contributor.agency</value>
-                <value>dc.contributor.arranger</value>
-                <value>dc.contributor.org</value>
-                <value>dc.contributor.committeeMember</value>
-                <value>dc.contributor.company</value>
-                <value>dc.contributor.conductor</value>
-                <value>dc.contributor.donor</value>
-                <value>dc.contributor.editor</value>
-                <value>dc.contributor.funder</value>
-                <value>dc.contributor.interviewer</value>
-                <value>dc.contributor.lecturer</value>
-                <value>dc.contributor.publisher</value>
-                <value>dc.contributor.composer</value>
-                <value>dc.contributor.translator</value>
-            </list>
-        </property>
-        <property name="facetLimit" value="10"/>
-        <property name="sortOrderSidebar" value="COUNT"/>
-        <property name="sortOrderFilterPage" value="COUNT"/>
-    </bean>
+<!--    <bean id="searchFilterDOI" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">-->
+<!--        <property name="indexFieldName" value="doi"/>-->
+<!--        <property name="metadataFields">-->
+<!--            <list>-->
+<!--                <value>dc.identifier.doi</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="facetLimit" value="10"/>-->
+<!--        <property name="sortOrderSidebar" value="COUNT"/>-->
+<!--        <property name="sortOrderFilterPage" value="COUNT"/>-->
+<!--    </bean>-->
+<!--    <bean id="searchFilterAbstract" class="org.dspace.discovery.configuration.DiscoverySearchFilter">-->
+<!--        <property name="indexFieldName" value="abstract"/>-->
+<!--        <property name="metadataFields">-->
+<!--            <list>-->
+<!--                <value>dc.description.abstract</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    <bean id="searchFilterContributor" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">-->
+<!--        <property name="indexFieldName" value="contributor"/>-->
+<!--        <property name="metadataFields">-->
+<!--            <list>-->
+<!--                <value>dc.contributor</value>-->
+<!--                <value>dc.contributor.accompanist</value>-->
+<!--                <value>dc.contributor.advisor</value>-->
+<!--                <value>dc.contributor.agency</value>-->
+<!--                <value>dc.contributor.arranger</value>-->
+<!--                <value>dc.contributor.org</value>-->
+<!--                <value>dc.contributor.committeeMember</value>-->
+<!--                <value>dc.contributor.company</value>-->
+<!--                <value>dc.contributor.conductor</value>-->
+<!--                <value>dc.contributor.donor</value>-->
+<!--                <value>dc.contributor.editor</value>-->
+<!--                <value>dc.contributor.funder</value>-->
+<!--                <value>dc.contributor.interviewer</value>-->
+<!--                <value>dc.contributor.lecturer</value>-->
+<!--                <value>dc.contributor.publisher</value>-->
+<!--                <value>dc.contributor.composer</value>-->
+<!--                <value>dc.contributor.translator</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="facetLimit" value="10"/>-->
+<!--        <property name="sortOrderSidebar" value="COUNT"/>-->
+<!--        <property name="sortOrderFilterPage" value="COUNT"/>-->
+<!--    </bean>-->
     <bean id="searchFilterEntityType" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
         <property name="indexFieldName" value="entityType"/>
         <property name="metadataFields">

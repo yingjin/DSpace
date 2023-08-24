@@ -141,7 +141,7 @@
                     <!-- An input-type of twobox MUST be marked as repeatable -->
                     <repeatable>true</repeatable>
                     <label>Subject Keywords</label>
-                    <input-type>twobox</input-type>
+                    <input-type>onebox</input-type>
                     <hint>Enter keywords one at a time. Use  button after each keyword to create the list.</hint>
                     <required></required>
                     <vocabulary>srsc</vocabulary>
@@ -646,7 +646,7 @@
                     <repeatable>true</repeatable>
                     <label>Associated funding agency/agencies</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.funder</hint>
+                    <hint>Any person or organizational body who funded or sponsored the study. Use (http://search.crossref.org/fundref) FundRef to find standardized funder names.</hint>
                     <required></required>
                 </field>
             </row>
@@ -658,7 +658,7 @@
                     <repeatable>true</repeatable>
                     <label>Award ID</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.grantid</hint>
+                    <hint>The funding number(s) and agency that provided a grant used to produce the dataset(s). Example: P20 RR016458 (National Institutes of Health)</hint>
                     <required></required>
                 </field>
             </row>
@@ -682,7 +682,7 @@
                     <repeatable>true</repeatable>
                     <label>Other Contributor(s)</label>
                     <input-type value-pairs-name="researchdata_othercontributor">qualdrop_value</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.othercontributor</hint>
+                    <hint>Any other person, organization, or entity involved in contributing to the creation of the dataset. For a list of available contributor types and definitions, please see (https://digitalriceprojects.pbworks.com/w/page/112707136/Contributors%20for%20research%20data) Contributors for Research Data. Enter a single person’s name as last name, first name.</hint>
                     <required></required>
                 </field>
             </row>
@@ -694,7 +694,7 @@
                     <repeatable>true</repeatable>
                     <label>Language of the dataset</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.language</hint>
+                    <hint>Default is English. If the data includes multiple languages, or if it’s in a language other than English, you can look up (http://www.loc.gov/standards/iso639-2/php/code_list.php) 3-character language codes here</hint>
                 </field>
             </row>
             <row>
@@ -717,7 +717,7 @@
                     <repeatable>true</repeatable>
                     <label>The geographic location(s) covering the data</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.spatial</hint>
+                    <hint>Give as much information as possible to prevent conflated entries. We recommend using the (http://www.geonames.org/) GeoNames geographical database to find the preferred name.</hint>
                     <required></required>
                 </field>
             </row>
@@ -729,7 +729,11 @@
                     <repeatable>true</repeatable>
                     <label>Latitude-Longitude Point Pairs</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.coveragepoint</hint>
+                    <hint>Follow (https://en.wikipedia.org/wiki/ISO_6709) ISO 6709, the  standard representation of geographic point location by coordinates. Enter latitude followed by longitude, end with a slash character (/). Use a plus sign for north latitude or east longitude; use a dash for south latitude or west longitude.
+                        Examples:
+                        Paris: +48.52+002.20/
+                        United States: +38-097/
+                        Statue of Liberty: +40.6894-074.0447/</hint>
                     <required></required>
                 </field>
             </row>
@@ -753,7 +757,14 @@
                     <repeatable>false</repeatable>
                     <label>Date of data creation</label>
                     <input-type>date</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.datecreated</hint>
+                    <hint>The given time interval for when the data was collected, gathered or otherwise created. May be entered as a range (e.g. 1929-1939). DCMI recommends using start and end time periods separated by a semicolon.
+                        Examples: start=2009-01-01; end=2012-03-31
+                                  start=1929; end=1939
+                        Either side of this string can be omitted, in the case of a single or open-ended interval.
+                        Examples:
+                            start=2010
+                            2012
+                            end=1976</hint>
                     <required></required>
                 </field>
             </row>
@@ -789,7 +800,7 @@
                     <repeatable>false</repeatable>
                     <label>Technical specifications</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.digitalspecification</hint>
+                    <hint>A description of the technical specifications of how the dataset(s) was/were digitized, migrated or created, as well as any special hardware, software or tools needed to display/open the files. If source files were later converted to open source formats, please note that as well. Example: Stata was used to create the original versions of the files.</hint>
                     <required></required>
                 </field>
             </row>
@@ -801,7 +812,7 @@
                     <repeatable>false</repeatable>
                     <label>Changes to source files</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.sourceprovenance</hint>
+                    <hint>Record information regarding anything that has changed in the dataset between publication and deposit. Example: Minor errors in calculations, found after publication, were fixed before deposit.</hint>
                     <required></required>
                 </field>
             </row>
@@ -825,7 +836,7 @@
                     <repeatable>false</repeatable>
                     <label>File size or lengh</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.formatextent</hint>
+                    <hint>Examples: 15 pages, 6 MB, Duration 1:15:05</hint>
                     <required></required>
                 </field>
             </row>
@@ -837,7 +848,7 @@
                     <repeatable>false</repeatable>
                     <label>Technical format</label>
                     <input-type>onebox</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.formatmimetype</hint>
+                    <hint>Use file extension or (http://www.freeformatter.com/mime-types-list.html) MIME type where possible. Examples: PDF, XML</hint>
                     <required></required>
                 </field>
             </row>
@@ -874,7 +885,7 @@
                     <repeatable>true</repeatable>
                     <label>Other relationship(s)</label>
                     <input-type value-pairs-name="researchdata_otherrelation">qualdrop_value</input-type>
-                    <hint>xmlui.Submission.submit.DescribeStep.hint.researchdata.otherrelation</hint>
+                    <hint>Any other information relating to or referencing the data. For a list of available contributor types and definitions, please see (https://digitalriceprojects.pbworks.com/w/page/112708771/Relation%20types%20for%20research%20data) Relation Types for Research Data.</hint>
                     <required></required>
                 </field>
             </row>
