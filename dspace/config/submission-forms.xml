@@ -144,7 +144,7 @@
                     <input-type>onebox</input-type>
                     <hint>Enter keywords one at a time. Use  button after each keyword to create the list.</hint>
                     <required></required>
-                    <vocabulary>srsc</vocabulary>
+<!--                    <vocabulary>srsc</vocabulary>-->
                 </field>
             </row>
             <row>
