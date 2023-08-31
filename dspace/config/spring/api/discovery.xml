@@ -167,13 +167,8 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterAdvisor"/>
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
-                <ref bean="searchFilterDegreeDepartment" />
-                <ref bean="searchFilterDegreeDiscipline" />
-                <ref bean="searchFilterDegreeLevel" />
-                <ref bean="searchFilterDegreeName" />
 <!--                <ref bean="searchFilterContentInOriginalBundle"/>-->
                 <ref bean="searchFilterEntityType"/>
             </list>
