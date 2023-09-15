@@ -1,0 +1,90 @@
+#!/bin/bash
+######################################################################
+# chkconfig: 345 80 20                                               #
+# Description: This is an init.d script for the DSpace handle server #
+######################################################################
+
+# set environment
+
+export DSPACE_DIR="/ds/sw/dspace"
+
+export TOMCAT_USER=dspace
+
+# Need to specify a different java path if we're x86_64
+#if [ `/bin/arch` = "x86_64" ]; then
+#        XARCH=".x86_64"
+#fi
+[ -n "${JAVA_HOME}" ] || export JAVA_HOME=/usr/lib/jvm/java-17
+[ -n "${JRE_HOME}" ] || export JRE_HOME=/usr/lib/jvm/jre-17
+
+# extra opts for handle...
+export JAVA_OPTS="-Xms64M -Xmx128M"
+
+PROG=$(basename $0)
+
+# For SELinux we need to use 'runuser' not 'su'
+if [ -x "/sbin/runuser" ]; then
+    SU="/sbin/runuser"
+else
+    SU="su"
+fi
+
+stop() {
+        echo "Stopping handle instance $PROG..."
+        PID=`ps -ef | grep handle-server | grep java | awk '!/grep/ {print $2}'`
+        if [[ -n "$PID" ]]; then
+			   # kill handle as humanely as possible
+               for signal in "TERM" "INT" "HUP" "KILL"; do
+					kill -$signal $PID
+					RETVAL=$?
+					[ $RETVAL -eq 0 ] && break
+					sleep 1
+				done 
+        else
+                echo $"${PROG} is not running..."
+        fi
+        echo "Done."
+}
+
+status() {
+        PID=`ps -ef | grep handle-server | grep java | awk '!/grep/ {print $2}'`
+        if [[ -n "$PID" ]]; then
+                echo $"${PROG} is running (pid $PID)."
+        else
+                echo $"${PROG} is not running..."
+                echo ""
+        fi
+}
+
+
+start() {
+        echo "Starting handle instance $PROG..."
+        ${SU} -m ${TOMCAT_USER} -c "$DSPACE_DIR/bin/start-handle-server"
+        echo "Done."
+}
+
+restart() {
+        stop
+        start
+}
+
+case "$1" in
+        start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        restart)
+                restart
+                ;;
+        status)
+                status
+                ;;
+        *)
+                echo $"Usage: $0 {start|stop|restart|status}"
+                exit 1
+esac
+
+exit $?
+
