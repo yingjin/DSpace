@@ -50,6 +50,849 @@
 
         <!-- Form which defines the first page/section of the "traditional" DSpace submission process,
              often used when depositing normal Items (i.e. Items which are not Entities). -->
+        <form name="facultypubform">
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>author</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Author</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the author's name (Family name, Given names).</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+            <field>
+                <dc-schema>dc</dc-schema>
+                <dc-element>contributor</dc-element>
+                <dc-qualifier>editor</dc-qualifier>
+                <repeatable>true</repeatable>
+                <label>Editors</label>
+                <input-type>name</input-type>
+                <hint>Editor of book. Can enter multiple names.</hint>
+                <required></required>
+            </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Title</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the main title of the item.</hint>
+                    <required>You must enter a main title for this item.</required>
+                </field>
+            </row>
+            <row>
+<!--                <field>-->
+<!--                    <dc-schema>dc</dc-schema>-->
+<!--                    <dc-element>title</dc-element>-->
+<!--                    <dc-qualifier>alternative</dc-qualifier>-->
+<!--                    <repeatable>true</repeatable>-->
+<!--                    <label>Other Titles</label>-->
+<!--                    <input-type>onebox</input-type>-->
+<!--                    <hint>If the item has any alternative titles, please enter them here.</hint>-->
+<!--                    <required></required>-->
+<!--                </field>-->
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable></repeatable>
+                    <label>Type</label>
+                    <input-type value-pairs-name="facultypub_types">dropdown</input-type>
+                    <hint>Journal  for most.</hint>
+                    <required>You have to provide the type.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>dcmi</dc-qualifier>
+                    <repeatable></repeatable>
+                    <label>Content Format</label>
+                    <input-type value-pairs-name="facultypub_typedcmi">dropdown</input-type>
+                    <hint>Most resources are text. When there are multiple entries, choose primary format. 'Moving Image' refers to video files.</hint>
+                    <required>You have to provide the content format.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>language</dc-element>
+                    <dc-qualifier>iso</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Language</label>
+                    <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+                    <hint>Defaults to English. Can include multiple languages.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier>keyword</dc-qualifier>
+                    <!-- An input-type of twobox MUST be marked as repeatable -->
+                    <repeatable>true</repeatable>
+                    <label>Subject Keywords</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter keywords one at a time. Use  button after each keyword to create the list.</hint>
+                    <required></required>
+<!--                    <vocabulary>srsc</vocabulary>-->
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>abstract</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Abstract</label>
+                    <input-type>textarea</input-type>
+                    <hint>Enter abstract of item.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>journalTitle</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Journal or Book Title</label>
+                    <input-type>onebox</input-type>
+                    <hint>Title of journal or book.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>issued</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date of Issue</label>
+                    <style>col-sm-4</style>
+                    <input-type>date</input-type>
+                    <hint>Please give the date of previous publication or public distribution.
+                        You can leave out the day and/or month if they aren't applicable.
+                    </hint>
+                    <required>You must enter at least the year.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>volumeNumber</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Volume Number</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>issueNumber</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Issue Number</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>articleNumber</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Article Number</label>
+                    <input-type>onebox</input-type>
+                    <hint>Many online-only journals publish articles that have article numbers rather than unique page ranges.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>pageNumber</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Page Number(s)</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>firstpage</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Number of first page</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>lastpage</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Number of last page (if applicable)</label>
+                    <input-type>onebox</input-type>
+                    <hint>Not every article has a page range. Increasingly, the publishers only list the first number (since it’s digital-born)</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>publisher</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Publisher</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the name of the publisher.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>pubplace</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Publisher Location</label>
+                    <input-type>onebox</input-type>
+                    <hint>If item is Book or Book Chapter, enter publisher location, e.g. New York, NY.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+                    <repeatable>true</repeatable>
+                    <label>Identifiers</label>
+                    <input-type value-pairs-name="facultypub_identifiers">qualdrop_value</input-type>
+                    <hint>Include any associated identification numbers. When available, DOI (digital object identifier) MUST be entered. DOIs must include the prefix http://dx.doi.org/. </hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>relation</dc-element>
+                    <dc-qualifier>uri</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Link to Published Version</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter full link if published version does not have a DOI, but does have a unique URL, handle, etc. </hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>org</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Affiliated Rice lab (s), center (s), or institute (s)</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter name of affiliated Rice lab (s), center (s), or institute (s). Enter names one at a time. Use  button after each name to create the list.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>funder</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Sponsor Name</label>
+                    <input-type>onebox</input-type>
+                    <hint>If grant-funded, list name of sponsor(s), e.g. National Institutes of Health. Enter the name of sponsor one at a time. Use the ‘add’ button after each sponsor to create the list.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>grantID</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Funding Number</label>
+                    <input-type>onebox</input-type>
+                    <hint>If grant-funded, list unique identifier for award(s) + Funder name(s) in parentheses, e.g. R01 EB007813 (National Institutes of Health). Enter the identifier one at a time. Use the ‘add’ button after each award to create the list.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>conferenceName</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Conference</label>
+                    <input-type>onebox</input-type>
+                    <hint>If paper presented at conference, enter the name of conference.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>citation</dc-element>
+                    <dc-qualifier>conferenceDate</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Conference Date</label>
+                    <input-type>onebox</input-type>
+                    <hint>If paper presented at conference, enter conference date. YYYY-MM-DD.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>publication</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Version of Work</label>
+                    <input-type value-pairs-name="type_publication">dropdown</input-type>
+                    <hint>“Pre-print” is the first draft of the work, before peer-review. “Post-print” is the version submitted to the publisher after peer-review. “Publisher version” is the version of record, as found in print or on the publisher’s website.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>schema</dc-schema>
+                    <dc-element>accessibilityFeature</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>schema.accessibilityFeature</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>schema</dc-schema>
+                    <dc-element>accessibilitySummary</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>schema.accessibilitySummary</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+            </row>
+        </form>
+
+        <form name="patentsform">
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>patentID</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Patent ID</label>
+                    <input-type>onebox</input-type>
+                    <hint>Use the most complete version of the ID without spaces or commas. (e.g. US6428811B1).</hint>
+                    <required>You must enter Patent ID for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Title</label>
+                    <input-type>onebox</input-type>
+                    <hint>Title of the patent taken from the published version.</hint>
+                    <required>You must enter a Title for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>creator</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Inventor(s)</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter name(s) as appear on patent e.g. Smalley, Richard E.</hint>
+                    <required>You must enter an Inventor for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>assignee</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Assignee(s)</label>
+                    <input-type>onebox</input-type>
+                    <hint>Inventor and the assignee may be the same. Rice University may be one of the assignees.</hint>
+                    <required>You must enter an Assignee for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>filed</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date Filed</label>
+                    <input-type>date</input-type>
+                    <hint>Enter date in YYYY-MM-DD format.</hint>
+                    <required>You must enter Date Filed for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>issued</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date Issued by the USPTO</label>
+                    <input-type>date</input-type>
+                    <hint>Enter date in YYYY-MM-DD format</hint>
+                    <required>You must enter Date Issued by the USPTO for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>abstract</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Abstract</label>
+                    <input-type>textarea</input-type>
+                    <hint></hint>
+                    <required>You must enter Abstract for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Type of Patent</label>
+                    <input-type value-pairs-name="patents_subject">dropdown</input-type>
+                    <hint></hint>
+                    <required>You must enter Type of Patent for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>format</dc-element>
+                    <dc-qualifier>extent</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Page Count</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter number of pages in patent PDF (e.g. 19 pp).</hint>
+                    <required>You must enter Page Count for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>language</dc-element>
+                    <dc-qualifier>iso</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Language</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required>You must enter Language for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>publisher</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Publisher</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required>You must enter Publisher for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>dcmi</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Content Format</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required>You must enter Content Format for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>genre</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Resource Type</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required>You must enter Resource Type for this item.</required>
+                </field>
+            </row>
+           <row>
+               <field>
+                   <dc-schema>dc</dc-schema>
+                   <dc-element>digitization</dc-element>
+                   <dc-qualifier>specifications</dc-qualifier>
+                   <repeatable>false</repeatable>
+                   <label>Technical Specs</label>
+                   <input-type>onebox</input-type>
+                   <hint></hint>
+                   <required>You must enter Technical Specs for this item.</required>
+               </field>
+           </row>
+        </form>
+
+        <form name="datasetsform">
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>genre</dc-qualifier>
+                    <label>Content Type</label>
+                    <input-type>onebox</input-type>
+                    <hint>Content types can be free‐text terms or from the <a href="http://dictionary.casrai.org/Output_Types" target="_blank">CASRAI Publications resource type list</a>.<br /><i>Example: Census data</i></hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Title of Dataset</label>
+                    <input-type>onebox</input-type>
+                    <hint>In the cases of datasets connected to a single published study, article or dissertation (such as replication or supplemental data), use the published name of the piece.</hint>
+                    <required>You must enter a Title of Dataset for this item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>title</dc-element>
+                    <dc-qualifier>subtitle</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Subtitle of Dataset</label>
+                    <input-type value-pairs-name="Researchdata_subtitle">list</input-type>
+                    <hint>If your data is supplemental and/or for replication purposes, check the appropriate box(es). If neither apply, please check “Dataset.”</hint>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>creator</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Creator(s) of the dataset</label>
+                    <input-type>name</input-type>
+                    <hint>Last name, e.g. Smith First name (s) + “Jr,” e.g. Donald, Jr</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>org</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Rice affiliated department</label>
+                    <input-type>onebox</input-type>
+                    <hint>Rice affiliated department</hint>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>abstract</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Abstract</label>
+                    <input-type>textarea</input-type>
+                    <hint>Abstract</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>funder</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Associated funding agency/agencies</label>
+                    <input-type>onebox</input-type>
+                    <hint>Any person or organizational body who funded or sponsored the study. Use (http://search.crossref.org/fundref) FundRef to find standardized funder names.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>grantID</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Award ID</label>
+                    <input-type>onebox</input-type>
+                    <hint>The funding number(s) and agency that provided a grant used to produce the dataset(s). Example: P20 RR016458 (National Institutes of Health)</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>org</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Affiliated Rice entity</label>
+                    <input-type>onebox</input-type>
+                    <hint>Lab, center, institute or department affiliated with the creation of the dataset.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Other Contributor(s)</label>
+                    <input-type value-pairs-name="researchdata_othercontributor">qualdrop_value</input-type>
+                    <hint>Any other person, organization, or entity involved in contributing to the creation of the dataset. For a list of available contributor types and definitions, please see (https://digitalriceprojects.pbworks.com/w/page/112707136/Contributors%20for%20research%20data) Contributors for Research Data. Enter a single person’s name as last name, first name.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>language </dc-element>
+                    <dc-qualifier>iso</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Language of the dataset</label>
+                    <input-type>onebox</input-type>
+                    <hint>Default is English. If the data includes multiple languages, or if it’s in a language other than English, you can look up (http://www.loc.gov/standards/iso639-2/php/code_list.php) 3-character language codes here</hint>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>coverage</dc-element>
+                    <dc-qualifier>temporal</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Time period covered by the data</label>
+                    <input-type>onebox</input-type>
+                    <hint>Example: 1929-1939</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>coverage</dc-element>
+                    <dc-qualifier>spatial</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>The geographic location(s) covering the data</label>
+                    <input-type>onebox</input-type>
+                    <hint>Give as much information as possible to prevent conflated entries. We recommend using the (http://www.geonames.org/) GeoNames geographical database to find the preferred name.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>coverage</dc-element>
+                    <dc-qualifier>point</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Latitude-Longitude Point Pairs</label>
+                    <input-type>onebox</input-type>
+                    <hint>Follow (https://en.wikipedia.org/wiki/ISO_6709) ISO 6709, the  standard representation of geographic point location by coordinates. Enter latitude followed by longitude, end with a slash character (/). Use a plus sign for north latitude or east longitude; use a dash for south latitude or west longitude.
+                        Examples:
+                        Paris: +48.52+002.20/
+                        United States: +38-097/
+                        Statue of Liberty: +40.6894-074.0447/</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>issued</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date of publication or distribution of the dataset</label>
+                    <input-type>date</input-type>
+                    <hint>When republishing datasets, use the original date the data was made publicly accessible.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>created</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Date of data creation</label>
+                    <input-type>date</input-type>
+                    <hint>The given time interval for when the data was collected, gathered or otherwise created. May be entered as a range (e.g. 1929-1939). DCMI recommends using start and end time periods separated by a semicolon.
+                        Examples: start=2009-01-01; end=2012-03-31
+                                  start=1929; end=1939
+                        Either side of this string can be omitted, in the case of a single or open-ended interval.
+                        Examples:
+                            start=2010
+                            2012
+                            end=1976</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Data description</label>
+                    <input-type>textarea</input-type>
+                    <hint>Description may include information about the context of the data collection (such as bibliographic citation of the study and data), scope of the study (topics, geography, time), methodology of data collection, sampling and processing, data access information, and information on the accompanying, deposited materials.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>description</dc-element>
+                    <dc-qualifier>version</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Version number of the dataset</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>digitization</dc-element>
+                    <dc-qualifier>specifications</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Technical specifications</label>
+                    <input-type>onebox</input-type>
+                    <hint>A description of the technical specifications of how the dataset(s) was/were digitized, migrated or created, as well as any special hardware, software or tools needed to display/open the files. If source files were later converted to open source formats, please note that as well. Example: Stata was used to create the original versions of the files.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>source</dc-element>
+                    <dc-qualifier>provenance</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Changes to source files</label>
+                    <input-type>onebox</input-type>
+                    <hint>Record information regarding anything that has changed in the dataset between publication and deposit. Example: Minor errors in calculations, found after publication, were fixed before deposit.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>subject</dc-element>
+                    <dc-qualifier>keyword</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Subject Keywords</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter keywords to describe the dataset, one at a time. Use the ‘add’ button after each keyword to create the list.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>format</dc-element>
+                    <dc-qualifier>extent</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>File size or lengh</label>
+                    <input-type>onebox</input-type>
+                    <hint>Examples: 15 pages, 6 MB, Duration 1:15:05</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>format</dc-element>
+                    <dc-qualifier>mimetype</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Technical format</label>
+                    <input-type>onebox</input-type>
+                    <hint>Use file extension or (http://www.freeformatter.com/mime-types-list.html) MIME type where possible. Examples: PDF, XML</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>publisher</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Publisher</label>
+                    <input-type>onebox</input-type>
+                    <hint></hint>
+                    <required></required>
+                    <visibility>workflow</visibility>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>relation</dc-element>
+                    <dc-qualifier>IsReferencedBy</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Related publications</label>
+                    <input-type>onebox</input-type>
+                    <hint>Human-readable, standard bibliographic citations for any publications relating to or referencing the data. If available, please include article DOI or permanent URL.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>relation</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Other relationship(s)</label>
+                    <input-type value-pairs-name="researchdata_otherrelation">qualdrop_value</input-type>
+                    <hint>Any other information relating to or referencing the data. For a list of available contributor types and definitions, please see (https://digitalriceprojects.pbworks.com/w/page/112708771/Relation%20types%20for%20research%20data) Relation Types for Research Data.</hint>
+                    <required></required>
+                </field>
+            </row>
+        </form>
+
+        <!-- Form which defines the first page/section of the "traditional" DSpace submission process,
+             often used when depositing normal Items (i.e. Items which are not Entities). -->
         <form name="traditionalpageone">
             <row>
                 <field>
@@ -182,7 +1025,6 @@
                 </field>
             </row>
         </form>
-
         <!-- Form which defines the second page/section of the "traditional" DSpace submission process,
              often used when depositing normal Items. -->
         <form name="traditionalpagetwo">
@@ -1365,6 +2207,1134 @@
     <!-- stores the associated stored-values in the database.                  -->
 
     <form-value-pairs>
+        <value-pairs value-pairs-name="researchdata_otherrelation" dc-term="">
+            <pair>
+                <displayed-value>IsCitedBy</displayed-value>
+                <stored-value>IsCitedBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Cites</displayed-value>
+                <stored-value>Cites</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsSupplementTo</displayed-value>
+                <stored-value>IsSupplementTo</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsSupplementedBy</displayed-value>
+                <stored-value>IsSupplementedBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsContinuedBy</displayed-value>
+                <stored-value>IsContinuedBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Continues</displayed-value>
+                <stored-value>Continues</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>HasMetadata</displayed-value>
+                <stored-value>HasMetadata</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsMetadataFor</displayed-value>
+                <stored-value>IsMetadataFor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsNewVersionOf</displayed-value>
+                <stored-value>IsNewVersionOf</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsPreviousVersionOf</displayed-value>
+                <stored-value>IsPreviousVersionOf</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsPartOf (*)</displayed-value>
+                <stored-value>IsPartOf</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>HasPart (*)</displayed-value>
+                <stored-value>HasPart</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsReferencedBy (*)</displayed-value>
+                <stored-value>IsReferencedBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>References (*)</displayed-value>
+                <stored-value>References</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsDocumentedBy</displayed-value>
+                <stored-value>IsDocumentedBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Documents</displayed-value>
+                <stored-value>Documents</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsCompiledBy</displayed-value>
+                <stored-value>IsCompiledBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Compiles</displayed-value>
+                <stored-value>Compiles</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsVariantFormOf</displayed-value>
+                <stored-value>IsVariantFormOf</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsOriginalFormOf</displayed-value>
+                <stored-value>IsOriginalFormOf</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsIdenticalTo</displayed-value>
+                <stored-value>IsIdenticalTo</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsReviewedBy</displayed-value>
+                <stored-value>IsReviewedBy</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Reviews</displayed-value>
+                <stored-value>Reviews</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsDerivedFrom</displayed-value>
+                <stored-value>IsDerivedFrom</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>IsSourceOf</displayed-value>
+                <stored-value>IsSourceOf</stored-value>
+            </pair>
+        </value-pairs>
+        <value-pairs value-pairs-name="researchdata_othercontributor" dc-term="">
+            <pair>
+                <displayed-value>ContactPerson</displayed-value>
+                <stored-value>ContactPerson</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>DataCollector</displayed-value>
+                <stored-value>DataCollector</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>DataCurator</displayed-value>
+                <stored-value>DataCurator</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>DataManager</displayed-value>
+                <stored-value>DataManager</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Distributor</displayed-value>
+                <stored-value>Distributor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>editor (*)</displayed-value>
+                <stored-value>editor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>HostingInstitution</displayed-value>
+                <stored-value>HostingInstitution</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Producer</displayed-value>
+                <stored-value>Producer</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ProjectLeader</displayed-value>
+                <stored-value>ProjectLeader</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ProjectManager</displayed-value>
+                <stored-value>ProjectManager</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ProjectMember</displayed-value>
+                <stored-value>ProjectMember</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>RegistrationAgency</displayed-value>
+                <stored-value>RegistrationAgency</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>RegistrationAuthority</displayed-value>
+                <stored-value>RegistrationAuthority</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>RelatedPerson</displayed-value>
+                <stored-value>RelatedPerson</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Researcher</displayed-value>
+                <stored-value>Researcher</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ResearchGroup</displayed-value>
+                <stored-value>ResearchGroup</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>RightsHolder</displayed-value>
+                <stored-value>RightsHolder</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sponsor</displayed-value>
+                <stored-value>Sponsor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Supervisor</displayed-value>
+                <stored-value>Supervisor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>WorkPackageLeader</displayed-value>
+                <stored-value>WorkPackageLeader</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>other (*)</displayed-value>
+                <stored-value>other</stored-value>
+            </pair>
+        </value-pairs>
+        <value-pairs value-pairs-name="researchdata_dcmitype" dc-term="type.dcmi">
+            <pair>
+                <displayed-value>Dataset</displayed-value>
+                <stored-value>Dataset</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Audiovisual</displayed-value>
+                <stored-value>Audiovisual</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Collection</displayed-value>
+                <stored-value>Collection</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Event</displayed-value>
+                <stored-value>Event</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Image</displayed-value>
+                <stored-value>Image</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>InteractiveResource</displayed-value>
+                <stored-value>InteractiveResource</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Model</displayed-value>
+                <stored-value>Model</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>PhysicalObject</displayed-value>
+                <stored-value>PhysicalObject</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Service</displayed-value>
+                <stored-value>Service</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Software</displayed-value>
+                <stored-value>Software</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Sound</displayed-value>
+                <stored-value>Sound</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Text</displayed-value>
+                <stored-value>Text</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Workflow</displayed-value>
+                <stored-value>Workflow</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="Researchdata_subtitle" dc-term="title.subtitle">
+            <pair>
+                <displayed-value>Replication Data</displayed-value>
+                <stored-value>Replication Data</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Supplemental Data</displayed-value>
+                <stored-value>Supplemental Data</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Dataset</displayed-value>
+                <stored-value>Dataset</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="researchdata_contributororg" dc-term="contributor.org">
+            <pair>
+                <displayed-value>Archaeology Group</displayed-value>
+                <stored-value>Archaeology Group</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Atomic and Molecular Collisions Group</displayed-value>
+                <stored-value>Atomic and Molecular Collisions Group</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Barron Research Group</displayed-value>
+                <stored-value>Barron Research Group</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Bartel Research Group</displayed-value>
+                <stored-value>Bartel Research Group</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Beckingham Research Group</displayed-value>
+                <stored-value>Beckingham Research Group</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Bennett Research Group</displayed-value>
+                <stored-value>Bennett Research Group</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Beyond Traditional Borders Initiative</displayed-value>
+                <stored-value>Beyond Traditional Borders Initiative</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Bioscience Research Collaborative</displayed-value>
+                <stored-value>Bioscience Research Collaborative</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Boniuk Institute for the Study and Advancement of Religious Tolerance</displayed-value>
+                <stored-value>Boniuk Institute for the Study and Advancement of Religious Tolerance</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Bonner Nuclear Laboratories</displayed-value>
+                <stored-value>Bonner Nuclear Laboratories</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Braam Research Group</displayed-value>
+                <stored-value>Braam Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Brine Chemistry Consortium</displayed-value>
+                <stored-value>>Brine Chemistry Consortium</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Brooks Research Group</displayed-value>
+                <stored-value>Brooks Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Computational Finance and Economic Systems</displayed-value>
+                <stored-value>Center for Computational Finance and Economic Systems</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Critical and Cultural Theory</displayed-value>
+                <stored-value>Center for Critical and Cultural Theory</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Education</displayed-value>
+                <stored-value>Center for Education</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Energy &amp; Environmental Research in the Human Sciences</displayed-value>
+                <stored-value>Center for Energy &amp; Environmental Research in the Human Sciences</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Excellence and Equity in Education</displayed-value>
+                <stored-value>Center for Excellence and Equity in Education</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Languages &amp; Intercultural Communication</displayed-value>
+                <stored-value>Center for Languages &amp; Intercultural Communication</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Medical Ethics and Health Policy</displayed-value>
+                <stored-value>Center for Medical Ethics and Health Policy</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Multimedia Communication</displayed-value>
+                <stored-value>Center for Multimedia Communication</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Plant Sciences</displayed-value>
+                <stored-value>Center for Plant Sciences</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Subsurface Modeling</displayed-value>
+                <stored-value>Center for Subsurface Modeling</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for Technology in Teaching and Learning</displayed-value>
+                <stored-value>Center for Technology in Teaching and Learning</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Center for the Study of Women, Gender and Sexuality</displayed-value>
+                <stored-value>Center for the Study of Women, Gender and Sexuality</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Chao Center for Asian Studies</displayed-value>
+                <stored-value>Chao Center for Asian Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Colvin Research Group</displayed-value>
+                <stored-value>Colvin Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Computer Systems Group</displayed-value>
+                <stored-value>Computer Systems Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Condensed Matter Theory Group</displayed-value>
+                <stored-value>Condensed Matter Theory Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Consortium for Computational Seismic/Signal Interpretation</displayed-value>
+                <stored-value>Consortium for Computational Seismic/Signal Interpretation</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Curl/Glass Infrared Kinetic Spectroscopy Group</displayed-value>
+                <stored-value>Curl/Glass Infrared Kinetic Spectroscopy Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Air Force Science</displayed-value>
+                <stored-value>Department of Air Force Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Ancient Mediterranean Civilizations</displayed-value>
+                <stored-value>Department of Ancient Mediterranean Civilizations</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Anthropology</displayed-value>
+                <stored-value>Department of Anthropology</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Art History</displayed-value>
+                <stored-value>Department of Art History</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Bioengineering</displayed-value>
+                <stored-value>Department of Bioengineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Biosciences</displayed-value>
+                <stored-value>Department of Biosciences</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Chemical and Biomolecular Engineering</displayed-value>
+                <stored-value>Department of Chemical and Biomolecular Engineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Chemistry</displayed-value>
+                <stored-value>Department of Chemistry</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Civil and Environmental Engineering</displayed-value>
+                <stored-value>Department of Civil and Environmental Engineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Classical and European Studies</displayed-value>
+                <stored-value>Department of Classical and European Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Cognitive Sciences</displayed-value>
+                <stored-value>Department of Cognitive Sciences</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Computational and Applied Mathematics</displayed-value>
+                <stored-value>Department of Computational and Applied Mathematics</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Computational Science and Engineering</displayed-value>
+                <stored-value>Department of Computational Science and Engineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Computer Science</displayed-value>
+                <stored-value>Department of Computer Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Digital Signal Processing</displayed-value>
+                <stored-value>>Department of Digital Signal Processing</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Earth Science</displayed-value>
+                <stored-value>Department of Earth Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Economics</displayed-value>
+                <stored-value>Department of Economics</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Electrical and Computer Engineering</displayed-value>
+                <stored-value>Department of Electrical and Computer Engineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of English</displayed-value>
+                <stored-value>Department of English</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of History</displayed-value>
+                <stored-value>Department of History</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Jewish Studies</displayed-value>
+                <stored-value>Department of Jewish Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Kinesiology</displayed-value>
+                <stored-value>Department of Kinesiology</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Linguistics</displayed-value>
+                <stored-value>Department of Linguistics</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Managerial Studies</displayed-value>
+                <stored-value>Department of Managerial Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Materials Science</displayed-value>
+                <stored-value>Department of Materials Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Mathematics</displayed-value>
+                <stored-value>Department of Mathematics</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Mechanical Engineering</displayed-value>
+                <stored-value>Department of Mechanical Engineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Medieval and Early Modern Studies</displayed-value>
+                <stored-value>Department of Medieval and Early Modern Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Military Science</displayed-value>
+                <stored-value>Department of Military Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Naval Science</displayed-value>
+                <stored-value>Department of Naval Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Philosophy</displayed-value>
+                <stored-value>Department of Philosophy</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Physics and Astronomy</displayed-value>
+                <stored-value>Department of Physics and Astronomy</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Policy Studies</displayed-value>
+                <stored-value>Department of Policy Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Political Science</displayed-value>
+                <stored-value>Department of Political Science</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Politics, Law, and Social Thought</displayed-value>
+                <stored-value>Department of Politics, Law, and Social Thought</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Psychology</displayed-value>
+                <stored-value>Department of Psychology</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Religion</displayed-value>
+                <stored-value>Department of Religion</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Sociology</displayed-value>
+                <stored-value>Department of Sociology</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Spanish, Portuguese, and Latin American</displayed-value>
+                <stored-value>Department of Spanish, Portuguese, and Latin American</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Sport Management</displayed-value>
+                <stored-value>Department of Sport Management</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Statistics</displayed-value>
+                <stored-value>Department of Statistics</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Technology in Education</displayed-value>
+                <stored-value>Department of Technology in Education</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Department of Visual and Dramatic Arts</displayed-value>
+                <stored-value>Department of Visual and Dramatic Arts</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Dynamical Systems Group</displayed-value>
+                <stored-value>Dynamical Systems Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Earth Science Center for Computing</displayed-value>
+                <stored-value>>Earth Science Center for Computing</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>ECE Digital Signal Processing Group</displayed-value>
+                <stored-value>ECE Digital Signal Processing Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>ECE Halas Nanophotonics Group</displayed-value>
+                <stored-value>ECE Halas Nanophotonics Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>ECE Robots for Hazardous Environments Group</displayed-value>
+                <stored-value>ECE Robots for Hazardous Environments Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Energy and Environment Initiative</displayed-value>
+                <stored-value>Energy and Environment Initiative</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Engel Research Group</displayed-value>
+                <stored-value>Engel Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Genomics and Metabolic Engineering Laboratory</displayed-value>
+                <stored-value>Genomics and Metabolic Engineering Laboratory</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Gomer Research Group</displayed-value>
+                <stored-value>Gomer Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Gustin Research Group</displayed-value>
+                <stored-value>Gustin Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Halas Nanophotonics Group</displayed-value>
+                <stored-value>Halas Nanophotonics Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Hazardous Substances Research Center</displayed-value>
+                <stored-value>Hazardous Substances Research Center</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Hobby Center for the Study of Texas</displayed-value>
+                <stored-value>Hobby Center for the Study of Texas</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Hulet Group</displayed-value>
+                <stored-value>Hulet Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Humanities Research Center</displayed-value>
+                <stored-value>Humanities Research Center</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Institute of Biosciences and Bioengineering</displayed-value>
+                <stored-value>Institute of Biosciences and Bioengineering</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>James A. Baker III Institute for Public Policy</displayed-value>
+                <stored-value>James A. Baker III Institute for Public Policy</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Jefferson Davis Project</displayed-value>
+                <stored-value>Jefferson Davis Project</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Ken Kennedy Institute for Information Technology</displayed-value>
+                <stored-value>Ken Kennedy Institute for Information Technology</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Killian Research Group</displayed-value>
+                <stored-value>Killian Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Kinder Institute for Urban Research</displayed-value>
+                <stored-value>Kinder Institute for Urban Research</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Kinsey Research Group</displayed-value>
+                <stored-value>Kinsey Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Laboratory for Nanophotonics</displayed-value>
+                <stored-value>Laboratory for Nanophotonics</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Lane Research Group</displayed-value>
+                <stored-value>Lane Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Leadership Rice</displayed-value>
+                <stored-value>Leadership Rice</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>MacKenzie Research Group</displayed-value>
+                <stored-value>MacKenzie Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Massively Scalar Compiler Group</displayed-value>
+                <stored-value>Massively Scalar Compiler Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Matsuda Research Group</displayed-value>
+                <stored-value>Matsuda Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Matthews Research Group</displayed-value>
+                <stored-value>Matthews Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>McNew Research Group</displayed-value>
+                <stored-value>McNew Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Mikos Research Group</displayed-value>
+                <stored-value>Mikos Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Nikonowicz Research Group</displayed-value>
+                <stored-value>Nikonowicz Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Olson Research Group</displayed-value>
+                <stored-value>Olson Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>OpenStax</displayed-value>
+                <stored-value>OpenStax</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Parry Research Group</displayed-value>
+                <stored-value>Parry Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Poverty, Justice and Human Capabilities</displayed-value>
+                <stored-value>Poverty, Justice and Human Capabilities</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice 360 Institute for Global Health Technologies</displayed-value>
+                <stored-value>Rice 360 Institute for Global Health Technologies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Alliance for Technology and Entrepreneurship</displayed-value>
+                <stored-value>Rice Alliance for Technology and Entrepreneurship</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Bioinformatics Group</displayed-value>
+                <stored-value>Rice Bioinformatics Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Center for Digital Learning and Scholarship</displayed-value>
+                <stored-value>Rice Center for Digital Learning and Scholarship</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Center for Engineering Leadership</displayed-value>
+                <stored-value>Rice Center for Engineering Leadership</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Center for Organizational Effectiveness Studies</displayed-value>
+                <stored-value>Rice Center for Organizational Effectiveness Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Design Alliance</displayed-value>
+                <stored-value>Rice Design Alliance</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Inversion Project</displayed-value>
+                <stored-value>Rice Inversion Project</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Quantum Institute</displayed-value>
+                <stored-value>Rice Quantum Institute</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rice Space Institute</displayed-value>
+                <stored-value>Rice Space Institute</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Rimberg Group</displayed-value>
+                <stored-value>Rimberg Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>School of Architecture</displayed-value>
+                <stored-value>School of Architecture</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Scientia</displayed-value>
+                <stored-value>Scientia</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Scuseria Research Group</displayed-value>
+                <stored-value>Scuseria Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Shamoo Research Group</displayed-value>
+                <stored-value>Shamoo Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Shell Center for Sustainability</displayed-value>
+                <stored-value>Shell Center for Sustainability</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Shepherd School of Music</displayed-value>
+                <stored-value>Shepherd School of Music</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Silberg Research Group</displayed-value>
+                <stored-value>Silberg Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Smalley Research Group</displayed-value>
+                <stored-value>Smalley Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Social Sciences Research Institute</displayed-value>
+                <stored-value>Social Sciences Research Institute</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Softlib</displayed-value>
+                <stored-value>Softlib</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Stern Research Group</displayed-value>
+                <stored-value>Stern Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Stewart Research Group</displayed-value>
+                <stored-value>Stewart Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Susanne M. Glasscock School of Continuing Studies</displayed-value>
+                <stored-value>Susanne M. Glasscock School of Continuing Studies</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Tao Research Group</displayed-value>
+                <stored-value>Tao Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Team for Advanced Flow Simulation and Modeling</displayed-value>
+                <stored-value>Team for Advanced Flow Simulation and Modeling</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Texas Center for Crystallography</displayed-value>
+                <stored-value>Texas Center for Crystallography</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Tibetan/Bonpo Text Cataloguing Project</displayed-value>
+                <stored-value>Tibetan/Bonpo Text Cataloguing Project</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Transnational China Project</displayed-value>
+                <stored-value>Transnational China Project</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Value of Information-based Sustainable Embedded Nanocomputing Center</displayed-value>
+                <stored-value>Value of Information-based Sustainable Embedded Nanocomputing Center</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>W.M. Keck Center for Interdisciplinary Bioscience Training</displayed-value>
+                <stored-value>W.M. Keck Center for Interdisciplinary Bioscience Training</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Wagner Research Group</displayed-value>
+                <stored-value>Wagner Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Wetland Center for Biogeochemical Research</displayed-value>
+                <stored-value>Wetland Center for Biogeochemical Research</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Whitmire Research Group</displayed-value>
+                <stored-value>Whitmire Research Group</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Wittung-Stafshede Research Group</displayed-value>
+                <stored-value>Wittung-Stafshede Research Group</stored-value>
+            </pair>
+        </value-pairs>
+        <value-pairs value-pairs-name="patents_subject" dc-term="dc.subject">
+            <pair>
+                <displayed-value>Utility patent</displayed-value>
+                <stored-value>Utility patent</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Design patent</displayed-value>
+                <stored-value>Design patent</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Plant patent</displayed-value>
+                <stored-value>Plant patent</stored-value>
+            </pair>
+        </value-pairs>
+        <value-pairs value-pairs-name="type_publication" dc-term="type.publication">
+            <pair>
+                <displayed-value>N/A</displayed-value>
+                <stored-value></stored-value>
+            </pair>
+            <pair>
+                <displayed-value>pre-print</displayed-value>
+                <stored-value>pre-print</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>post-print</displayed-value>
+                <stored-value>post-print</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>publisher version</displayed-value>
+                <stored-value>publisher version</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="facultypub_typedcmi" dc-term="type.dcmi">
+            <pair>
+                <displayed-value>Text</displayed-value>
+                <stored-value>Text</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>MovingImage</displayed-value>
+                <stored-value>MovingImage</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>StillImage</displayed-value>
+                <stored-value>StillImage</stored-value>
+            </pair>
+
+            <pair>
+                <displayed-value>Sound</displayed-value>
+                <stored-value>Sound</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Dataset</displayed-value>
+                <stored-value>Dataset</stored-value>
+            </pair>
+
+        </value-pairs>
+        <value-pairs value-pairs-name="facultypub_identifiers" dc-term="identifier">
+            <pair>
+                <displayed-value>DOI</displayed-value>
+                <stored-value>doi</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ISBN</displayed-value>
+                <stored-value>isbn</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ISSN</displayed-value>
+                <stored-value>issn</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>PMID</displayed-value>
+                <stored-value>pmid</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>PMCID</displayed-value>
+                <stored-value>pmcid</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Other</displayed-value>
+                <stored-value>other</stored-value>
+            </pair>
+        </value-pairs>
+
+        <value-pairs value-pairs-name="facultypub_types" dc-term="type">
+            <pair>
+                <displayed-value>Journal article</displayed-value>
+                <stored-value>Journal article</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Dataset</displayed-value>
+                <stored-value>Dataset</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Book review</displayed-value>
+                <stored-value>Book review</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Book</displayed-value>
+                <stored-value>Book</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Book chapter</displayed-value>
+                <stored-value>Book chapter</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>White paper</displayed-value>
+                <stored-value>White paper</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Conference paper</displayed-value>
+                <stored-value>Conference paper</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Magazine article</displayed-value>
+                <stored-value>Magazine article</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Newspaper article</displayed-value>
+                <stored-value>Newspaper article</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Report</displayed-value>
+                <stored-value>Report</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Technical report</displayed-value>
+                <stored-value>Technical report</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>audio recordings</displayed-value>
+                <stored-value>audio recordings</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>video recordings</displayed-value>
+                <stored-value>video recordings</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Presentation</displayed-value>
+                <stored-value>Presentation</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Computer program</displayed-value>
+                <stored-value>Computer program</stored-value>
+            </pair>
+
+        </value-pairs>
+
         <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
             <pair>
                 <displayed-value>ISSN</displayed-value>

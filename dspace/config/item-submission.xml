@@ -18,7 +18,10 @@
     <!-- for handle "default". -->
     <submission-map>
         <!-- Default submission process -->
-        <name-map collection-handle="default" submission-name="traditional"/>
+        <name-map collection-handle="default" submission-name="facultypub"/>
+        <name-map collection-handle="1911/77660" submission-name="datasets"/>
+        <name-map collection-handle="1911/79705" submission-name="patents"/>
+
 
         <!-- Sample Entities Collection configuration based on the demo Entities dataset available at:
              https://github.com/DSpace-Labs/AIP-Files/releases/tag/demo-entities-data
@@ -118,6 +121,22 @@
             <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
             <type>submission-form</type>
         </step-definition>
+        <step-definition id="facultypubform" mandatory="true">
+            <heading>submit.progressbar.describe.stepone</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+        <step-definition id="patentsform" mandatory="true">
+            <heading>submit.progressbar.describe.stepone</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+        <step-definition id="datasetsform" mandatory="true">
+            <heading>submit.progressbar.describe.stepone</heading>
+            <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
+            <type>submission-form</type>
+        </step-definition>
+
         <step-definition id="publicationStep" mandatory="true">
             <heading>submit.progressbar.describe.stepone</heading>
             <processing-class>org.dspace.app.rest.submit.step.DescribeStep</processing-class>
@@ -272,6 +291,37 @@
     <!-- -->
     <submission-definitions>
 
+
+        <submission-process name="facultypub">
+            <step id="collection"/>
+            <step id="facultypubform"></step>
+            <step id="upload"/>
+            <!-- Uncomment this step to allow the user to select a Creative Commons License -->
+            <!-- <step id="cclicense"/> -->
+
+            <!--Step will be to Sign off on the required DSpace License agreement -->
+            <step id="license"/>
+        </submission-process>
+        <submission-process name="patents">
+            <step id="collection"/>
+            <step id="patentsform"></step>
+            <step id="upload"/>
+            <!-- Uncomment this step to allow the user to select a Creative Commons License -->
+            <!-- <step id="cclicense"/> -->
+
+            <!--Step will be to Sign off on the required DSpace License agreement -->
+            <step id="license"/>
+        </submission-process>
+        <submission-process name="datasets">
+            <step id="collection"/>
+            <step id="datasetsform"></step>
+            <step id="upload"/>
+            <!-- Uncomment this step to allow the user to select a Creative Commons License -->
+            <!-- <step id="cclicense"/> -->
+
+            <!--Step will be to Sign off on the required DSpace License agreement -->
+            <step id="license"/>
+        </submission-process>
         <!--This "traditional" process defines the DEFAULT item submission process -->
         <submission-process name="traditional">
             <!--Uncommment to display the SAMPLE step as your first step -->
