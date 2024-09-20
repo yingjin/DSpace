@@ -526,19 +526,20 @@ public abstract class DSpaceObjectServiceImpl<T extends DSpaceObject> implements
                 return false;
             }
         }
-
-        if (language == null) {
-            // Value must be null language to match
-            if (metadataValue.getLanguage() != null) {
-                // Value is qualified, so no match
-                return false;
-            }
-        } else if (!language.equals(Item.ANY)) {
-            // Not a wildcard, so language must match exactly
-            if (!language.equals(metadataValue.getLanguage())) {
-                return false;
-            }
-        }
+// Ying commented this out to ignore language tag
+//        if (language == null) {
+//            // Value must be null language to match
+//            if (metadataValue.getLanguage() != null) {
+//                // Value is qualified, so no match
+//                return false;
+//            }
+//        } else if (!language.equals(Item.ANY)) {
+//            // Not a wildcard, so language must match exactly
+//            if (!language.equals(metadataValue.getLanguage())) {
+//                return false;
+//            }
+//        }
+// END Ying commented this out to ignore language tag
 
         if (!schema.equals(Item.ANY)) {
             if (metadataSchema != null && !metadataSchema.getName().equals(schema)) {
