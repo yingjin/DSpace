@@ -130,7 +130,8 @@ public class MetadataValue implements ReloadableEntity<Integer> {
      * @return language
      */
     public String getLanguage() {
-        return language;
+       // return language;
+        return "en_US"; // Ying added this to avoid language inconsistent across different import and export
     }
 
     /**
