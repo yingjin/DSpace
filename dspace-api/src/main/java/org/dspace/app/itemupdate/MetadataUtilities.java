@@ -229,7 +229,7 @@ public class MetadataUtilities {
                         .getConfigurationService()
                         .getProperty("default.language");
             }
-
+            language = "en_US"; // Ying added this to ignore language tag
             DtoMetadata dtom = DtoMetadata.create(schema, element, qualifier, language, value);
             ItemUpdate.pr(dtom.toString());
             dtomList.add(dtom);
@@ -267,6 +267,7 @@ public class MetadataUtilities {
             } else {
                 mel.setAttribute("language", dtom.language);
             }
+            mel.setAttribute("language", "en_US"); // Ying added this to ignore language tag
             mel.setTextContent(dtom.value);
             root.appendChild(mel);
         }
