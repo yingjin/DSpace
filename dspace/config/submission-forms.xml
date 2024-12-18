@@ -573,10 +573,10 @@
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>type</dc-element>
-                    <dc-qualifier>genre</dc-qualifier>
-                    <label>Content Type</label>
+                    <dc-qualifier>dcmi</dc-qualifier>
+                    <label>General Resource Type</label>
                     <input-type>onebox</input-type>
-                    <hint>Content types can be free‐text terms or from the <a href="http://dictionary.casrai.org/Output_Types" target="_blank">CASRAI Publications resource type list</a>.<br /><i>Example: Census data</i></hint>
+                    <hint>Select one term from the DCMI Type Vocabulary. (https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7)"</hint>
                     <required></required>
                 </field>
             </row>
