@@ -145,7 +145,7 @@ public class DatabaseUtils {
                 case "info":
                 case "status":
                     try (Connection connection = dataSource.getConnection()) {
-                        // Print basic Database info
+                         // Print basic Database info
                         printDBInfo(connection);
 
                         // Get info table from Flyway

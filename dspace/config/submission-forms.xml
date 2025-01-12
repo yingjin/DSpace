@@ -573,10 +573,10 @@
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>type</dc-element>
-                    <dc-qualifier>genre</dc-qualifier>
-                    <label>Content Type</label>
+                    <dc-qualifier>dcmi</dc-qualifier>
+                    <label>General Resource Type</label>
                     <input-type>onebox</input-type>
-                    <hint>Content types can be free‐text terms or from the <a href="http://dictionary.casrai.org/Output_Types" target="_blank">CASRAI Publications resource type list</a>.<br /><i>Example: Census data</i></hint>
+                    <hint>Select one term from the DCMI Type Vocabulary. (https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7)"</hint>
                     <required></required>
                 </field>
             </row>
@@ -621,9 +621,9 @@
                     <dc-element>contributor</dc-element>
                     <dc-qualifier>org</dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Rice affiliated department</label>
+                    <label>Affiliated Rice Entity</label>
                     <input-type>onebox</input-type>
-                    <hint>Rice affiliated department</hint>
+                    <hint>The Rice University lab, center, institute, department, or other research entity affiliated with the development of or contribution to the resource</hint>
                 </field>
             </row>
             <row>
@@ -659,18 +659,6 @@
                     <label>Award ID</label>
                     <input-type>onebox</input-type>
                     <hint>The funding number(s) and agency that provided a grant used to produce the dataset(s). Example: P20 RR016458 (National Institutes of Health)</hint>
-                    <required></required>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>contributor</dc-element>
-                    <dc-qualifier>org</dc-qualifier>
-                    <repeatable>true</repeatable>
-                    <label>Affiliated Rice entity</label>
-                    <input-type>onebox</input-type>
-                    <hint>Lab, center, institute or department affiliated with the creation of the dataset.</hint>
                     <required></required>
                 </field>
             </row>

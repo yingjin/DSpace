@@ -22,7 +22,7 @@ import org.dspace.service.DSpaceCRUDService;
  *
  * @author kevinvandevelde at atmire.com
  */
-public interface BitstreamFormatService extends DSpaceCRUDService<BitstreamFormat> {
+public interface    BitstreamFormatService extends DSpaceCRUDService<BitstreamFormat> {
 
 
     /**
