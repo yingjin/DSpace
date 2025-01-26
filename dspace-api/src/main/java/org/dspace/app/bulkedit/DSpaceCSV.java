@@ -24,6 +24,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.input.BOMInputStream;
 import org.apache.commons.lang3.StringUtils;
 import org.dspace.authority.AuthorityValue;
 import org.dspace.authority.factory.AuthorityServiceFactory;
@@ -149,7 +150,10 @@ public class DSpaceCSV implements Serializable {
         // Open the CSV file
         BufferedReader input = null;
         try {
-            input = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+            // Y.J. remove the BOM from csv
+            BOMInputStream bomInputStream = new BOMInputStream(inputStream);
+
+            input = new BufferedReader(new InputStreamReader(bomInputStream, StandardCharsets.UTF_8));
 
             // Read the heading line
             String head = input.readLine();
