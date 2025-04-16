@@ -18,7 +18,8 @@
     <!-- for handle "default". -->
     <submission-map>
         <!-- Default submission process -->
-        <name-map collection-handle="default" submission-name="facultypub"/>
+        <name-map collection-handle="default" submission-name="traditional"/>
+<!--        <name-map collection-handle="default" submission-name="facultypub"/>-->
         <name-map collection-handle="1911/77660" submission-name="datasets"/>
         <name-map collection-handle="1911/79705" submission-name="patents"/>
 
@@ -355,7 +356,7 @@
             <!-- <step id="extractionstep"/> -->
 
             <!-- Uncomment this step to allow the user to select a Creative Commons License -->
-            <!-- <step id="cclicense"/> -->
+             <step id="cclicense"/>
 
             <!--Step will be to Sign off on the required DSpace License agreement -->
             <step id="license"/>
